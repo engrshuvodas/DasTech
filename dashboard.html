@@ -5,127 +5,333 @@
   <meta charset="utf-8">
   <meta content="width=device-width, initial-scale=1.0" name="viewport">
 
-  <title>KinoyeeIT</title>
-  <meta content="" name="description">
-  <meta content="" name="keywords">
+  <title>Administration & Client Portal — DasTech</title>
+  <meta content="Manage DasTech digital product licenses, client projects, service inquiries, and content." name="description">
 
   <!-- Favicons -->
   <link href="./assets/img/favicon.png" rel="icon">
   <link href="./assets/img/apple-touch-icon.png" rel="apple-touch-icon">
 
   <!-- Google Fonts -->
-  <link href="https://fonts.gstatic.com" rel="preconnect">
-  <link href="https://fonts.googleapis.com/css?family=Open+Sans:300,300i,400,400i,600,600i,700,700i|Nunito:300,300i,400,400i,600,600i,700,700i|Poppins:300,300i,400,400i,500,500i,600,600i,700,700i" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Plus+Jakarta+Sans:wght@600;700;800&family=JetBrains+Mono:wght@500&display=swap" rel="stylesheet">
 
   <!-- Vendor CSS Files -->
   <link href="./assets/vendor/bootstrap/css/bootstrap.min.css" rel="stylesheet">
   <link href="./assets/vendor/bootstrap-icons/bootstrap-icons.css" rel="stylesheet">
   <link href="./assets/vendor/boxicons/css/boxicons.min.css" rel="stylesheet">
-  <link href="./assets/vendor/quill/quill.snow.css" rel="stylesheet">
-  <link href="./assets/vendor/quill/quill.bubble.css" rel="stylesheet">
-  <link href="./assets/vendor/remixicon/remixicon.css" rel="stylesheet">
-  <link href="./assets/vendor/simple-datatables/style.css" rel="stylesheet">
 
-  <!-- Main CSS File -->
+  <!-- Main CSS Files -->
   <link href="./assets/css/style.css" rel="stylesheet">
-
+  <link href="./style.css" rel="stylesheet">
 </head>
 
-<body>
+<body class="bg-light">
 
-  <header id="header" class="header fixed-top d-flex align-items-center">
+  <!-- Header Top Bar -->
+  <header id="header" class="header fixed-top d-flex align-items-center bg-white border-bottom shadow-sm">
+    <div class="d-flex align-items-center justify-content-between px-3 w-100">
+      <div class="d-flex align-items-center gap-3">
+        <a href="./index.html" class="dastech-brand text-decoration-none">
+          <span class="brand-icon"><i class="bi bi-cpu-fill"></i></span>
+          <span class="fs-4 fw-bold text-dark">Das<span class="brand-text-accent">Tech</span></span>
+        </a>
+        <i class="bi bi-list toggle-sidebar-btn fs-4 text-dark cursor-pointer ms-3"></i>
+      </div>
 
-    <div class="d-flex align-items-center justify-content-between">
-      <a href="./index.html" class="logo d-flex align-items-center">
-        <img src="./assets/img/logo.png" alt="">
-        <span class="d-none d-lg-block">KinoyeeIT</span>
-      </a>
-      <i class="bi bi-list toggle-sidebar-btn"></i>
+      <div class="d-flex align-items-center gap-3">
+        <a href="index.html" class="btn btn-outline-primary btn-sm rounded-pill px-3 d-none d-sm-inline-flex align-items-center gap-1">
+          <i class="bi bi-box-arrow-up-right"></i> Public Website
+        </a>
+
+        <!-- User Profile Dropdown -->
+        <div class="dropdown">
+          <a class="nav-link nav-profile d-flex align-items-center gap-2 pe-0 dropdown-toggle" href="#" data-bs-toggle="dropdown">
+            <div class="p-2 bg-primary bg-opacity-10 text-primary rounded-circle fw-bold">DT</div>
+            <span class="d-none d-md-block fw-semibold text-dark">DasTech Admin</span>
+          </a>
+          <ul class="dropdown-menu dropdown-menu-end dropdown-menu-arrow profile shadow border-0 rounded-3 mt-2">
+            <li class="dropdown-header">
+              <h6 class="fw-bold mb-0">DasTech Administrator</h6>
+              <span class="small text-muted">admin@dastech.io</span>
+            </li>
+            <li><hr class="dropdown-divider"></li>
+            <li>
+              <a class="dropdown-item d-flex align-items-center gap-2" href="dashboard.html">
+                <i class="bi bi-grid"></i> <span>Dashboard Overview</span>
+              </a>
+            </li>
+            <li>
+              <a class="dropdown-item d-flex align-items-center gap-2" href="contacts.html">
+                <i class="bi bi-envelope"></i> <span>Inquiries</span>
+              </a>
+            </li>
+            <li><hr class="dropdown-divider"></li>
+            <li>
+              <a class="dropdown-item d-flex align-items-center gap-2 text-danger" href="login.html">
+                <i class="bi bi-box-arrow-right"></i> <span>Sign Out</span>
+              </a>
+            </li>
+          </ul>
+        </div>
+      </div>
     </div>
-
   </header>
 
-  <aside id="sidebar" class="sidebar">
-
+  <!-- Sidebar -->
+  <aside id="sidebar" class="sidebar bg-white border-end">
     <ul class="sidebar-nav" id="sidebar-nav">
-
-      <h5 class="ps-1 fw-bold">Arman Sharif</h5>
-      <hr>
+      <div class="px-3 py-2 text-muted small fw-bold text-uppercase">Management Portal</div>
 
       <li class="nav-item">
-        <a class="nav-link " href="./dashboard.html">
-          <i class="bi bi-grid"></i>
-          <span>Dashboard</span>
+        <a class="nav-link active" href="./dashboard.html">
+          <i class="bi bi-grid-fill"></i>
+          <span>Dashboard Overview</span>
         </a>
       </li>
 
-      <li class="nav-item"><a class="nav-link collapsed" href="./banner.html" class=""><i class="bi bi-grid"></i></i><span>Banner Section</span></a></li>
-      <li class="nav-item"><a class="nav-link collapsed" href="./services.html" class=""><i class="bi bi-grid"></i><span>Services</span></a></li>
-      <li class="nav-item"><a class="nav-link collapsed" href="./clients.html" class=""><i class="bi bi-grid"></i><span>Clients</span></a></li>
-      <li class="nav-item"><a class="nav-link collapsed" href="./news_and_blogs.html" class=""><i class="bi bi-grid"></i><span>News & Blogs</span></a></li>
-      <li class="nav-item"><a class="nav-link collapsed" href="./offers.html" class=""><i class="bi bi-grid"></i><span>Offers</span></a></li>
-      <li class="nav-item"><a class="nav-link collapsed" href="./client_portfolios.html" class=""><i class="bi bi-grid"></i><span>Client Portfolios</span></a></li>
-      <li class="nav-item"><a class="nav-link collapsed" href="./about_us.html" class=""><i class="bi bi-grid"></i><span>About Us</span></a></li>
-      <li class="nav-item"><a class="nav-link collapsed" href="./contacts.html" class=""><i class="bi bi-grid"></i><span>Contacts</span></a></li>
-      
-      <li class="nav-item"><a class="nav-link collapsed" href="./index.html" class=""><i class="bi bi-box-arrow-right"></i><span>Logout</span></a></li>
-
-      <!-- <li class="nav-item">
-        <a class="nav-link collapsed" data-bs-target="#components-nav" data-bs-toggle="collapse" href="#">
-          <i class="bi bi-menu-button-wide"></i><span>Components</span><i class="bi bi-chevron-down ms-auto"></i>
+      <li class="nav-item">
+        <a class="nav-link collapsed" href="./banner.html">
+          <i class="bi bi-images"></i>
+          <span>Hero & Banner</span>
         </a>
-        <ul id="components-nav" class="nav-content collapse " data-bs-parent="#sidebar-nav">
-          <li><a href=""><i class="bi bi-circle"></i><span>Alerts</span></a></li>
-        </ul>
-      </li> -->
-
-      <!-- <li class="nav-heading">Pages</li>
+      </li>
 
       <li class="nav-item">
-        <a class="nav-link collapsed" href="">
-          <i class="bi bi-person"></i>
-          <span>Profile</span>
+        <a class="nav-link collapsed" href="./services.html">
+          <i class="bi bi-gear-wide-connected"></i>
+          <span>Services Manager</span>
         </a>
-      </li> -->
+      </li>
 
+      <li class="nav-item">
+        <a class="nav-link collapsed" href="./clients.html">
+          <i class="bi bi-people"></i>
+          <span>Clients & Partners</span>
+        </a>
+      </li>
+
+      <li class="nav-item">
+        <a class="nav-link collapsed" href="./news_and_blogs.html">
+          <i class="bi bi-newspaper"></i>
+          <span>News & Insights</span>
+        </a>
+      </li>
+
+      <li class="nav-item">
+        <a class="nav-link collapsed" href="./offers.html">
+          <i class="bi bi-tag"></i>
+          <span>Special Offers</span>
+        </a>
+      </li>
+
+      <li class="nav-item">
+        <a class="nav-link collapsed" href="./client_portfolios.html">
+          <i class="bi bi-folder-check"></i>
+          <span>Case Studies</span>
+        </a>
+      </li>
+
+      <li class="nav-item">
+        <a class="nav-link collapsed" href="./about_us.html">
+          <i class="bi bi-info-circle"></i>
+          <span>About Us Section</span>
+        </a>
+      </li>
+
+      <li class="nav-item">
+        <a class="nav-link collapsed" href="./contacts.html">
+          <i class="bi bi-chat-left-text"></i>
+          <span>Inquiries & Leads</span>
+        </a>
+      </li>
+
+      <hr class="mx-3 my-2">
+
+      <li class="nav-item">
+        <a class="nav-link collapsed text-danger" href="./index.html">
+          <i class="bi bi-box-arrow-left text-danger"></i>
+          <span>Exit to Website</span>
+        </a>
+      </li>
     </ul>
-
   </aside>
 
-  <main id="main" class="main" style="min-height: 70vh;">
+  <!-- Main Content Body -->
+  <main id="main" class="main p-4" style="min-height: 85vh;">
+    <!-- Page Title -->
+    <div class="pagetitle mb-4">
+      <h1 class="h3 fw-bold mb-1">Executive Dashboard</h1>
+      <nav>
+        <ol class="breadcrumb mb-0">
+          <li class="breadcrumb-item"><a href="./index.html">Home</a></li>
+          <li class="breadcrumb-item active">Dashboard Overview</li>
+        </ol>
+      </nav>
+    </div>
 
-    <section class="section dashboard">
-      <div class="row">
-
+    <!-- KPI Metric Cards -->
+    <div class="row g-3 mb-4">
+      <div class="col-sm-6 col-xl-3">
+        <div class="card border-0 shadow-sm rounded-4 p-3 bg-white h-100">
+          <div class="d-flex align-items-center justify-content-between mb-2">
+            <span class="text-muted small fw-semibold">Digital Product Sales</span>
+            <div class="p-2 bg-primary bg-opacity-10 text-primary rounded-3"><i class="bi bi-currency-dollar fs-5"></i></div>
+          </div>
+          <h3 class="fw-bold mb-1">$48,250</h3>
+          <div class="small text-success"><i class="bi bi-arrow-up-right me-1"></i> +18.4% this month</div>
+        </div>
       </div>
-    </section>
 
+      <div class="col-sm-6 col-xl-3">
+        <div class="card border-0 shadow-sm rounded-4 p-3 bg-white h-100">
+          <div class="d-flex align-items-center justify-content-between mb-2">
+            <span class="text-muted small fw-semibold">Active Licenses</span>
+            <div class="p-2 bg-success bg-opacity-10 text-success rounded-3"><i class="bi bi-patch-check fs-5"></i></div>
+          </div>
+          <h3 class="fw-bold mb-1">184</h3>
+          <div class="small text-muted">Across 6 Digital Products</div>
+        </div>
+      </div>
+
+      <div class="col-sm-6 col-xl-3">
+        <div class="card border-0 shadow-sm rounded-4 p-3 bg-white h-100">
+          <div class="d-flex align-items-center justify-content-between mb-2">
+            <span class="text-muted small fw-semibold">Engineering Projects</span>
+            <div class="p-2 bg-info bg-opacity-10 text-info rounded-3"><i class="bi bi-kanban fs-5"></i></div>
+          </div>
+          <h3 class="fw-bold mb-1">12</h3>
+          <div class="small text-primary"><i class="bi bi-activity me-1"></i> 4 in sprint cycle</div>
+        </div>
+      </div>
+
+      <div class="col-sm-6 col-xl-3">
+        <div class="card border-0 shadow-sm rounded-4 p-3 bg-white h-100">
+          <div class="d-flex align-items-center justify-content-between mb-2">
+            <span class="text-muted small fw-semibold">New Client Leads</span>
+            <div class="p-2 bg-warning bg-opacity-10 text-warning rounded-3"><i class="bi bi-chat-left-dots fs-5"></i></div>
+          </div>
+          <h3 class="fw-bold mb-1">28</h3>
+          <div class="small text-muted"><a href="contacts.html" class="text-primary text-decoration-none">View inquiries &rarr;</a></div>
+        </div>
+      </div>
+    </div>
+
+    <!-- Main Grid: Recent Orders & Active Projects -->
+    <div class="row g-4 mb-4">
+      <!-- Recent Orders Table -->
+      <div class="col-lg-8">
+        <div class="card border-0 shadow-sm rounded-4 p-4 bg-white h-100">
+          <div class="d-flex justify-content-between align-items-center mb-3">
+            <h4 class="fw-bold fs-5 mb-0">Recent Digital Product Orders</h4>
+            <a href="products.html" class="btn btn-sm btn-dastech-outline">Marketplace View</a>
+          </div>
+
+          <div class="table-responsive">
+            <table class="table table-hover align-middle mb-0">
+              <thead class="table-light text-muted small text-uppercase">
+                <tr>
+                  <th scope="col">Order ID</th>
+                  <th scope="col">Product</th>
+                  <th scope="col">Customer</th>
+                  <th scope="col">Amount</th>
+                  <th scope="col" class="text-center">License Status</th>
+                </tr>
+              </thead>
+              <tbody class="small">
+                <tr>
+                  <td class="font-monospace fw-bold">#DT-98421</td>
+                  <td>Apex SaaS Admin Suite</td>
+                  <td>sarah@vertex.io</td>
+                  <td class="fw-bold">$69.00</td>
+                  <td class="text-center"><span class="badge bg-success">Active</span></td>
+                </tr>
+                <tr>
+                  <td class="font-monospace fw-bold">#DT-98420</td>
+                  <td>CloudGuard DevOps Toolkit</td>
+                  <td>devops@nordic.se</td>
+                  <td class="fw-bold">$89.00</td>
+                  <td class="text-center"><span class="badge bg-success">Active</span></td>
+                </tr>
+                <tr>
+                  <td class="font-monospace fw-bold">#DT-98419</td>
+                  <td>Nova UI Pro Design System</td>
+                  <td>alex@designpulse.co</td>
+                  <td class="fw-bold">$49.00</td>
+                  <td class="text-center"><span class="badge bg-success">Active</span></td>
+                </tr>
+                <tr>
+                  <td class="font-monospace fw-bold">#DT-98418</td>
+                  <td>PulseFlow CRM Engine</td>
+                  <td>michael@growthhub.com</td>
+                  <td class="fw-bold">$99.00</td>
+                  <td class="text-center"><span class="badge bg-success">Active</span></td>
+                </tr>
+                <tr>
+                  <td class="font-monospace fw-bold">#DT-98417</td>
+                  <td>SpeedCraft Headless Store</td>
+                  <td>claire@retailpulse.org</td>
+                  <td class="fw-bold">$59.00</td>
+                  <td class="text-center"><span class="badge bg-success">Active</span></td>
+                </tr>
+              </tbody>
+            </table>
+          </div>
+        </div>
+      </div>
+
+      <!-- Quick Shortcuts & System Status -->
+      <div class="col-lg-4">
+        <div class="card border-0 shadow-sm rounded-4 p-4 bg-white h-100">
+          <h4 class="fw-bold fs-5 mb-3">Quick Actions</h4>
+          <div class="d-flex flex-column gap-2 mb-4">
+            <a href="products.html" class="btn btn-light text-start p-3 rounded-3 d-flex align-items-center gap-3">
+              <i class="bi bi-box-seam text-primary fs-5"></i>
+              <div>
+                <div class="fw-bold text-dark small">Explore Digital Products</div>
+                <div class="text-muted small">View product catalog & pricing</div>
+              </div>
+            </a>
+            <a href="projects.html" class="btn btn-light text-start p-3 rounded-3 d-flex align-items-center gap-3">
+              <i class="bi bi-folder-plus text-success fs-5"></i>
+              <div>
+                <div class="fw-bold text-dark small">Portfolio Case Studies</div>
+                <div class="text-muted small">Browse engineering showcases</div>
+              </div>
+            </a>
+            <a href="contacts.html" class="btn btn-light text-start p-3 rounded-3 d-flex align-items-center gap-3">
+              <i class="bi bi-envelope-open text-warning fs-5"></i>
+              <div>
+                <div class="fw-bold text-dark small">Review Inquiries</div>
+                <div class="text-muted small">Respond to client leads</div>
+              </div>
+            </a>
+          </div>
+
+          <div class="p-3 bg-light rounded-3 border">
+            <div class="d-flex align-items-center gap-2 mb-1">
+              <span class="p-1 bg-success rounded-circle"></span>
+              <span class="fw-bold small text-dark">Production Cluster Status</span>
+            </div>
+            <div class="text-muted small">All systems operational. Latency 24ms. Zero incidents reported in past 30 days.</div>
+          </div>
+        </div>
+      </div>
+    </div>
   </main>
   
-  <footer id="footer" class="footer">
-    <div class="copyright">
-      &copy; Copyright <strong><span>Arman's Solution</span></strong>. All Rights Reserved
-    </div>
-    <div class="credits">
-      Designed by <a href="https://arman9022.github.io/a.solution/" class="fw-bold">Arman's Solution</a>
-    </div>
+  <!-- Dashboard Footer -->
+  <footer id="footer" class="footer bg-white border-top py-3 text-center text-muted small">
+    &copy; <span id="currentYear"></span> <strong><span>DasTech</span></strong>. All Rights Reserved.
   </footer>
 
   <a href="#" class="back-to-top d-flex align-items-center justify-content-center"><i class="bi bi-arrow-up-short"></i></a>
 
   <!-- Vendor JS Files -->
-  <script src="./assets/vendor/apexcharts/apexcharts.min.js"></script>
   <script src="./assets/vendor/bootstrap/js/bootstrap.bundle.min.js"></script>
-  <script src="./assets/vendor/chart.js/chart.umd.js"></script>
-  <script src="./assets/vendor/echarts/echarts.min.js"></script>
-  <script src="./assets/vendor/quill/quill.min.js"></script>
-  <script src="./assets/vendor/simple-datatables/simple-datatables.js"></script>
-  <script src="./assets/vendor/tinymce/tinymce.min.js"></script>
-  <script src="./assets/vendor/php-email-form/validate.js"></script>
-
-  <!-- Template Main JS File -->
   <script src="./assets/js/main.js"></script>
-
+  <script>
+    document.getElementById('currentYear').textContent = new Date().getFullYear();
+  </script>
 </body>
 
 </html>

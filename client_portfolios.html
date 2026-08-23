@@ -5,109 +5,149 @@
   <meta charset="utf-8">
   <meta content="width=device-width, initial-scale=1.0" name="viewport">
 
-  <title>KinoyeeIT</title>
-  <meta content="" name="description">
-  <meta content="" name="keywords">
+  <title>Case Studies & Portfolios — DasTech Portal</title>
+  <meta content="Manage DasTech client portfolio items and case study media." name="description">
 
   <!-- Favicons -->
   <link href="./assets/img/favicon.png" rel="icon">
   <link href="./assets/img/apple-touch-icon.png" rel="apple-touch-icon">
 
   <!-- Google Fonts -->
-  <link href="https://fonts.gstatic.com" rel="preconnect">
-  <link href="https://fonts.googleapis.com/css?family=Open+Sans:300,300i,400,400i,600,600i,700,700i|Nunito:300,300i,400,400i,600,600i,700,700i|Poppins:300,300i,400,400i,500,500i,600,600i,700,700i" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Plus+Jakarta+Sans:wght@600;700;800&display=swap" rel="stylesheet">
 
   <!-- Vendor CSS Files -->
   <link href="./assets/vendor/bootstrap/css/bootstrap.min.css" rel="stylesheet">
   <link href="./assets/vendor/bootstrap-icons/bootstrap-icons.css" rel="stylesheet">
   <link href="./assets/vendor/boxicons/css/boxicons.min.css" rel="stylesheet">
-  <link href="./assets/vendor/quill/quill.snow.css" rel="stylesheet">
-  <link href="./assets/vendor/quill/quill.bubble.css" rel="stylesheet">
-  <link href="./assets/vendor/remixicon/remixicon.css" rel="stylesheet">
-  <link href="./assets/vendor/simple-datatables/style.css" rel="stylesheet">
 
   <!-- Main CSS File -->
   <link href="./assets/css/style.css" rel="stylesheet">
-
+  <link href="./style.css" rel="stylesheet">
 </head>
 
-<body>
+<body class="bg-light">
 
-  <header id="header" class="header fixed-top d-flex align-items-center">
+  <header id="header" class="header fixed-top d-flex align-items-center bg-white border-bottom shadow-sm">
+    <div class="d-flex align-items-center justify-content-between px-3 w-100">
+      <div class="d-flex align-items-center gap-3">
+        <a href="./index.html" class="dastech-brand text-decoration-none">
+          <span class="brand-icon"><i class="bi bi-cpu-fill"></i></span>
+          <span class="fs-4 fw-bold text-dark">Das<span class="brand-text-accent">Tech</span></span>
+        </a>
+        <i class="bi bi-list toggle-sidebar-btn fs-4 text-dark cursor-pointer ms-3"></i>
+      </div>
 
-    <div class="d-flex align-items-center justify-content-between">
-      <a href="./index.html" class="logo d-flex align-items-center">
-        <img src="./assets/img/logo.png" alt="">
-        <span class="d-none d-lg-block">KinoyeeIT</span>
-      </a>
-      <i class="bi bi-list toggle-sidebar-btn"></i>
+      <div class="d-flex align-items-center gap-3">
+        <a href="index.html" class="btn btn-outline-primary btn-sm rounded-pill px-3 d-none d-sm-inline-flex">
+          <i class="bi bi-box-arrow-up-right me-1"></i> Public Website
+        </a>
+        <div class="d-flex align-items-center gap-2">
+          <div class="p-2 bg-primary bg-opacity-10 text-primary rounded-circle fw-bold small">DT</div>
+          <span class="d-none d-md-block fw-semibold text-dark small">DasTech Admin</span>
+        </div>
+      </div>
     </div>
-
   </header>
 
-  <aside id="sidebar" class="sidebar">
-
+  <aside id="sidebar" class="sidebar bg-white border-end">
     <ul class="sidebar-nav" id="sidebar-nav">
+      <div class="px-3 py-2 text-muted small fw-bold text-uppercase">Management Portal</div>
 
-      <h5 class="ps-1 fw-bold">Arman Sharif</h5>
-      <hr>
+      <li class="nav-item"><a class="nav-link collapsed" href="./dashboard.html"><i class="bi bi-grid"></i><span>Dashboard Overview</span></a></li>
+      <li class="nav-item"><a class="nav-link collapsed" href="./banner.html"><i class="bi bi-images"></i><span>Hero & Banner</span></a></li>
+      <li class="nav-item"><a class="nav-link collapsed" href="./services.html"><i class="bi bi-gear-wide-connected"></i><span>Services Manager</span></a></li>
+      <li class="nav-item"><a class="nav-link collapsed" href="./clients.html"><i class="bi bi-people"></i><span>Clients & Partners</span></a></li>
+      <li class="nav-item"><a class="nav-link collapsed" href="./news_and_blogs.html"><i class="bi bi-newspaper"></i><span>News & Insights</span></a></li>
+      <li class="nav-item"><a class="nav-link collapsed" href="./offers.html"><i class="bi bi-tag"></i><span>Special Offers</span></a></li>
+      <li class="nav-item"><a class="nav-link active" href="./client_portfolios.html"><i class="bi bi-folder-check"></i><span>Case Studies</span></a></li>
+      <li class="nav-item"><a class="nav-link collapsed" href="./about_us.html"><i class="bi bi-info-circle"></i><span>About Us Section</span></a></li>
+      <li class="nav-item"><a class="nav-link collapsed" href="./contacts.html"><i class="bi bi-chat-left-text"></i><span>Inquiries & Leads</span></a></li>
+
+      <hr class="mx-3 my-2">
 
       <li class="nav-item">
-        <a class="nav-link collapsed" href="./dashboard.html">
-          <i class="bi bi-grid"></i>
-          <span>Dashboard</span>
+        <a class="nav-link collapsed text-danger" href="./index.html">
+          <i class="bi bi-box-arrow-left text-danger"></i>
+          <span>Exit to Website</span>
         </a>
       </li>
-
-      <li class="nav-item"><a class="nav-link collapsed" href="./banner.html" class=""><i class="bi bi-grid"></i></i><span>Banner Section</span></a></li>
-      <li class="nav-item"><a class="nav-link collapsed" href="./services.html" class=""><i class="bi bi-grid"></i><span>Services</span></a></li>
-      <li class="nav-item"><a class="nav-link collapsed" href="./clients.html" class=""><i class="bi bi-grid"></i><span>Clients</span></a></li>
-      <li class="nav-item"><a class="nav-link collapsed" href="./news_and_blogs.html" class=""><i class="bi bi-grid"></i><span>News & Blogs</span></a></li>
-      <li class="nav-item"><a class="nav-link collapsed" href="./offers.html" class=""><i class="bi bi-grid"></i><span>Offers</span></a></li>
-      <li class="nav-item"><a class="nav-link" href="./client_portfolios.html" class=""><i class="bi bi-grid"></i><span>Client Portfolios</span></a></li>
-      <li class="nav-item"><a class="nav-link collapsed" href="./about_us.html" class=""><i class="bi bi-grid"></i><span>About Us</span></a></li>
-      <li class="nav-item"><a class="nav-link collapsed" href="./contacts.html" class=""><i class="bi bi-grid"></i><span>Contacts</span></a></li>
-      
-      <li class="nav-item"><a class="nav-link collapsed" href="./index.html" class=""><i class="bi bi-box-arrow-right"></i><span>Logout</span></a></li>
-
     </ul>
-
   </aside>
 
-  <main id="main" class="main" style="min-height: 70vh;">
-
-    <section class="section dashboard">
-      <div class="row">
-
+  <main id="main" class="main p-4" style="min-height: 85vh;">
+    <div class="row">
+      <div class="col-12">
+        <div class="pagetitle mb-4">
+          <h1 class="h3 fw-bold mb-1">Portfolio Case Studies</h1>
+          <nav>
+            <ol class="breadcrumb">
+              <li class="breadcrumb-item"><a href="./index.html">Home</a></li>
+              <li class="breadcrumb-item"><a href="./dashboard.html">Dashboard</a></li>
+              <li class="breadcrumb-item active">Case Studies</li>
+            </ol>
+          </nav>
+        </div>
       </div>
-    </section>
+    </div>
 
+    <div class="row">
+      <div class="col-12">
+        <div class="card border-0 shadow-sm rounded-4 p-4 bg-white">
+          <div class="d-flex justify-content-between align-items-center mb-3">
+            <h5 class="fw-bold mb-0">Active Project Case Studies</h5>
+            <a href="projects.html" class="btn btn-dastech-outline btn-sm">Public Portfolio</a>
+          </div>
+
+          <div class="table-responsive">
+            <table class="table table-hover align-middle">
+              <thead class="table-light small text-uppercase text-muted">
+                <tr>
+                  <th scope="col">#</th>
+                  <th scope="col">Project Title</th>
+                  <th scope="col">Client</th>
+                  <th scope="col">Category</th>
+                  <th scope="col" class="text-center">Status</th>
+                </tr>
+              </thead>
+              <tbody class="small">
+                <tr>
+                  <th scope="row">1</th>
+                  <td class="fw-bold">FinPulse Neo-Banking & Wealth Platform</td>
+                  <td class="text-muted">FinPulse Financial Ltd.</td>
+                  <td><span class="badge bg-light text-dark border">FinTech & Cloud</span></td>
+                  <td class="text-center"><span class="badge bg-success">Published</span></td>
+                </tr>
+                <tr>
+                  <th scope="row">2</th>
+                  <td class="fw-bold">OmniChain Logistics & Fleet ERP</td>
+                  <td class="text-muted">Global Cargo Solutions</td>
+                  <td><span class="badge bg-light text-dark border">Enterprise Software</span></td>
+                  <td class="text-center"><span class="badge bg-success">Published</span></td>
+                </tr>
+                <tr>
+                  <th scope="row">3</th>
+                  <td class="fw-bold">MediVault Telehealth Consultation Hub</td>
+                  <td class="text-muted">Apex Health Network</td>
+                  <td><span class="badge bg-light text-dark border">Healthcare & Mobile</span></td>
+                  <td class="text-center"><span class="badge bg-success">Published</span></td>
+                </tr>
+              </tbody>
+            </table>
+          </div>
+        </div>
+      </div>
+    </div>
   </main>
   
-  <footer id="footer" class="footer">
-    <div class="copyright">
-      &copy; Copyright <strong><span>Arman's Solution</span></strong>. All Rights Reserved
-    </div>
-    <div class="credits">
-      Designed by <a href="https://arman9022.github.io/a.solution/" class="fw-bold">Arman's Solution</a>
-    </div>
+  <footer id="footer" class="footer bg-white border-top py-3 text-center text-muted small">
+    &copy; <span id="currentYear"></span> <strong><span>DasTech</span></strong>. All Rights Reserved.
   </footer>
 
-  <a href="#" class="back-to-top d-flex align-items-center justify-content-center"><i class="bi bi-arrow-up-short"></i></a>
-
-  <!-- Vendor JS Files -->
-  <script src="./assets/vendor/apexcharts/apexcharts.min.js"></script>
   <script src="./assets/vendor/bootstrap/js/bootstrap.bundle.min.js"></script>
-  <script src="./assets/vendor/chart.js/chart.umd.js"></script>
-  <script src="./assets/vendor/echarts/echarts.min.js"></script>
-  <script src="./assets/vendor/quill/quill.min.js"></script>
-  <script src="./assets/vendor/simple-datatables/simple-datatables.js"></script>
-  <script src="./assets/vendor/tinymce/tinymce.min.js"></script>
-  <script src="./assets/vendor/php-email-form/validate.js"></script>
-
-  <!-- Template Main JS File -->
   <script src="./assets/js/main.js"></script>
-
+  <script>
+    document.getElementById('currentYear').textContent = new Date().getFullYear();
+  </script>
 </body>
 
 </html>

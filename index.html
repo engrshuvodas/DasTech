@@ -1,438 +1,771 @@
 <!doctype html>
 <html lang="en">
   <head>
-    <!-- Required meta tags -->
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>DasTech — Digital Products & Engineering Studio</title>
+    <meta name="description" content="DasTech designs and builds cutting-edge software solutions, ready-to-deploy digital products, SaaS platforms, and enterprise web applications.">
+    
+    <!-- Open Graph / Meta -->
+    <meta property="og:title" content="DasTech — Digital Products & Engineering Studio">
+    <meta property="og:description" content="Building high-performance digital products and custom software solutions that move businesses forward.">
+    <meta property="og:type" content="website">
 
-    <!-- Bootstrap CSS -->
-    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
-
-
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/OwlCarousel2/2.3.4/assets/owl.carousel.min.css" integrity="sha512-tS3S5qG0BlhnQROyJXvNjeEM4UpMXHrQfTGmbQ1gKmelCxlSEBUaxhRBj/EFTzpbP4RVSrpEikbmdJobCvhE3g==" crossorigin="anonymous" referrerpolicy="no-referrer" />
-
-
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/OwlCarousel2/2.3.4/assets/owl.theme.default.css" integrity="sha512-OTcub78R3msOCtY3Tc6FzeDJ8N9qvQn1Ph49ou13xgA9VsH9+LRxoFU6EqLhW4+PKRfU+/HReXmSZXHEkpYoOA==" crossorigin="anonymous" referrerpolicy="no-referrer" />
-
-
+    <!-- Bootstrap 5 CSS -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
+    <!-- Bootstrap Icons -->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css">
+    <!-- AOS Animation Library -->
     <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
+    <!-- Owl Carousel 2 -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/OwlCarousel2/2.3.4/assets/owl.carousel.min.css" />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/OwlCarousel2/2.3.4/assets/owl.theme.default.min.css" />
 
-    <title>KinoyeeIT</title>
-
+    <!-- DasTech Master Design System -->
     <link rel="stylesheet" href="style.css">
   </head>
   <body>
-    <!-- navbar-start -->
-    <nav class="navbar navbar-expand-lg navbar-light bg-light sticky-top">
-        <div class="container">
-          <a class="navbar-brand" href="./index.html">KinoyeeIT</a>
-          <button class="navbar-toggler collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent"
-            aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
-            <span class="toggler-icon top-bar"></span>
-            <span class="toggler-icon middle-bar"></span>
-            <span class="toggler-icon bottom-bar"></span>
+    <!-- Top Navigation Bar -->
+    <nav class="navbar navbar-expand-lg dastech-navbar sticky-top" id="mainNavbar">
+      <div class="container">
+        <a class="dastech-brand" href="index.html">
+          <span class="brand-icon"><i class="bi bi-cpu-fill"></i></span>
+          <span>Das<span class="brand-text-accent">Tech</span></span>
+        </a>
+
+        <div class="d-flex align-items-center d-lg-none gap-2">
+          <!-- Mobile Cart Trigger -->
+          <button class="cart-btn-trigger" data-dastech-open-cart aria-label="Open Shopping Cart">
+            <i class="bi bi-bag-fill"></i>
+            <span class="dastech-cart-badge" style="display: none;">0</span>
           </button>
-          <div class="collapse navbar-collapse" id="navbarSupportedContent">
-            <ul class="navbar-nav ms-auto mb-2 mb-lg-0">
-              <li class="nav-item ">
-                <a class="nav-link active menu_border" aria-current="page" href="./index.html">Home</a>
-              </li>
+          
+          <button class="navbar-toggler border-0 p-2" type="button" data-bs-toggle="collapse" data-bs-target="#navbarContent"
+            aria-controls="navbarContent" aria-expanded="false" aria-label="Toggle navigation">
+            <i class="bi bi-list fs-2 text-dark"></i>
+          </button>
+        </div>
 
-              <li class="nav-item li center">
-                <a class="nav-link " href="">About Us</a>
-              </li>
+        <div class="collapse navbar-collapse" id="navbarContent">
+          <ul class="navbar-nav mx-auto mb-2 mb-lg-0">
+            <li class="nav-item">
+              <a class="nav-link active" aria-current="page" href="index.html">Home</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="products.html">Digital Products</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="projects.html">Projects</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="services-page.html">Services</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="about.html">About</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="#contact_us">Contact</a>
+            </li>
+          </ul>
 
-             
-
-              <li class="nav-item dropdown">
-                <a class="nav-link dropdown-toggle" href="#services" id="navbarDropdown" role="button" data-bs-toggle="dropdown"
-                  aria-expanded="false">
-                  Services
-                </a>
-                <ul class="dropdown-menu" aria-labelledby="navbarDropdown">
-                  <li><a class="dropdown-item" href="#services">Custom Software Development</a></li>
-                  <li><a class="dropdown-item" href="#">Web Application Development</a></li>
-                  <li><a class="dropdown-item" href="#">Mobile Application Development</a></li>
-                  <li><a class="dropdown-item" href="#">Digital Marketing</a></li>
-                </ul>
-              </li>
-
-              <li class="nav-item li center">
-                <a class="nav-link" href="">Careers</a>
-              </li>
-
-              <li class="nav-item li center">
-                <a class="nav-link" href="#contact_us">Contact Us</a>
-              </li>
-
-              <li class="nav-item li center">
-                <a class="nav-link" href="./login.html">Login</a>
-              </li>
-              
-            </ul>
-            
+          <div class="nav-actions d-none d-lg-flex">
+            <!-- Desktop Cart Trigger -->
+            <button class="cart-btn-trigger" data-dastech-open-cart title="Shopping Cart">
+              <i class="bi bi-bag-fill"></i>
+              <span class="dastech-cart-badge" style="display: none;">0</span>
+            </button>
+            <a href="login.html" class="btn btn-dastech-ghost btn-sm"><i class="bi bi-person-fill"></i> Portal</a>
+            <a href="#contact_us" class="btn btn-dastech-primary btn-sm">Start a Project</a>
           </div>
         </div>
+      </div>
     </nav>
-    <!-- navbar-end -->
 
-
-    <section>
-        <div class="container" >
-            <div class="row">
-                <div class="col-12 col-sm-12 col-md-6 col-lg-6 banner">
-                    <h1 class="banner_header fw-bolder"> <span class="color_head">Kinoyee</span> - Your trusted Software Development Partner  </h1>
-                    <p class="banner_text">A top tier software development team assisting owners and decision makers to implement digital initiatives to achieve lasting financial success</p>
-                </div>
-    
-    
-                <div class="col-12 col-sm-12 col-md-6 col-lg-6">
-                    <div class="banner_img">
-                        <img src="./images/home-banner.png" class="img-fluid" alt="">
-                    </div>
-                </div>
-            </div>
-        </div>
-    </section>
-
-
-
-
-    <section class="services">
+    <!-- Hero Section -->
+    <header class="hero-section">
       <div class="container">
-        <div class="row">
-          <div class="col-lg-12" data-aos="fade-up">
-            <h1 class="our_services  fw-bolder banner_header">OUR SERVICES</h1>
-            <p class="services_p">We build software development teams that grow with our clients, from the early stages to whatever they aspire to be. Our expertise includes front-end, backend, database, and server solutions for mobile, web, and desktop applications. Our purpose is to provide our clients with expert guidance and to build software vital to their organizations.</p>
-          </div>
-        </div>
-      </div>
-    </section>
-
-
-    <section class="services_part" id="#services" data-aos="fade-up">
-      <div class="container">
-        <div class="row" data-aos="fade-up">
-          <div class="col-md-6 col-lg-6 mb-3">
-            <div class="custom_soft_dev">
-              <img src="./images/home-dev.png" class="img-fluid" alt="" srcset="">
+        <div class="row align-items-center g-5">
+          <div class="col-lg-6" data-aos="fade-right" data-aos-duration="800">
+            <div class="badge-feature mb-3">
+              <i class="bi bi-stars"></i> Next-Gen Software Studio & Marketplace
+            </div>
+            <h1 class="hero-headline">
+              Building Digital Products That <span class="text-gradient">Move Businesses</span> Forward.
+            </h1>
+            <p class="hero-lead">
+              DasTech combines premier software engineering with high-velocity digital product templates, SaaS starters, and custom cloud architecture to accelerate your digital growth.
+            </p>
+            <div class="hero-cta-group">
+              <a href="products.html" class="btn btn-dastech-primary btn-dastech-lg">
+                <i class="bi bi-box-seam-fill"></i> Explore Products
+              </a>
+              <a href="projects.html" class="btn btn-dastech-outline btn-dastech-lg">
+                <i class="bi bi-folder-check"></i> View Portfolio
+              </a>
+            </div>
+            <div class="d-flex align-items-center gap-3 pt-2 text-muted small">
+              <span><i class="bi bi-check-circle-fill text-success me-1"></i> Production Ready</span>
+              <span><i class="bi bi-check-circle-fill text-success me-1"></i> Enterprise Grade</span>
+              <span><i class="bi bi-check-circle-fill text-success me-1"></i> 24/7 Support</span>
             </div>
           </div>
 
-
-          <div class="col-md-6 col-lg-6">
-            <div class="services_part_text services_part_tab">
-              <a href="#"><h2 class="services_part_header services_part_tab_header">Custom Software <br> Development</h2></a>
-              <p class="services_part_p services_part_tab_text">Kinoyee helps you create diverse and complex software solutions for your business needs. Listening to your ideas, we implement and create custom software solutions from scratch, designed especially for your business. With Enosis, you get quality software and perfect service every time.</p>
-            </div>
-
-            
-          </div>
-          
-        </div>
-
-        <div class="row mt-4" data-aos="fade-up">
-          <div class="col-md-6 col-lg-6 mb-3 ">
-
-            <div class="services_part_web services_part_tab">
-              <a href="#"><h2 class="services_part_header services_part_web_phn services_part_tab_header">Web Application <br> Development</h2></a>
-              <p class="services_part_p services_part_web_phn_text services_part_tab_text">Kinoyee helps you create diverse and complex software solutions for your business needs. Listening to your ideas, we implement and create custom software solutions from scratch, designed especially for your business. With Enosis, you get quality software and perfect service every time.</p>
-            </div>
-
-          </div>
-
-          <div class="col-md-6 col-lg-6 mb-3">
-
-            <div class="custom_soft_dev">
-              <img src="./images/home-web.png" class="img-fluid" alt="" srcset="">
-            </div>
-
-          </div>
-
-          
-        </div>
-
-        <div class="row mt-4" data-aos="fade-up">
-          <div class="col-md-6 col-lg-6 mb-3">
-            <div class="custom_soft_dev">
-              <img src="./images/home-mobile.png" class="img-fluid" alt="" srcset="">
-            </div>
-          </div>
-
-
-          <div class="col-md-6 col-lg-6">
-            <div class="services_part_text services_part_tab">
-              <a href="#"><h2 class="services_part_header services_part_tab_header">Mobile Application <br> Development</h2></a>
-              <p class="services_part_p services_part_tab_text">Our expertise in custom mobile app development gives our clients the opportunity to pack incredible functionality into their customer’s hands. We develop apps that perform across different mobile devices and operating systems.</p>
-            </div>
-          </div>
-          
-        </div>
-
-        <div class="row mt-4" data-aos="fade-up">
-          <div class="col-md-6 col-lg-6 mb-3">
-
-            <div class="services_part_web services_part_tab">
-              <a href="#"><h2 class="services_part_header services_part_web_phn services_part_tab_header">Digital Marketing</h2></a>
-              <p class="services_part_p services_part_web_phn_text services_part_tab_text">Kinoyee helps you create diverse and complex software solutions for your business needs. Listening to your ideas, we implement and create custom software solutions from scratch, designed especially for your business. With Enosis, you get quality software and perfect service every time.</p>
-            </div>
-
-          </div>
-
-          <div class="col-md-6 col-lg-6 mb-3">
-
-            <div class="custom_soft_dev">
-              <img src="./images/home-qa.png" class="img-fluid" alt="" srcset="">
-            </div>
-
-          </div>
-
-          
-        </div>
-        
-      </div>
-    </section>
-
-
-
-    <section class="client mt-4 mb-3" data-aos="fade-up">
-      <div class="container">
-        <div class="row">
-          <div class="col-lg-12">
-            <h1 class="fw-bolder my-4 text-center client">Our Clients</h1>
-            <div class="owl-carousel owl-theme">
-              <div class="item"> <img src="./images/bergerl.png" alt="" srcset=""> </div>
-              <div class="item"> <img src="./images/uniliver.jpg" alt="" srcset=""> </div>
-              <div class="item"><img src="./images/uniliver.jpg" alt="" srcset=""></div>
-              <div class="item"> <img src="./images/bergerl.png" alt="" srcset=""> </div>
-              <div class="item"> <img src="./images/uniliver.jpg" alt="" srcset=""> </div>
-              <div class="item"><img src="./images/uniliver.jpg" alt="" srcset=""></div>
+          <div class="col-lg-6" data-aos="fade-left" data-aos-duration="800">
+            <div class="hero-visual-card position-relative">
+              <img src="images/home-banner.png" alt="DasTech Software Engineering" class="img-fluid">
               
-          </div>
-          </div>
-        </div>
-      </div>
-    </section>
-
-
-    <section class="news_blog mt-5 mb-4" data-aos="fade-up">
-      <div class="container">
-        <h1 class="fw-bolder my-4 text-center client">News & Blog</h1>
-        <div class="row">
-          <div class="col-md-6 col-lg-3 mb-4">
-
-            <div class="card" style="width: 100%;">
-              <img src="./images/home-qa.png" class="card_img" style="height: 22vh;" alt="...">
-              <div class="card-body">
-                <h5 class="card-title">Card title</h5>
-                <p class="card-text">Some quick example text to build on the card title and make up</p>
-                <a href="#" class="btn btn-primary see_more_btn">See More</a>
-              </div>
-            </div>
-
-          </div>
-
-          <div class="col-md-6 col-lg-3 mb-4">
-
-            <div class="card" style="width: 100%;">
-              <img src="./images/home-qa.png" class="card_img" style="height: 22vh;" alt="...">
-              <div class="card-body">
-                <h5 class="card-title">Card title</h5>
-                <p class="card-text">Some quick example text to build on the card title and make up</p>
-                <a href="#" class="btn btn-primary see_more_btn">See More</a>
-              </div>
-            </div>
-
-          </div>
-
-          <div class="col-md-6 col-lg-3 mb-4">
-
-            <div class="card" style="width: 100%;">
-              <img src="./images/home-qa.png" class="card_img" style="height: 22vh;" alt="...">
-              <div class="card-body">
-                <h5 class="card-title">Card title</h5>
-                <p class="card-text">Some quick example text to build on the card title and make up</p>
-                <a href="#" class="btn btn-primary see_more_btn">See More</a>
-              </div>
-            </div>
-
-          </div>
-
-          <div class="col-md-6 col-lg-3 mb-4">
-
-            <div class="card" style="width: 100%;">
-              <img src="./images/home-qa.png" class="card_img" style="height: 22vh;" alt="...">
-              <div class="card-body">
-                <h5 class="card-title">Card title</h5>
-                <p class="card-text">Some quick example text to build on the card title and make up</p>
-                <a href="#" class="btn btn-primary see_more_btn">See More</a>
-              </div>
-            </div>
-
-          </div>
-          
-        </div>
-
-        <div class="d-flex justify-content-center align-items-center">
-          <a href="#" class="news_seemore">See More</a>
-        </div>
-
-      </div>
-    </section>
-
-
-
-    <section>
-      <div class="container">
-        <h1 class="key_client fw-bolder text-center mt-5 mb-4">What We Offer</h1>
-        <p class="services_p mb-4">Enosis works as an extension of your development and testing team. We will work together to solve your business cases and get the maximum value of your budget. One of our differentiating qualities is that we take the time to understand the particular challenges, difficulties, and needs of your business.</p>
-        <div class="row" data-aos="fade-up">
-          <div class="col-md-6 col-lg-6 mb-4">
-            <div class="offer_first">
-              <img src="./images/home-engineers.png" class="img-fluid mb-4" alt="">
-              <h2 class="fw-bolder services_part_header mb-4">Qualified Engineers</h2>
-              <p class="offer_p">Enosis is a team of 150+ software experts. We continue to strive in being the best in the industry by hiring engineers from renowned universities. Having team members experienced in a wide range of technology stacks enables us to meet different customers needs.</p>
-            </div>
-          </div>
-
-          <div class="col-md-6 col-lg-6 mb-4">
-            <div class="offer_first">
-              <img src="./images/home-engineers.png" class="img-fluid mb-4" alt="">
-              <h2 class="fw-bolder services_part_header mb-4">Dedicated Team</h2>
-              <p class="offer_p">Our in-house team is yours too. We will jump in and ramp up quickly. Your goals become our goals. We will navigate the risks of software development together.</p>
-            </div>
-          </div>
-
-        </div>
-
-        <div class="row" data-aos="fade-up">
-          <div class="col-md-6 col-lg-6 mb-4">
-            <div class="offer_first">
-              <img src="./images/home-engineers.png" class="img-fluid mb-4" alt="">
-              <h2 class="fw-bolder services_part_header mb-4">Collaborative Process</h2>
-              <p class="offer_p">Enosis is a team of 150+ software experts. We continue to strive in being the best in the industry by hiring engineers from renowned universities. Having team members experienced in a wide range of technology stacks enables us to meet different customers needs.</p>
-            </div>
-          </div>
-
-          <div class="col-md-6 col-lg-6 mb-4">
-            <div class="offer_first">
-              <img src="./images/home-engineers.png" class="img-fluid mb-4" alt="">
-              <h2 class="fw-bolder services_part_header mb-4">Continuous Supervision</h2>
-              <p class="offer_p">Our in-house team is yours too. We will jump in and ramp up quickly. Your goals become our goals. We will navigate the risks of software development together.</p>
-            </div>
-          </div>
-
-        </div>
-
-      </div>
-    </section>
-    
-
-
-    <section>
-      <div class="container mb-4">
-        <h1 class=" fw-bolder text-center key_client mb-4">Key Client Portfolio</h1>
-        <div class="row">
-          <div class="col-md-6 col-lg-6">
-            <iframe width="98%" height="315" src="https://www.youtube.com/embed/OycHVArEc9Y" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" class="mb-3" allowfullscreen></iframe>
-          </div>
-
-          <div class="col-md-6 col-lg-6">
-            <iframe width="98%" height="315" src="https://www.youtube.com/embed/OycHVArEc9Y" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
-          </div>
-        </div>
-      </div>
-    </section>
-
-
-    <section class="contact_us" id="contact_us">
-         <div class="container">
-            <div class="row">
-              <div class=" col-md-6 col-lg-6 ">
-                  
-                    <div class="want">
-                      <h1 class="fw-bolder want_text">Want us to <span style="color:#f9690e;">Call</span> <br> you?</h1>
-                    </div>
-                  
-              </div>
-
-              <div class="col-md-6 col-lg-6 contact_form">
+              <!-- Floating UI Badge Top Right -->
+              <div class="hero-floating-badge badge-top-right">
+                <div class="p-2 bg-primary bg-opacity-10 text-primary rounded-3">
+                  <i class="bi bi-lightning-charge-fill fs-5"></i>
+                </div>
                 <div>
-                  <div class="form-floating mb-3">
-                    <input type="text" class="form-control"  placeholder="name@example.com">
-                    <label for="floatingInput">Name</label>
-                  </div>
+                  <div class="fw-bold fs-6 text-dark">Instant Deploy</div>
+                  <div class="text-muted small">Turnkey Architectures</div>
+                </div>
+              </div>
 
-                  <div class="form-floating mb-3">
-                    <input type="text" class="form-control"  placeholder="name@example.com">
-                    <label for="floatingInput">Company Name</label>
-                  </div>
+              <!-- Floating UI Badge Bottom Left -->
+              <div class="hero-floating-badge badge-bottom-left">
+                <div class="p-2 bg-success bg-opacity-10 text-success rounded-3">
+                  <i class="bi bi-shield-check fs-5"></i>
+                </div>
+                <div>
+                  <div class="fw-bold fs-6 text-dark">99.9% Uptime</div>
+                  <div class="text-muted small">Battle-tested Systems</div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
 
-                  <div class="form-floating mb-3">
-                    <input type="email" class="form-control" id="floatingInput" placeholder="name@example.com">
-                    <label for="floatingInput">Email address</label>
-                  </div>
+        <!-- Trust Stats Banner -->
+        <div class="stats-banner" data-aos="fade-up" data-aos-delay="200">
+          <div class="row g-4 justify-content-center">
+            <div class="col-6 col-md-3">
+              <div class="stat-item">
+                <div class="stat-number">150+</div>
+                <div class="stat-label">Projects Completed</div>
+              </div>
+            </div>
+            <div class="col-6 col-md-3">
+              <div class="stat-item">
+                <div class="stat-number">99.8%</div>
+                <div class="stat-label">Client Satisfaction</div>
+              </div>
+            </div>
+            <div class="col-6 col-md-3">
+              <div class="stat-item">
+                <div class="stat-number">15+</div>
+                <div class="stat-label">Digital Products</div>
+              </div>
+            </div>
+            <div class="col-6 col-md-3">
+              <div class="stat-item">
+                <div class="stat-number">24/7</div>
+                <div class="stat-label">Engineering Support</div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </header>
 
-                  <div class="form-floating mb-3">
-                    <input type="number" class="form-control" id="floatingPassword" placeholder="Password">
-                    <label for="floatingPassword">Phone</label>
-                  </div>
+    <!-- Featured Digital Products Marketplace Section -->
+    <section class="section-padding bg-light" id="products">
+      <div class="container">
+        <div class="d-flex flex-column flex-md-row justify-content-between align-items-md-end mb-4">
+          <div>
+            <span class="section-tag"><i class="bi bi-cart3"></i> Digital Marketplace</span>
+            <h2 class="section-title">Featured Digital Products</h2>
+            <p class="text-muted mb-0">Production-ready source code, SaaS blueprints, and developer utilities.</p>
+          </div>
+          <div class="mt-3 mt-md-0">
+            <a href="products.html" class="btn btn-dastech-outline">
+              View All Products <i class="bi bi-arrow-right"></i>
+            </a>
+          </div>
+        </div>
 
-                  <div class="form-floating">
-                    <textarea class="form-control" placeholder="Leave a comment here" id="floatingTextarea"></textarea>
-                    <label for="floatingTextarea">Message</label>
+        <div class="row g-4" id="featuredProductsContainer">
+          <!-- Populated dynamically via DasTechData or rendered below as static high-performance cards -->
+          <div class="col-md-6 col-lg-4" data-aos="fade-up">
+            <div class="product-card">
+              <div class="product-card-thumb">
+                <img src="assets/img/product-1.jpg" alt="Apex SaaS Admin & Analytics Suite">
+                <div class="product-badge-overlay">
+                  <span class="category-badge">SaaS Platform</span>
+                </div>
+              </div>
+              <div class="product-card-body">
+                <h3 class="product-card-title">
+                  <a href="product-details.html?id=dt-prod-1">Apex SaaS Admin & Analytics Suite</a>
+                </h3>
+                <p class="product-card-desc">Turnkey multi-tenant SaaS starter with role-based auth, Stripe subscriptions, and responsive dark/light dashboards.</p>
+                <div class="product-tech-stack">
+                  <span class="tech-badge">Next.js 15</span>
+                  <span class="tech-badge">TypeScript</span>
+                  <span class="tech-badge">Prisma</span>
+                </div>
+                <div class="product-card-footer">
+                  <div class="product-price-box">
+                    <span class="current-price">$69</span>
+                    <span class="original-price">$129</span>
                   </div>
-
-                  <div class="d-flex justify-content-center align-items-center mt-3">
-                    <a href="#" class="news_seemore">Submit</a>
+                  <div class="product-actions">
+                    <button class="btn btn-dastech-outline btn-dastech-sm" data-dastech-add-cart="dt-prod-1" title="Add to Cart">
+                      <i class="bi bi-bag-plus"></i>
+                    </button>
+                    <button class="btn btn-dastech-primary btn-dastech-sm" data-dastech-buy-now="dt-prod-1">
+                      Buy Now
+                    </button>
                   </div>
                 </div>
               </div>
             </div>
-         </div>
+          </div>
+
+          <div class="col-md-6 col-lg-4" data-aos="fade-up" data-aos-delay="100">
+            <div class="product-card">
+              <div class="product-card-thumb">
+                <img src="assets/img/product-2.jpg" alt="CloudGuard Kubernetes & DevOps Toolkit">
+                <div class="product-badge-overlay">
+                  <span class="category-badge">DevOps & Cloud</span>
+                </div>
+              </div>
+              <div class="product-card-body">
+                <h3 class="product-card-title">
+                  <a href="product-details.html?id=dt-prod-2">CloudGuard Kubernetes & DevOps Toolkit</a>
+                </h3>
+                <p class="product-card-desc">Production-ready Terraform blueprints, automated CI/CD GitHub workflows, and Prometheus observability for cloud setups.</p>
+                <div class="product-tech-stack">
+                  <span class="tech-badge">Terraform</span>
+                  <span class="tech-badge">Kubernetes</span>
+                  <span class="tech-badge">Docker</span>
+                </div>
+                <div class="product-card-footer">
+                  <div class="product-price-box">
+                    <span class="current-price">$89</span>
+                    <span class="original-price">$149</span>
+                  </div>
+                  <div class="product-actions">
+                    <button class="btn btn-dastech-outline btn-dastech-sm" data-dastech-add-cart="dt-prod-2" title="Add to Cart">
+                      <i class="bi bi-bag-plus"></i>
+                    </button>
+                    <button class="btn btn-dastech-primary btn-dastech-sm" data-dastech-buy-now="dt-prod-2">
+                      Buy Now
+                    </button>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <div class="col-md-6 col-lg-4" data-aos="fade-up" data-aos-delay="200">
+            <div class="product-card">
+              <div class="product-card-thumb">
+                <img src="assets/img/product-3.jpg" alt="Nova UI Pro Design System">
+                <div class="product-badge-overlay">
+                  <span class="category-badge">UI Kits</span>
+                </div>
+              </div>
+              <div class="product-card-body">
+                <h3 class="product-card-title">
+                  <a href="product-details.html?id=dt-prod-3">Nova UI Pro Design System</a>
+                </h3>
+                <p class="product-card-desc">500+ modular, accessible UI components with auto-layout Figma files and clean React/HTML source code.</p>
+                <div class="product-tech-stack">
+                  <span class="tech-badge">Figma</span>
+                  <span class="tech-badge">HTML5 / CSS</span>
+                  <span class="tech-badge">React</span>
+                </div>
+                <div class="product-card-footer">
+                  <div class="product-price-box">
+                    <span class="current-price">$49</span>
+                    <span class="original-price">$99</span>
+                  </div>
+                  <div class="product-actions">
+                    <button class="btn btn-dastech-outline btn-dastech-sm" data-dastech-add-cart="dt-prod-3" title="Add to Cart">
+                      <i class="bi bi-bag-plus"></i>
+                    </button>
+                    <button class="btn btn-dastech-primary btn-dastech-sm" data-dastech-buy-now="dt-prod-3">
+                      Buy Now
+                    </button>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
     </section>
 
-
-    <footer class="footer">
+    <!-- Featured Projects Showcase Section -->
+    <section class="section-padding" id="projects">
       <div class="container">
-        <div class="row">
-          <div class="col-lg-12">
-            <h6>&copy; 2023 KinoyeeIT Solutions. All Rights Reserved.</h6>
+        <div class="d-flex flex-column flex-md-row justify-content-between align-items-md-end mb-4">
+          <div>
+            <span class="section-tag"><i class="bi bi-briefcase"></i> Portfolio & Case Studies</span>
+            <h2 class="section-title">Selected Engineering Projects</h2>
+            <p class="text-muted mb-0">Custom enterprise applications and digital transformations built by DasTech.</p>
+          </div>
+          <div class="mt-3 mt-md-0">
+            <a href="projects.html" class="btn btn-dastech-outline">
+              View All Projects <i class="bi bi-arrow-right"></i>
+            </a>
+          </div>
+        </div>
+
+        <div class="row g-4">
+          <div class="col-md-6 col-lg-4" data-aos="fade-up">
+            <div class="project-card">
+              <div class="project-card-thumb">
+                <img src="images/home-dev.png" alt="FinPulse Neo-Banking">
+              </div>
+              <div class="project-card-body">
+                <div class="project-category-meta">FinTech & Cloud</div>
+                <h3 class="project-card-title">
+                  <a href="project-details.html?id=dt-proj-1">FinPulse Neo-Banking & Wealth Platform</a>
+                </h3>
+                <p class="project-card-desc">High-concurrency digital banking platform with peer-to-peer transfers, real-time ledger sync, and KYC automation.</p>
+                <div class="product-tech-stack mb-3">
+                  <span class="tech-badge">React</span>
+                  <span class="tech-badge">Node.js</span>
+                  <span class="tech-badge">Kafka</span>
+                </div>
+                <div>
+                  <a href="project-details.html?id=dt-proj-1" class="btn btn-dastech-ghost p-0 fw-bold text-primary">
+                    Read Case Study <i class="bi bi-arrow-right ms-1"></i>
+                  </a>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <div class="col-md-6 col-lg-4" data-aos="fade-up" data-aos-delay="100">
+            <div class="project-card">
+              <div class="project-card-thumb">
+                <img src="images/home-web.png" alt="OmniChain Fleet ERP">
+              </div>
+              <div class="project-card-body">
+                <div class="project-category-meta">Enterprise Software</div>
+                <h3 class="project-card-title">
+                  <a href="project-details.html?id=dt-proj-2">OmniChain Logistics & Fleet ERP</a>
+                </h3>
+                <p class="project-card-desc">Real-time GPS telemetry, automated customs clearance manifests, and fleet dispatching for 5,000+ commercial vehicles.</p>
+                <div class="product-tech-stack mb-3">
+                  <span class="tech-badge">Vue.js</span>
+                  <span class="tech-badge">FastAPI</span>
+                  <span class="tech-badge">Mapbox GL</span>
+                </div>
+                <div>
+                  <a href="project-details.html?id=dt-proj-2" class="btn btn-dastech-ghost p-0 fw-bold text-primary">
+                    Read Case Study <i class="bi bi-arrow-right ms-1"></i>
+                  </a>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <div class="col-md-6 col-lg-4" data-aos="fade-up" data-aos-delay="200">
+            <div class="project-card">
+              <div class="project-card-thumb">
+                <img src="images/home-mobile.png" alt="MediVault Telehealth">
+              </div>
+              <div class="project-card-body">
+                <div class="project-category-meta">Healthcare & Mobile</div>
+                <h3 class="project-card-title">
+                  <a href="project-details.html?id=dt-proj-3">MediVault Telehealth Consultation Hub</a>
+                </h3>
+                <p class="project-card-desc">HIPAA-compliant encrypted video appointments, EHR database connectivity, and digital prescription dispatch.</p>
+                <div class="product-tech-stack mb-3">
+                  <span class="tech-badge">React Native</span>
+                  <span class="tech-badge">WebRTC</span>
+                  <span class="tech-badge">MongoDB</span>
+                </div>
+                <div>
+                  <a href="project-details.html?id=dt-proj-3" class="btn btn-dastech-ghost p-0 fw-bold text-primary">
+                    Read Case Study <i class="bi bi-arrow-right ms-1"></i>
+                  </a>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Services Section -->
+    <section class="section-padding bg-light" id="services">
+      <div class="container">
+        <div class="section-header text-center" data-aos="fade-up">
+          <span class="section-tag"><i class="bi bi-gear-wide-connected"></i> Engineering Capabilities</span>
+          <h2 class="section-title">Core DasTech Services</h2>
+          <p class="section-subtitle">We design, develop, and scale modern technology solutions tailored for business impact.</p>
+        </div>
+
+        <div class="row g-4">
+          <div class="col-md-6 col-lg-4" data-aos="fade-up">
+            <div class="service-box">
+              <div class="service-icon-wrap">
+                <i class="bi bi-code-slash"></i>
+              </div>
+              <h3 class="service-title">Custom Software Engineering</h3>
+              <p class="service-text">Robust backends, intuitive frontends, and tailored database architectures built to solve complex business operations.</p>
+              <ul class="service-features-list">
+                <li><i class="bi bi-check-circle-fill"></i> Full-Stack Web Architecture</li>
+                <li><i class="bi bi-check-circle-fill"></i> High-Throughput REST & GraphQL</li>
+                <li><i class="bi bi-check-circle-fill"></i> SQL & NoSQL Database Optimization</li>
+              </ul>
+            </div>
+          </div>
+
+          <div class="col-md-6 col-lg-4" data-aos="fade-up" data-aos-delay="100">
+            <div class="service-box">
+              <div class="service-icon-wrap">
+                <i class="bi bi-window-stack"></i>
+              </div>
+              <h3 class="service-title">Web & SaaS Applications</h3>
+              <p class="service-text">Modern, conversion-focused single-page and progressive web applications engineered with Next.js and React.</p>
+              <ul class="service-features-list">
+                <li><i class="bi bi-check-circle-fill"></i> Multi-Tenant SaaS Systems</li>
+                <li><i class="bi bi-check-circle-fill"></i> Responsive UI/UX & Dashboards</li>
+                <li><i class="bi bi-check-circle-fill"></i> Stripe / Payment Gateway Integration</li>
+              </ul>
+            </div>
+          </div>
+
+          <div class="col-md-6 col-lg-4" data-aos="fade-up" data-aos-delay="200">
+            <div class="service-box">
+              <div class="service-icon-wrap">
+                <i class="bi bi-phone"></i>
+              </div>
+              <h3 class="service-title">Mobile App Development</h3>
+              <p class="service-text">High-performance iOS and Android applications with offline synchronization and responsive touch experiences.</p>
+              <ul class="service-features-list">
+                <li><i class="bi bi-check-circle-fill"></i> Cross-Platform React Native</li>
+                <li><i class="bi bi-check-circle-fill"></i> Push Notifications & Real-Time Sync</li>
+                <li><i class="bi bi-check-circle-fill"></i> App Store & Play Store Publishing</li>
+              </ul>
+            </div>
+          </div>
+
+          <div class="col-md-6 col-lg-4" data-aos="fade-up">
+            <div class="service-box">
+              <div class="service-icon-wrap">
+                <i class="bi bi-cloud-check"></i>
+              </div>
+              <h3 class="service-title">Cloud Architecture & DevOps</h3>
+              <p class="service-text">Automated CI/CD deployment pipelines, container orchestration, and multi-region cloud infrastructure.</p>
+              <ul class="service-features-list">
+                <li><i class="bi bi-check-circle-fill"></i> Kubernetes & Docker Deployments</li>
+                <li><i class="bi bi-check-circle-fill"></i> Terraform Infrastructure as Code</li>
+                <li><i class="bi bi-check-circle-fill"></i> 24/7 Monitoring & Log Observability</li>
+              </ul>
+            </div>
+          </div>
+
+          <div class="col-md-6 col-lg-4" data-aos="fade-up" data-aos-delay="100">
+            <div class="service-box">
+              <div class="service-icon-wrap">
+                <i class="bi bi-palette"></i>
+              </div>
+              <h3 class="service-title">UI/UX & Product Design</h3>
+              <p class="service-text">User journey mapping, wireframing, high-fidelity prototypes, and accessible design system development.</p>
+              <ul class="service-features-list">
+                <li><i class="bi bi-check-circle-fill"></i> Figma Design Systems & Tokens</li>
+                <li><i class="bi bi-check-circle-fill"></i> Usability Testing & Analytics</li>
+                <li><i class="bi bi-check-circle-fill"></i> WCAG 2.1 AA Compliance</li>
+              </ul>
+            </div>
+          </div>
+
+          <div class="col-md-6 col-lg-4" data-aos="fade-up" data-aos-delay="200">
+            <div class="service-box">
+              <div class="service-icon-wrap">
+                <i class="bi bi-shield-check"></i>
+              </div>
+              <h3 class="service-title">QA & Security Auditing</h3>
+              <p class="service-text">Comprehensive automated test suites, performance stress benchmarking, and security vulnerability scanning.</p>
+              <ul class="service-features-list">
+                <li><i class="bi bi-check-circle-fill"></i> End-to-End Automated Testing</li>
+                <li><i class="bi bi-check-circle-fill"></i> Load Testing & Speed Optimization</li>
+                <li><i class="bi bi-check-circle-fill"></i> OWASP Security Vulnerability Scans</li>
+              </ul>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Why DasTech Section -->
+    <section class="section-padding">
+      <div class="container">
+        <div class="section-header text-center" data-aos="fade-up">
+          <span class="section-tag"><i class="bi bi-award"></i> The DasTech Advantage</span>
+          <h2 class="section-title">Why Industry Leaders Choose DasTech</h2>
+          <p class="section-subtitle">We merge senior engineering discipline with modern speed to ship reliable software on time.</p>
+        </div>
+
+        <div class="row g-4">
+          <div class="col-md-6 col-lg-3" data-aos="fade-up">
+            <div class="why-dastech-card text-center">
+              <div class="why-icon-box mx-auto">
+                <i class="bi bi-people-fill"></i>
+              </div>
+              <h4 class="fw-bold mb-2 fs-5">Senior Engineers</h4>
+              <p class="text-muted small mb-0">Every project is handled by seasoned architects and developers with deep domain expertise.</p>
+            </div>
+          </div>
+
+          <div class="col-md-6 col-lg-3" data-aos="fade-up" data-aos-delay="100">
+            <div class="why-dastech-card text-center">
+              <div class="why-icon-box mx-auto">
+                <i class="bi bi-speedometer2"></i>
+              </div>
+              <h4 class="fw-bold mb-2 fs-5">Agile Velocity</h4>
+              <p class="text-muted small mb-0">Transparent 2-week sprint cycles with live staging previews and continuous feedback loops.</p>
+            </div>
+          </div>
+
+          <div class="col-md-6 col-lg-3" data-aos="fade-up" data-aos-delay="200">
+            <div class="why-dastech-card text-center">
+              <div class="why-icon-box mx-auto">
+                <i class="bi bi-shield-lock-fill"></i>
+              </div>
+              <h4 class="fw-bold mb-2 fs-5">Code Ownership</h4>
+              <p class="text-muted small mb-0">100% intellectual property transfer, clean documentation, and zero proprietary lock-in.</p>
+            </div>
+          </div>
+
+          <div class="col-md-6 col-lg-3" data-aos="fade-up" data-aos-delay="300">
+            <div class="why-dastech-card text-center">
+              <div class="why-icon-box mx-auto">
+                <i class="bi bi-headset"></i>
+              </div>
+              <h4 class="fw-bold mb-2 fs-5">Ongoing Support</h4>
+              <p class="text-muted small mb-0">Guaranteed SLAs, security patch updates, and continuous maintenance monitoring.</p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Key Client Portfolio Video Showcase -->
+    <section class="section-padding bg-light">
+      <div class="container">
+        <div class="section-header text-center" data-aos="fade-up">
+          <span class="section-tag"><i class="bi bi-play-circle"></i> Video Spotlight</span>
+          <h2 class="section-title">Client Portfolio & Showcase</h2>
+          <p class="section-subtitle">Take an inside look at how DasTech delivers enterprise-grade software solutions.</p>
+        </div>
+
+        <div class="row g-4 justify-content-center">
+          <div class="col-lg-6" data-aos="fade-up">
+            <div class="ratio ratio-16x9 rounded-4 shadow-sm overflow-hidden border">
+              <iframe src="https://www.youtube.com/embed/OycHVArEc9Y" title="DasTech Engineering Overview" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+            </div>
+          </div>
+          <div class="col-lg-6" data-aos="fade-up" data-aos-delay="100">
+            <div class="ratio ratio-16x9 rounded-4 shadow-sm overflow-hidden border">
+              <iframe src="https://www.youtube.com/embed/OycHVArEc9Y" title="DasTech Product Workflow" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Contact & Lead Capture Section -->
+    <section class="section-padding" id="contact_us">
+      <div class="container">
+        <div class="contact-section-wrapper" data-aos="fade-up">
+          <div class="row align-items-center g-5">
+            <div class="col-lg-5">
+              <span class="badge bg-primary bg-opacity-25 text-white mb-3 px-3 py-2 rounded-pill">
+                <i class="bi bi-envelope-fill me-1"></i> Get in Touch
+              </span>
+              <h2 class="display-6 fw-bold mb-3 text-white">Have a Project in Mind? Let's Build It.</h2>
+              <p class="text-light opacity-75 mb-4">
+                Whether you need a custom software application, an engineering team, or guidance on our digital products, our senior architects are here to help.
+              </p>
+              
+              <div class="d-flex flex-column gap-3 text-light">
+                <div class="d-flex align-items-center gap-3">
+                  <div class="p-2 bg-white bg-opacity-10 rounded-3"><i class="bi bi-geo-alt-fill text-primary"></i></div>
+                  <div>Technology Park, Innovation Way</div>
+                </div>
+                <div class="d-flex align-items-center gap-3">
+                  <div class="p-2 bg-white bg-opacity-10 rounded-3"><i class="bi bi-envelope-fill text-primary"></i></div>
+                  <div>contact@dastech.io</div>
+                </div>
+                <div class="d-flex align-items-center gap-3">
+                  <div class="p-2 bg-white bg-opacity-10 rounded-3"><i class="bi bi-shield-check text-success"></i></div>
+                  <div>Strict NDA & Confidentiality Guaranteed</div>
+                </div>
+              </div>
+            </div>
+
+            <div class="col-lg-7">
+              <div class="contact-form-card">
+                <form id="homeContactForm">
+                  <div class="row g-3">
+                    <div class="col-md-6">
+                      <label class="form-label-dastech">Your Name *</label>
+                      <input type="text" class="form-control form-control-dastech" required placeholder="John Doe">
+                    </div>
+                    <div class="col-md-6">
+                      <label class="form-label-dastech">Work Email *</label>
+                      <input type="email" class="form-control form-control-dastech" required placeholder="john@company.com">
+                    </div>
+                    <div class="col-md-6">
+                      <label class="form-label-dastech">Company Name</label>
+                      <input type="text" class="form-control form-control-dastech" placeholder="Acme Inc.">
+                    </div>
+                    <div class="col-md-6">
+                      <label class="form-label-dastech">Project Type</label>
+                      <select class="form-select form-control-dastech">
+                        <option value="custom-dev" selected>Custom Software Development</option>
+                        <option value="saas-app">SaaS / Web Application</option>
+                        <option value="mobile-app">Mobile App (iOS/Android)</option>
+                        <option value="digital-product">Digital Products Inquiry</option>
+                        <option value="devops">Cloud & DevOps Architecture</option>
+                      </select>
+                    </div>
+                    <div class="col-12">
+                      <label class="form-label-dastech">Project Scope & Requirements *</label>
+                      <textarea class="form-control form-control-dastech" rows="4" required placeholder="Briefly describe your goals, budget timeline, or tech requirements..."></textarea>
+                    </div>
+                    <div class="col-12 mt-4">
+                      <button type="submit" class="btn btn-dastech-primary w-100 py-3 fw-bold">
+                        <i class="bi bi-send-fill me-2"></i> Submit Inquiry
+                      </button>
+                    </div>
+                  </div>
+                </form>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Professional DasTech Footer -->
+    <footer class="dastech-footer">
+      <div class="container">
+        <div class="row g-4">
+          <div class="col-lg-4 col-md-6">
+            <a class="footer-brand" href="index.html">
+              <span class="brand-icon"><i class="bi bi-cpu-fill"></i></span>
+              <span>Das<span class="text-primary">Tech</span></span>
+            </a>
+            <p class="footer-text">
+              DasTech is a modern digital products studio and full-service software development agency delivering high-velocity technology solutions.
+            </p>
+            <div class="d-flex gap-3">
+              <a href="#" class="btn btn-sm btn-outline-light rounded-circle p-2" aria-label="GitHub"><i class="bi bi-github"></i></a>
+              <a href="#" class="btn btn-sm btn-outline-light rounded-circle p-2" aria-label="LinkedIn"><i class="bi bi-linkedin"></i></a>
+              <a href="#" class="btn btn-sm btn-outline-light rounded-circle p-2" aria-label="Twitter"><i class="bi bi-twitter-x"></i></a>
+            </div>
+          </div>
+
+          <div class="col-lg-2 col-md-6">
+            <h5 class="footer-heading">Navigation</h5>
+            <ul class="footer-links">
+              <li><a href="index.html">Home</a></li>
+              <li><a href="products.html">Digital Products</a></li>
+              <li><a href="projects.html">Portfolio Projects</a></li>
+              <li><a href="services-page.html">Services</a></li>
+              <li><a href="about.html">About Us</a></li>
+              <li><a href="#contact_us">Contact Us</a></li>
+            </ul>
+          </div>
+
+          <div class="col-lg-3 col-md-6">
+            <h5 class="footer-heading">Digital Products</h5>
+            <ul class="footer-links">
+              <li><a href="product-details.html?id=dt-prod-1">Apex SaaS Analytics</a></li>
+              <li><a href="product-details.html?id=dt-prod-2">CloudGuard DevOps Kit</a></li>
+              <li><a href="product-details.html?id=dt-prod-3">Nova UI Pro Kit</a></li>
+              <li><a href="product-details.html?id=dt-prod-4">PulseFlow CRM Engine</a></li>
+              <li><a href="cart.html">View Cart</a></li>
+            </ul>
+          </div>
+
+          <div class="col-lg-3 col-md-6">
+            <h5 class="footer-heading">Client Portal</h5>
+            <ul class="footer-links">
+              <li><a href="login.html"><i class="bi bi-lock-fill me-1"></i> Admin Login</a></li>
+              <li><a href="register.html"><i class="bi bi-person-plus-fill me-1"></i> Create Account</a></li>
+              <li><a href="dashboard.html"><i class="bi bi-speedometer2 me-1"></i> Dashboard</a></li>
+              <li><a href="checkout.html"><i class="bi bi-shield-check me-1"></i> Secure Checkout</a></li>
+            </ul>
+          </div>
+        </div>
+
+        <div class="footer-bottom d-flex flex-column flex-md-row justify-content-between align-items-center gap-3">
+          <div class="text-muted">
+            &copy; <span id="currentYear"></span> DasTech. All Rights Reserved.
+          </div>
+          <div class="d-flex gap-3 text-muted small">
+            <a href="#" class="text-muted">Privacy Policy</a>
+            <span>•</span>
+            <a href="#" class="text-muted">Terms of Service</a>
+            <span>•</span>
+            <a href="#" class="text-muted">Security</a>
           </div>
         </div>
       </div>
     </footer>
 
+    <!-- Scripts -->
     <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.4/jquery.min.js"></script>
-
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/OwlCarousel2/2.3.4/owl.carousel.min.js"></script>
-
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
     <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
-   
-    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM" crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/OwlCarousel2/2.3.4/owl.carousel.min.js"></script>
+    
+    <!-- DasTech Core Logic & Cart -->
+    <script src="assets/js/dastech-data.js"></script>
+    <script src="assets/js/cart.js"></script>
 
     <script>
-      $('.owl-carousel').owlCarousel({
-      loop:true,
-      margin:10,
-      nav:true,
-      autoplay:true,
-      autoplayTimeout:2000,
-      dots:false,
-      responsive:{
-          0:{
-              items:1
-          },
-          600:{
-              items:3
-          },
-          1000:{
-              items:5
-          }
-      }
-      })
+      AOS.init({ once: true, offset: 50, duration: 600 });
+      document.getElementById('currentYear').textContent = new Date().getFullYear();
 
-      AOS.init();
+      // Navbar scroll effect
+      window.addEventListener('scroll', function() {
+        const navbar = document.getElementById('mainNavbar');
+        if (window.scrollY > 20) {
+          navbar.classList.add('scrolled');
+        } else {
+          navbar.classList.remove('scrolled');
+        }
+      });
+
+      // Contact Form Handler
+      const contactForm = document.getElementById('homeContactForm');
+      if (contactForm) {
+        contactForm.addEventListener('submit', function(e) {
+          e.preventDefault();
+          const submitBtn = contactForm.querySelector('button[type="submit"]');
+          const originalText = submitBtn.innerHTML;
+          submitBtn.innerHTML = '<span class="spinner-border spinner-border-sm me-2"></span> Sending...';
+          submitBtn.disabled = true;
+
+          setTimeout(function() {
+            submitBtn.innerHTML = '<i class="bi bi-check2-circle me-2"></i> Message Sent!';
+            submitBtn.classList.remove('btn-dastech-primary');
+            submitBtn.classList.add('btn-success');
+            contactForm.reset();
+
+            setTimeout(function() {
+              submitBtn.innerHTML = originalText;
+              submitBtn.classList.remove('btn-success');
+              submitBtn.classList.add('btn-dastech-primary');
+              submitBtn.disabled = false;
+            }, 3000);
+          }, 800);
+        });
+      }
     </script>
   </body>
 </html>

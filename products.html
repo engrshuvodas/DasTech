@@ -1,0 +1,364 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Digital Products Marketplace — DasTech</title>
+    <meta name="description" content="Explore production-ready software templates, SaaS kits, DevOps tools, and UI design systems crafted by DasTech.">
+
+    <!-- Bootstrap 5 CSS -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css">
+    <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
+
+    <!-- DasTech Master Design System -->
+    <link rel="stylesheet" href="style.css">
+  </head>
+  <body>
+    <!-- Top Navigation Bar -->
+    <nav class="navbar navbar-expand-lg dastech-navbar sticky-top" id="mainNavbar">
+      <div class="container">
+        <a class="dastech-brand" href="index.html">
+          <span class="brand-icon"><i class="bi bi-cpu-fill"></i></span>
+          <span>Das<span class="brand-text-accent">Tech</span></span>
+        </a>
+
+        <div class="d-flex align-items-center d-lg-none gap-2">
+          <button class="cart-btn-trigger" data-dastech-open-cart aria-label="Open Shopping Cart">
+            <i class="bi bi-bag-fill"></i>
+            <span class="dastech-cart-badge" style="display: none;">0</span>
+          </button>
+          
+          <button class="navbar-toggler border-0 p-2" type="button" data-bs-toggle="collapse" data-bs-target="#navbarContent">
+            <i class="bi bi-list fs-2 text-dark"></i>
+          </button>
+        </div>
+
+        <div class="collapse navbar-collapse" id="navbarContent">
+          <ul class="navbar-nav mx-auto mb-2 mb-lg-0">
+            <li class="nav-item">
+              <a class="nav-link" href="index.html">Home</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link active" aria-current="page" href="products.html">Digital Products</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="projects.html">Projects</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="services-page.html">Services</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="about.html">About</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="index.html#contact_us">Contact</a>
+            </li>
+          </ul>
+
+          <div class="nav-actions d-none d-lg-flex">
+            <button class="cart-btn-trigger" data-dastech-open-cart title="Shopping Cart">
+              <i class="bi bi-bag-fill"></i>
+              <span class="dastech-cart-badge" style="display: none;">0</span>
+            </button>
+            <a href="login.html" class="btn btn-dastech-ghost btn-sm"><i class="bi bi-person-fill"></i> Portal</a>
+            <a href="index.html#contact_us" class="btn btn-dastech-primary btn-sm">Start a Project</a>
+          </div>
+        </div>
+      </div>
+    </nav>
+
+    <!-- Page Header Banner -->
+    <header class="py-5 bg-white border-bottom">
+      <div class="container">
+        <div class="row align-items-center">
+          <div class="col-lg-8">
+            <nav aria-label="breadcrumb">
+              <ol class="breadcrumb mb-2">
+                <li class="breadcrumb-item"><a href="index.html">Home</a></li>
+                <li class="breadcrumb-item active" aria-current="page">Digital Products</li>
+              </ol>
+            </nav>
+            <h1 class="display-5 fw-bold mb-2">Digital Product Marketplace</h1>
+            <p class="text-muted lead mb-0">Production-ready source code, SaaS boilerplates, and developer tools ready for immediate deployment.</p>
+          </div>
+          <div class="col-lg-4 text-lg-end mt-3 mt-lg-0">
+            <span class="badge bg-primary bg-opacity-10 text-primary fs-6 px-3 py-2 rounded-pill">
+              <i class="bi bi-patch-check-fill me-1"></i> Lifetime Updates & Clean Code
+            </span>
+          </div>
+        </div>
+      </div>
+    </header>
+
+    <!-- Products Catalog Section -->
+    <section class="section-padding bg-light">
+      <div class="container">
+        <!-- Filter & Search Controls -->
+        <div class="store-filter-bar">
+          <div class="row g-3 align-items-center justify-content-between">
+            <!-- Search Bar -->
+            <div class="col-md-5 col-lg-4">
+              <div class="input-group">
+                <span class="input-group-text bg-white border-end-0 text-muted"><i class="bi bi-search"></i></span>
+                <input type="text" id="productSearchInput" class="form-control form-control-light border-start-0" placeholder="Search templates, SaaS, tools...">
+              </div>
+            </div>
+
+            <!-- Category Pills -->
+            <div class="col-md-7 col-lg-5">
+              <div class="category-nav-pills justify-content-md-center" id="categoryPillContainer">
+                <button class="category-pill-btn active" data-category="all">All</button>
+                <button class="category-pill-btn" data-category="SaaS">SaaS</button>
+                <button class="category-pill-btn" data-category="Automation">DevOps</button>
+                <button class="category-pill-btn" data-category="UI Kits">UI Kits</button>
+                <button class="category-pill-btn" data-category="Software">Software</button>
+                <button class="category-pill-btn" data-category="Templates">Templates</button>
+                <button class="category-pill-btn" data-category="Tools">Tools</button>
+              </div>
+            </div>
+
+            <!-- Sorting Select -->
+            <div class="col-md-4 col-lg-3 text-md-end">
+              <div class="d-flex align-items-center justify-content-md-end gap-2">
+                <label for="productSortSelect" class="small text-muted text-nowrap fw-semibold">Sort by:</label>
+                <select id="productSortSelect" class="form-select form-control-light w-auto">
+                  <option value="featured">Featured</option>
+                  <option value="price-low">Price: Low to High</option>
+                  <option value="price-high">Price: High to Low</option>
+                  <option value="rating">Highest Rated</option>
+                </select>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- Products Grid Container -->
+        <div class="row g-4" id="productsGrid">
+          <!-- Dynamically populated by JS -->
+        </div>
+
+        <!-- Empty State Container -->
+        <div id="productsEmptyState" class="text-center py-5" style="display: none;">
+          <div class="p-4 bg-white rounded-4 border d-inline-block shadow-sm mb-3">
+            <i class="bi bi-search text-muted" style="font-size: 3rem;"></i>
+          </div>
+          <h4 class="fw-bold">No matching products found</h4>
+          <p class="text-muted">Try adjusting your search terms or category filter.</p>
+          <button class="btn btn-dastech-primary btn-sm" id="resetFiltersBtn">Reset Filters</button>
+        </div>
+      </div>
+    </section>
+
+    <!-- Professional DasTech Footer -->
+    <footer class="dastech-footer">
+      <div class="container">
+        <div class="row g-4">
+          <div class="col-lg-4 col-md-6">
+            <a class="footer-brand" href="index.html">
+              <span class="brand-icon"><i class="bi bi-cpu-fill"></i></span>
+              <span>Das<span class="text-primary">Tech</span></span>
+            </a>
+            <p class="footer-text">
+              DasTech is a modern digital products studio and full-service software development agency delivering high-velocity technology solutions.
+            </p>
+          </div>
+
+          <div class="col-lg-2 col-md-6">
+            <h5 class="footer-heading">Navigation</h5>
+            <ul class="footer-links">
+              <li><a href="index.html">Home</a></li>
+              <li><a href="products.html">Digital Products</a></li>
+              <li><a href="projects.html">Portfolio Projects</a></li>
+              <li><a href="services-page.html">Services</a></li>
+              <li><a href="about.html">About Us</a></li>
+            </ul>
+          </div>
+
+          <div class="col-lg-3 col-md-6">
+            <h5 class="footer-heading">Digital Products</h5>
+            <ul class="footer-links">
+              <li><a href="product-details.html?id=dt-prod-1">Apex SaaS Analytics</a></li>
+              <li><a href="product-details.html?id=dt-prod-2">CloudGuard DevOps Kit</a></li>
+              <li><a href="product-details.html?id=dt-prod-3">Nova UI Pro Kit</a></li>
+              <li><a href="cart.html">View Shopping Cart</a></li>
+            </ul>
+          </div>
+
+          <div class="col-lg-3 col-md-6">
+            <h5 class="footer-heading">Client Portal</h5>
+            <ul class="footer-links">
+              <li><a href="login.html"><i class="bi bi-lock-fill me-1"></i> Admin Login</a></li>
+              <li><a href="register.html"><i class="bi bi-person-plus-fill me-1"></i> Create Account</a></li>
+              <li><a href="dashboard.html"><i class="bi bi-speedometer2 me-1"></i> Dashboard</a></li>
+            </ul>
+          </div>
+        </div>
+
+        <div class="footer-bottom d-flex flex-column flex-md-row justify-content-between align-items-center gap-3">
+          <div class="text-muted">
+            &copy; <span id="currentYear"></span> DasTech. All Rights Reserved.
+          </div>
+          <div class="d-flex gap-3 text-muted small">
+            <a href="#" class="text-muted">Privacy Policy</a>
+            <span>•</span>
+            <a href="#" class="text-muted">Terms of Service</a>
+          </div>
+        </div>
+      </div>
+    </footer>
+
+    <!-- Scripts -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+    
+    <!-- DasTech Core Logic & Cart -->
+    <script src="assets/js/dastech-data.js"></script>
+    <script src="assets/js/cart.js"></script>
+
+    <script>
+      AOS.init({ once: true, duration: 600 });
+      document.getElementById('currentYear').textContent = new Date().getFullYear();
+
+      let activeCategory = 'all';
+      let searchQuery = '';
+      let activeSort = 'featured';
+
+      function renderProducts() {
+        const grid = document.getElementById('productsGrid');
+        const emptyState = document.getElementById('productsEmptyState');
+        if (!grid || !window.DasTechData) return;
+
+        let list = [...window.DasTechData.products];
+
+        // 1. Filter by category
+        if (activeCategory !== 'all') {
+          list = list.filter(p => p.category.toLowerCase() === activeCategory.toLowerCase());
+        }
+
+        // 2. Search query
+        if (searchQuery.trim() !== '') {
+          const q = searchQuery.toLowerCase();
+          list = list.filter(p => 
+            p.name.toLowerCase().includes(q) || 
+            p.shortDescription.toLowerCase().includes(q) ||
+            p.technologies.some(t => t.toLowerCase().includes(q))
+          );
+        }
+
+        // 3. Sorting
+        if (activeSort === 'price-low') {
+          list.sort((a, b) => a.price - b.price);
+        } else if (activeSort === 'price-high') {
+          list.sort((a, b) => b.price - a.price);
+        } else if (activeSort === 'rating') {
+          list.sort((a, b) => b.rating - a.rating);
+        }
+
+        if (list.length === 0) {
+          grid.innerHTML = '';
+          emptyState.style.display = 'block';
+          return;
+        }
+
+        emptyState.style.display = 'none';
+
+        let html = '';
+        list.forEach(p => {
+          const techBadges = p.technologies.slice(0, 3).map(t => `<span class="tech-badge">${t}</span>`).join('');
+          html += `
+            <div class="col-md-6 col-lg-4" data-aos="fade-up">
+              <div class="product-card">
+                <div class="product-card-thumb">
+                  <img src="${p.image}" alt="${p.name}">
+                  <div class="product-badge-overlay">
+                    <span class="category-badge">${p.categoryName || p.category}</span>
+                  </div>
+                </div>
+                <div class="product-card-body">
+                  <div class="d-flex align-items-center gap-1 text-warning small mb-2">
+                    <i class="bi bi-star-fill"></i>
+                    <span class="fw-bold text-dark">${p.rating}</span>
+                    <span class="text-muted">(${p.reviewsCount})</span>
+                  </div>
+                  <h3 class="product-card-title">
+                    <a href="product-details.html?id=${p.id}">${p.name}</a>
+                  </h3>
+                  <p class="product-card-desc">${p.shortDescription}</p>
+                  <div class="product-tech-stack">
+                    ${techBadges}
+                  </div>
+                  <div class="product-card-footer">
+                    <div class="product-price-box">
+                      <span class="current-price">$${p.price}</span>
+                      ${p.originalPrice ? `<span class="original-price">$${p.originalPrice}</span>` : ''}
+                    </div>
+                    <div class="product-actions">
+                      <button class="btn btn-dastech-outline btn-dastech-sm" data-dastech-add-cart="${p.id}" title="Add to Cart">
+                        <i class="bi bi-bag-plus"></i>
+                      </button>
+                      <button class="btn btn-dastech-primary btn-dastech-sm" data-dastech-buy-now="${p.id}">
+                        Buy Now
+                      </button>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          `;
+        });
+
+        grid.innerHTML = html;
+      }
+
+      // Event Listeners
+      document.addEventListener('DOMContentLoaded', () => {
+        renderProducts();
+
+        // Category pills
+        document.querySelectorAll('.category-pill-btn').forEach(btn => {
+          btn.addEventListener('click', () => {
+            document.querySelectorAll('.category-pill-btn').forEach(b => b.classList.remove('active'));
+            btn.classList.add('active');
+            activeCategory = btn.getAttribute('data-category');
+            renderProducts();
+          });
+        });
+
+        // Search input
+        const searchInput = document.getElementById('productSearchInput');
+        if (searchInput) {
+          searchInput.addEventListener('input', (e) => {
+            searchQuery = e.target.value;
+            renderProducts();
+          });
+        }
+
+        // Sort select
+        const sortSelect = document.getElementById('productSortSelect');
+        if (sortSelect) {
+          sortSelect.addEventListener('change', (e) => {
+            activeSort = e.target.value;
+            renderProducts();
+          });
+        }
+
+        // Reset filter
+        const resetBtn = document.getElementById('resetFiltersBtn');
+        if (resetBtn) {
+          resetBtn.addEventListener('click', () => {
+            activeCategory = 'all';
+            searchQuery = '';
+            activeSort = 'featured';
+            if (searchInput) searchInput.value = '';
+            if (sortSelect) sortSelect.value = 'featured';
+            document.querySelectorAll('.category-pill-btn').forEach(b => {
+              b.classList.toggle('active', b.getAttribute('data-category') === 'all');
+            });
+            renderProducts();
+          });
+        }
+      });
+    </script>
+  </body>
+</html>

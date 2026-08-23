@@ -5,200 +5,186 @@
   <meta charset="utf-8">
   <meta content="width=device-width, initial-scale=1.0" name="viewport">
 
-  <title>KinoyeeIT</title>
-  <meta content="" name="description">
-  <meta content="" name="keywords">
+  <title>Inquiries & Leads — DasTech Portal</title>
+  <meta content="Manage incoming project inquiries and client contact submissions." name="description">
 
   <!-- Favicons -->
   <link href="./assets/img/favicon.png" rel="icon">
   <link href="./assets/img/apple-touch-icon.png" rel="apple-touch-icon">
 
   <!-- Google Fonts -->
-  <link href="https://fonts.gstatic.com" rel="preconnect">
-  <link href="https://fonts.googleapis.com/css?family=Open+Sans:300,300i,400,400i,600,600i,700,700i|Nunito:300,300i,400,400i,600,600i,700,700i|Poppins:300,300i,400,400i,500,500i,600,600i,700,700i" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Plus+Jakarta+Sans:wght@600;700;800&family=JetBrains+Mono:wght@500&display=swap" rel="stylesheet">
 
   <!-- Vendor CSS Files -->
   <link href="./assets/vendor/bootstrap/css/bootstrap.min.css" rel="stylesheet">
   <link href="./assets/vendor/bootstrap-icons/bootstrap-icons.css" rel="stylesheet">
   <link href="./assets/vendor/boxicons/css/boxicons.min.css" rel="stylesheet">
-  <link href="./assets/vendor/quill/quill.snow.css" rel="stylesheet">
-  <link href="./assets/vendor/quill/quill.bubble.css" rel="stylesheet">
-  <link href="./assets/vendor/remixicon/remixicon.css" rel="stylesheet">
-  <link href="./assets/vendor/simple-datatables/style.css" rel="stylesheet">
 
   <!-- Main CSS File -->
   <link href="./assets/css/style.css" rel="stylesheet">
-
+  <link href="./style.css" rel="stylesheet">
 </head>
 
-<body>
+<body class="bg-light">
 
-  <header id="header" class="header fixed-top d-flex align-items-center">
-
-    <div class="d-flex align-items-center justify-content-between">
-      <a href="./index.html" class="logo d-flex align-items-center">
-        <img src="./assets/img/logo.png" alt="">
-        <span class="d-none d-lg-block">KinoyeeIT</span>
-      </a>
-      <i class="bi bi-list toggle-sidebar-btn"></i>
-    </div>
-
-  </header>
-
-  <aside id="sidebar" class="sidebar">
-
-    <ul class="sidebar-nav" id="sidebar-nav">
-
-      <h5 class="ps-1 fw-bold">Arman Sharif</h5>
-      <hr>
-
-      <li class="nav-item">
-        <a class="nav-link collapsed" href="./dashboard.html">
-          <i class="bi bi-grid"></i>
-          <span>Dashboard</span>
+  <header id="header" class="header fixed-top d-flex align-items-center bg-white border-bottom shadow-sm">
+    <div class="d-flex align-items-center justify-content-between px-3 w-100">
+      <div class="d-flex align-items-center gap-3">
+        <a href="./index.html" class="dastech-brand text-decoration-none">
+          <span class="brand-icon"><i class="bi bi-cpu-fill"></i></span>
+          <span class="fs-4 fw-bold text-dark">Das<span class="brand-text-accent">Tech</span></span>
         </a>
-      </li>
+        <i class="bi bi-list toggle-sidebar-btn fs-4 text-dark cursor-pointer ms-3"></i>
+      </div>
 
-      <li class="nav-item"><a class="nav-link collapsed" href="./banner.html" class=""><i class="bi bi-grid"></i></i><span>Banner Section</span></a></li>
-      <li class="nav-item"><a class="nav-link collapsed" href="./services.html" class=""><i class="bi bi-grid"></i><span>Services</span></a></li>
-      <li class="nav-item"><a class="nav-link collapsed" href="./clients.html" class=""><i class="bi bi-grid"></i><span>Clients</span></a></li>
-      <li class="nav-item"><a class="nav-link collapsed" href="./news_and_blogs.html" class=""><i class="bi bi-grid"></i><span>News & Blogs</span></a></li>
-      <li class="nav-item"><a class="nav-link collapsed" href="./offers.html" class=""><i class="bi bi-grid"></i><span>Offers</span></a></li>
-      <li class="nav-item"><a class="nav-link collapsed" href="./client_portfolios.html" class=""><i class="bi bi-grid"></i><span>Client Portfolios</span></a></li>
-      <li class="nav-item"><a class="nav-link collapsed" href="./about_us.html" class=""><i class="bi bi-grid"></i><span>About Us</span></a></li>
-      <li class="nav-item"><a class="nav-link" href="./contacts.html" class=""><i class="bi bi-grid"></i><span>Contacts</span></a></li>
-      
-      <li class="nav-item"><a class="nav-link collapsed" href="./index.html" class=""><i class="bi bi-box-arrow-right"></i><span>Logout</span></a></li>
-
-    </ul>
-
-  </aside>
-
-  <main id="main" class="main" style="min-height: 70vh;">
-
-    <section class="section dashboard">
-      <div class="row">
-        <div class="col-12">
-            <div class="pagetitle">
-                <h1>Dashboard</h1>
-                <nav>
-                  <ol class="breadcrumb">
-                    <li class="breadcrumb-item"><a href="./index.html">Home</a></li>
-                    <li class="breadcrumb-item"><a href="./dashboard.html">Dashboard</a></li>
-                    <li class="breadcrumb-item active">Contacts</li>
-                  </ol>
-                </nav>
-            </div>
+      <div class="d-flex align-items-center gap-3">
+        <a href="index.html" class="btn btn-outline-primary btn-sm rounded-pill px-3 d-none d-sm-inline-flex">
+          <i class="bi bi-box-arrow-up-right me-1"></i> Public Website
+        </a>
+        <div class="d-flex align-items-center gap-2">
+          <div class="p-2 bg-primary bg-opacity-10 text-primary rounded-circle fw-bold small">DT</div>
+          <span class="d-none d-md-block fw-semibold text-dark small">DasTech Admin</span>
         </div>
       </div>
+    </div>
+  </header>
 
-      <div class="row">
-          <div class="col-12">
-              <div class="card p-3 table-responsive">
-                  <table class="table table-striped table-hover table-responsive">
-                      <thead>
-                        <tr>
-                          <th scope="col">#</th>
-                          <th scope="col">Name</th>
-                          <th scope="col">Company</th>
-                          <th scope="col">Email</th>
-                          <th scope="col">Phone</th>
-                          <th scope="col">Message</th>
-                          <th scope="col" class="text-center">Action</th>
-                        </tr>
-                      </thead>
-                      <tbody class="table-group-divider">
-                        <tr>
-                          <th scope="row">1</th>
-                          <td>Arman Sharif</td>
-                          <td>Kinoyee IT</td>
-                          <td>arman.hub.bd@gmail.com</td>
-                          <td>+880 1632109022</td>
-                          <td>hello Dear, ...</td>
-                          <td class="text-center">
-                              <a href="" class="btn btn-primary m-1" data-bs-toggle="modal" data-bs-target="#ShowModal">Show</a>
-                              <!-- Show -->
-                              <div class="modal fade text-start" id="ShowModal" tabindex="-1" aria-labelledby="ShowModalLabel" aria-hidden="true">
-                                  <div class="modal-dialog">
-                                      <div class="modal-content">
-                                          <div class="modal-header">
-                                              <h1 class="modal-title fs-5" id="ShowModalLabel">Message</h1>
-                                              <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
-                                          </div>
-                                          <div class="modal-body">
-                                              <div class="container">
-                                                  <div class="row">
-                                                      <p class="text-center">
-                                                        Lorem ipsum dolor sit amet consectetur adipisicing elit. Nam nihil distinctio perspiciatis sapiente, officia cupiditate dolorum iste nemo provident dolor neque reiciendis consequuntur aperiam, beatae, doloribus omnis itaque non sit cum eius. Quisquam blanditiis non assumenda ab quia nisi dolorem doloremque natus quae architecto alias perferendis minima aspernatur error, porro sint accusantium sunt dolorum ea tempore. Et saepe aut, reiciendis autem, ea expedita ducimus amet est unde id rem consectetur animi eveniet. Unde aliquam eius commodi nobis esse quidem earum ut beatae repudiandae ipsam ipsa eaque ducimus eum itaque minus tempora doloremque accusamus, doloribus harum modi natus. Ullam, corrupti modi?
-                                                      </p>
-                                                  </div>
-                                              </div>
-                                          </div>
-                                          <div class="modal-footer">
-                                              <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
-                                              <a href="" class="btn btn-danger">Delete</a>
-                                          </div>
-                                      </div>
-                                  </div>
-                              </div>
-                              <a href="" class="btn btn-danger m-1" data-bs-toggle="modal" data-bs-target="#DeleteModal">Delete</a>
-                              <!-- Delete -->
-                              <div class="modal fade text-start" id="DeleteModal" tabindex="-1" aria-labelledby="DeleteModalLabel" aria-hidden="true">
-                                  <div class="modal-dialog">
-                                      <div class="modal-content">
-                                          <div class="modal-header">
-                                              <h1 class="modal-title fs-5" id="DeleteModalLabel">Delete</h1>
-                                              <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
-                                          </div>
-                                          <div class="modal-body">
-                                              <div class="container">
-                                                  <div class="row">
-                                                      <h3 class="text-center">Are you sure ?</h3>
-                                                  </div>
-                                              </div>
-                                          </div>
-                                          <div class="modal-footer">
-                                              <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
-                                              <a href="" class="btn btn-danger">Delete</a>
-                                          </div>
-                                      </div>
-                                  </div>
-                              </div>
-                          </td>
-                        </tr>
-                      </tbody>
-                  </table>
-              </div>
-          </div>
+  <aside id="sidebar" class="sidebar bg-white border-end">
+    <ul class="sidebar-nav" id="sidebar-nav">
+      <div class="px-3 py-2 text-muted small fw-bold text-uppercase">Management Portal</div>
+
+      <li class="nav-item"><a class="nav-link collapsed" href="./dashboard.html"><i class="bi bi-grid"></i><span>Dashboard Overview</span></a></li>
+      <li class="nav-item"><a class="nav-link collapsed" href="./banner.html"><i class="bi bi-images"></i><span>Hero & Banner</span></a></li>
+      <li class="nav-item"><a class="nav-link collapsed" href="./services.html"><i class="bi bi-gear-wide-connected"></i><span>Services Manager</span></a></li>
+      <li class="nav-item"><a class="nav-link collapsed" href="./clients.html"><i class="bi bi-people"></i><span>Clients & Partners</span></a></li>
+      <li class="nav-item"><a class="nav-link collapsed" href="./news_and_blogs.html"><i class="bi bi-newspaper"></i><span>News & Insights</span></a></li>
+      <li class="nav-item"><a class="nav-link collapsed" href="./offers.html"><i class="bi bi-tag"></i><span>Special Offers</span></a></li>
+      <li class="nav-item"><a class="nav-link collapsed" href="./client_portfolios.html"><i class="bi bi-folder-check"></i><span>Case Studies</span></a></li>
+      <li class="nav-item"><a class="nav-link collapsed" href="./about_us.html"><i class="bi bi-info-circle"></i><span>About Us Section</span></a></li>
+      <li class="nav-item"><a class="nav-link active" href="./contacts.html"><i class="bi bi-chat-left-text"></i><span>Inquiries & Leads</span></a></li>
+
+      <hr class="mx-3 my-2">
+
+      <li class="nav-item">
+        <a class="nav-link collapsed text-danger" href="./index.html">
+          <i class="bi bi-box-arrow-left text-danger"></i>
+          <span>Exit to Website</span>
+        </a>
+      </li>
+    </ul>
+  </aside>
+
+  <main id="main" class="main p-4" style="min-height: 85vh;">
+    <div class="row">
+      <div class="col-12">
+        <div class="pagetitle mb-4">
+          <h1 class="h3 fw-bold mb-1">Incoming Project Inquiries & Leads</h1>
+          <nav>
+            <ol class="breadcrumb">
+              <li class="breadcrumb-item"><a href="./index.html">Home</a></li>
+              <li class="breadcrumb-item"><a href="./dashboard.html">Dashboard</a></li>
+              <li class="breadcrumb-item active">Inquiries</li>
+            </ol>
+          </nav>
+        </div>
       </div>
-    </section>
+    </div>
 
+    <div class="row">
+      <div class="col-12">
+        <div class="card border-0 shadow-sm rounded-4 p-4 bg-white">
+          <div class="d-flex justify-content-between align-items-center mb-3">
+            <h5 class="fw-bold mb-0">Customer Submissions</h5>
+            <span class="badge bg-primary rounded-pill px-3 py-2">3 New Unread</span>
+          </div>
+
+          <div class="table-responsive">
+            <table class="table table-hover align-middle">
+              <thead class="table-light small text-uppercase text-muted">
+                <tr>
+                  <th scope="col">#</th>
+                  <th scope="col">Contact Name</th>
+                  <th scope="col">Company</th>
+                  <th scope="col">Email</th>
+                  <th scope="col">Project Scope</th>
+                  <th scope="col" class="text-center">Action</th>
+                </tr>
+              </thead>
+              <tbody class="small">
+                <tr>
+                  <th scope="row">1</th>
+                  <td class="fw-bold">David Chen</td>
+                  <td>FinScale Ventures</td>
+                  <td>david@finscale.vc</td>
+                  <td class="text-muted">Looking for a custom multi-tenant SaaS banking dashboard with Kafka integration.</td>
+                  <td class="text-center">
+                    <button class="btn btn-sm btn-dastech-primary" data-bs-toggle="modal" data-bs-target="#inquiryDetailModal">View Details</button>
+                  </td>
+                </tr>
+                <tr>
+                  <th scope="row">2</th>
+                  <td class="fw-bold">Elena Rostova</td>
+                  <td>Nordic Health Systems</td>
+                  <td>elena.r@nordichealth.se</td>
+                  <td class="text-muted">Needs HIPAA-compliant telehealth WebRTC video consultation module.</td>
+                  <td class="text-center">
+                    <button class="btn btn-sm btn-dastech-primary" data-bs-toggle="modal" data-bs-target="#inquiryDetailModal">View Details</button>
+                  </td>
+                </tr>
+                <tr>
+                  <th scope="row">3</th>
+                  <td class="fw-bold">Marcus Vance</td>
+                  <td>OmniFleet Global</td>
+                  <td>mvance@omnifleet.com</td>
+                  <td class="text-muted">Inquiring about custom modifications to CloudGuard DevOps Kubernetes toolkit.</td>
+                  <td class="text-center">
+                    <button class="btn btn-sm btn-dastech-primary" data-bs-toggle="modal" data-bs-target="#inquiryDetailModal">View Details</button>
+                  </td>
+                </tr>
+              </tbody>
+            </table>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- Inquiry Details Modal -->
+    <div class="modal fade" id="inquiryDetailModal" tabindex="-1" aria-hidden="true">
+      <div class="modal-dialog modal-dialog-centered">
+        <div class="modal-content border-0 rounded-4 shadow-lg p-3">
+          <div class="modal-header border-0 pb-0">
+            <h5 class="modal-title fw-bold">Inquiry Details</h5>
+            <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+          </div>
+          <div class="modal-body small">
+            <div class="p-3 bg-light rounded-3 mb-3">
+              <div class="mb-1"><strong class="text-dark">From:</strong> David Chen (david@finscale.vc)</div>
+              <div class="mb-1"><strong class="text-dark">Organization:</strong> FinScale Ventures</div>
+              <div><strong class="text-dark">Status:</strong> <span class="badge bg-success">Under Review</span></div>
+            </div>
+            <div class="fw-bold mb-1 text-dark">Message:</div>
+            <p class="text-muted">
+              We are looking for a senior software engineering team to architect a custom multi-tenant SaaS banking dashboard with Kafka stream ingestion and PostgreSQL. Timeline is 8 weeks.
+            </p>
+          </div>
+          <div class="modal-footer border-0 pt-0">
+            <button type="button" class="btn btn-light btn-sm" data-bs-dismiss="modal">Close</button>
+            <a href="mailto:david@finscale.vc" class="btn btn-dastech-primary btn-sm">Reply via Email</a>
+          </div>
+        </div>
+      </div>
+    </div>
   </main>
   
-  <footer id="footer" class="footer">
-    <div class="copyright">
-      &copy; Copyright <strong><span>Arman's Solution</span></strong>. All Rights Reserved
-    </div>
-    <div class="credits">
-      Designed by <a href="https://arman9022.github.io/a.solution/" class="fw-bold">Arman's Solution</a>
-    </div>
+  <footer id="footer" class="footer bg-white border-top py-3 text-center text-muted small">
+    &copy; <span id="currentYear"></span> <strong><span>DasTech</span></strong>. All Rights Reserved.
   </footer>
 
-  <a href="#" class="back-to-top d-flex align-items-center justify-content-center"><i class="bi bi-arrow-up-short"></i></a>
-
-  <!-- Vendor JS Files -->
-  <script src="./assets/vendor/apexcharts/apexcharts.min.js"></script>
   <script src="./assets/vendor/bootstrap/js/bootstrap.bundle.min.js"></script>
-  <script src="./assets/vendor/chart.js/chart.umd.js"></script>
-  <script src="./assets/vendor/echarts/echarts.min.js"></script>
-  <script src="./assets/vendor/quill/quill.min.js"></script>
-  <script src="./assets/vendor/simple-datatables/simple-datatables.js"></script>
-  <script src="./assets/vendor/tinymce/tinymce.min.js"></script>
-  <script src="./assets/vendor/php-email-form/validate.js"></script>
-
-  <!-- Template Main JS File -->
   <script src="./assets/js/main.js"></script>
-
+  <script>
+    document.getElementById('currentYear').textContent = new Date().getFullYear();
+  </script>
 </body>
 
 </html>

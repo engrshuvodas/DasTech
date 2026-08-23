@@ -1,0 +1,373 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Product Details — DasTech</title>
+    <meta name="description" content="View comprehensive architecture details, source code inclusion, system requirements, and pricing for DasTech digital products.">
+
+    <!-- Bootstrap 5 CSS -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css">
+    <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
+
+    <!-- DasTech Master Design System -->
+    <link rel="stylesheet" href="style.css">
+  </head>
+  <body>
+    <!-- Top Navigation Bar -->
+    <nav class="navbar navbar-expand-lg dastech-navbar sticky-top" id="mainNavbar">
+      <div class="container">
+        <a class="dastech-brand" href="index.html">
+          <span class="brand-icon"><i class="bi bi-cpu-fill"></i></span>
+          <span>Das<span class="brand-text-accent">Tech</span></span>
+        </a>
+
+        <div class="d-flex align-items-center d-lg-none gap-2">
+          <button class="cart-btn-trigger" data-dastech-open-cart aria-label="Open Shopping Cart">
+            <i class="bi bi-bag-fill"></i>
+            <span class="dastech-cart-badge" style="display: none;">0</span>
+          </button>
+          
+          <button class="navbar-toggler border-0 p-2" type="button" data-bs-toggle="collapse" data-bs-target="#navbarContent">
+            <i class="bi bi-list fs-2 text-dark"></i>
+          </button>
+        </div>
+
+        <div class="collapse navbar-collapse" id="navbarContent">
+          <ul class="navbar-nav mx-auto mb-2 mb-lg-0">
+            <li class="nav-item">
+              <a class="nav-link" href="index.html">Home</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link active" aria-current="page" href="products.html">Digital Products</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="projects.html">Projects</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="services-page.html">Services</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="about.html">About</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="index.html#contact_us">Contact</a>
+            </li>
+          </ul>
+
+          <div class="nav-actions d-none d-lg-flex">
+            <button class="cart-btn-trigger" data-dastech-open-cart title="Shopping Cart">
+              <i class="bi bi-bag-fill"></i>
+              <span class="dastech-cart-badge" style="display: none;">0</span>
+            </button>
+            <a href="login.html" class="btn btn-dastech-ghost btn-sm"><i class="bi bi-person-fill"></i> Portal</a>
+            <a href="index.html#contact_us" class="btn btn-dastech-primary btn-sm">Start a Project</a>
+          </div>
+        </div>
+      </div>
+    </nav>
+
+    <!-- Product Details Content -->
+    <main class="py-5">
+      <div class="container">
+        <!-- Breadcrumb -->
+        <nav aria-label="breadcrumb" class="mb-4">
+          <ol class="breadcrumb">
+            <li class="breadcrumb-item"><a href="index.html">Home</a></li>
+            <li class="breadcrumb-item"><a href="products.html">Digital Products</a></li>
+            <li class="breadcrumb-item active" aria-current="page" id="breadcrumbProductName">Product Details</li>
+          </ol>
+        </nav>
+
+        <!-- Product Hero Card -->
+        <div class="card border-0 shadow-sm rounded-4 p-4 p-lg-5 mb-5 bg-white">
+          <div class="row g-5 align-items-center">
+            <!-- Product Gallery Column -->
+            <div class="col-lg-6">
+              <div class="position-relative rounded-4 overflow-hidden shadow-sm border bg-dark">
+                <img id="detailProductImage" src="assets/img/product-1.jpg" alt="Product Image" class="img-fluid w-100 object-fit-cover" style="max-height: 440px;">
+                <div class="position-absolute top-0 start-0 m-3">
+                  <span class="category-badge" id="detailProductCategory">SaaS Platform</span>
+                </div>
+              </div>
+            </div>
+
+            <!-- Product Purchase Info Column -->
+            <div class="col-lg-6">
+              <div class="d-flex align-items-center gap-2 mb-2">
+                <div class="text-warning d-flex align-items-center gap-1">
+                  <i class="bi bi-star-fill"></i>
+                  <span class="fw-bold text-dark" id="detailProductRating">4.9</span>
+                </div>
+                <span class="text-muted small" id="detailProductReviews">(84 reviews)</span>
+                <span class="badge bg-success bg-opacity-10 text-success rounded-pill px-3 py-1 ms-2">Verified Production Ready</span>
+              </div>
+
+              <h1 class="h2 fw-bold mb-3" id="detailProductName">Apex SaaS Admin & Analytics Suite</h1>
+              <p class="text-muted lead mb-4" id="detailProductTagline">Enterprise-grade dashboard starter with real-time analytics & multi-tenant auth.</p>
+
+              <!-- Price Box -->
+              <div class="p-3 bg-light rounded-3 border mb-4 d-flex align-items-center justify-content-between">
+                <div>
+                  <div class="text-muted small">One-time payment</div>
+                  <div class="d-flex align-items-baseline gap-2">
+                    <span class="display-6 fw-bold text-dark" id="detailProductPrice">$69</span>
+                    <span class="text-muted text-decoration-line-through fs-5" id="detailProductOriginalPrice">$129</span>
+                  </div>
+                </div>
+                <div class="text-end">
+                  <span class="badge bg-danger rounded-pill px-3 py-2">Save 45% Limited Offer</span>
+                </div>
+              </div>
+
+              <!-- Action CTAs -->
+              <div class="d-flex flex-column flex-sm-row gap-3 mb-4">
+                <button class="btn btn-dastech-primary btn-dastech-lg flex-grow-1" id="detailBuyNowBtn">
+                  <i class="bi bi-lightning-charge-fill me-1"></i> Buy Now
+                </button>
+                <button class="btn btn-dastech-outline btn-dastech-lg flex-grow-1" id="detailAddToCartBtn">
+                  <i class="bi bi-bag-plus me-1"></i> Add to Cart
+                </button>
+              </div>
+
+              <!-- Value Guarantees -->
+              <div class="row g-2 text-muted small border-top pt-3">
+                <div class="col-6"><i class="bi bi-check2-circle text-success me-1"></i> Instant Source Code Access</div>
+                <div class="col-6"><i class="bi bi-arrow-repeat text-success me-1"></i> Free Lifetime Updates</div>
+                <div class="col-6"><i class="bi bi-shield-check text-success me-1"></i> Commercial License Included</div>
+                <div class="col-6"><i class="bi bi-headset text-success me-1"></i> 24/7 Developer Support</div>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- Detailed Tabs / Information Grid -->
+        <div class="row g-4">
+          <!-- Main Content Column -->
+          <div class="col-lg-8">
+            <!-- Overview Section -->
+            <div class="card border-0 shadow-sm rounded-4 p-4 p-md-5 mb-4 bg-white">
+              <h3 class="fw-bold mb-3"><i class="bi bi-file-text text-primary me-2"></i> Product Overview</h3>
+              <p class="text-muted mb-4" id="detailProductOverview"></p>
+
+              <h4 class="fw-bold mb-3 mt-4"><i class="bi bi-stars text-primary me-2"></i> Key Features & Capabilities</h4>
+              <div class="row g-3" id="detailFeaturesList">
+                <!-- Features injected by JS -->
+              </div>
+            </div>
+
+            <!-- What's Included Section -->
+            <div class="card border-0 shadow-sm rounded-4 p-4 p-md-5 mb-4 bg-white">
+              <h3 class="fw-bold mb-3"><i class="bi bi-box-seam text-primary me-2"></i> What's Included in the Package</h3>
+              <ul class="list-group list-group-flush" id="detailWhatsIncludedList">
+                <!-- Included list items -->
+              </ul>
+            </div>
+
+            <!-- FAQ Accordion -->
+            <div class="card border-0 shadow-sm rounded-4 p-4 p-md-5 bg-white">
+              <h3 class="fw-bold mb-4"><i class="bi bi-question-circle text-primary me-2"></i> Frequently Asked Questions</h3>
+              <div class="accordion" id="productFaqAccordion">
+                <!-- FAQ items injected by JS -->
+              </div>
+            </div>
+          </div>
+
+          <!-- Sidebar Column: Specs & Tech Stack -->
+          <div class="col-lg-4">
+            <!-- Tech Stack Card -->
+            <div class="card border-0 shadow-sm rounded-4 p-4 mb-4 bg-white">
+              <h4 class="fw-bold mb-3 fs-5">Technology Stack</h4>
+              <div class="d-flex flex-wrap gap-2 mb-3" id="detailTechStack">
+                <!-- Tech badges -->
+              </div>
+              <hr>
+              <h4 class="fw-bold mb-3 fs-5">System Requirements</h4>
+              <ul class="text-muted small ps-3 mb-0" id="detailRequirementsList">
+                <!-- Requirements -->
+              </ul>
+            </div>
+
+            <!-- Customization Services Card -->
+            <div class="card border-0 shadow-sm rounded-4 p-4 bg-primary text-white">
+              <h4 class="fw-bold mb-2 text-white">Need Custom Modifications?</h4>
+              <p class="small opacity-90 mb-3">Our engineering team can customize this product to integrate with your existing databases, APIs, or design system.</p>
+              <a href="index.html#contact_us" class="btn btn-light text-primary fw-bold w-100">Request Customization</a>
+            </div>
+          </div>
+        </div>
+      </div>
+    </main>
+
+    <!-- Professional DasTech Footer -->
+    <footer class="dastech-footer">
+      <div class="container">
+        <div class="row g-4">
+          <div class="col-lg-4 col-md-6">
+            <a class="footer-brand" href="index.html">
+              <span class="brand-icon"><i class="bi bi-cpu-fill"></i></span>
+              <span>Das<span class="text-primary">Tech</span></span>
+            </a>
+            <p class="footer-text">
+              DasTech is a modern digital products studio and full-service software development agency delivering high-velocity technology solutions.
+            </p>
+          </div>
+
+          <div class="col-lg-2 col-md-6">
+            <h5 class="footer-heading">Navigation</h5>
+            <ul class="footer-links">
+              <li><a href="index.html">Home</a></li>
+              <li><a href="products.html">Digital Products</a></li>
+              <li><a href="projects.html">Portfolio Projects</a></li>
+              <li><a href="services-page.html">Services</a></li>
+              <li><a href="about.html">About Us</a></li>
+            </ul>
+          </div>
+
+          <div class="col-lg-3 col-md-6">
+            <h5 class="footer-heading">Digital Products</h5>
+            <ul class="footer-links">
+              <li><a href="product-details.html?id=dt-prod-1">Apex SaaS Analytics</a></li>
+              <li><a href="product-details.html?id=dt-prod-2">CloudGuard DevOps Kit</a></li>
+              <li><a href="product-details.html?id=dt-prod-3">Nova UI Pro Kit</a></li>
+              <li><a href="cart.html">View Shopping Cart</a></li>
+            </ul>
+          </div>
+
+          <div class="col-lg-3 col-md-6">
+            <h5 class="footer-heading">Client Portal</h5>
+            <ul class="footer-links">
+              <li><a href="login.html"><i class="bi bi-lock-fill me-1"></i> Admin Login</a></li>
+              <li><a href="register.html"><i class="bi bi-person-plus-fill me-1"></i> Create Account</a></li>
+              <li><a href="dashboard.html"><i class="bi bi-speedometer2 me-1"></i> Dashboard</a></li>
+            </ul>
+          </div>
+        </div>
+
+        <div class="footer-bottom d-flex flex-column flex-md-row justify-content-between align-items-center gap-3">
+          <div class="text-muted">
+            &copy; <span id="currentYear"></span> DasTech. All Rights Reserved.
+          </div>
+          <div class="d-flex gap-3 text-muted small">
+            <a href="#" class="text-muted">Privacy Policy</a>
+            <span>•</span>
+            <a href="#" class="text-muted">Terms of Service</a>
+          </div>
+        </div>
+      </div>
+    </footer>
+
+    <!-- Scripts -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
+    
+    <!-- DasTech Core Logic & Cart -->
+    <script src="assets/js/dastech-data.js"></script>
+    <script src="assets/js/cart.js"></script>
+
+    <script>
+      document.getElementById('currentYear').textContent = new Date().getFullYear();
+
+      // Retrieve product from URL parameter
+      const urlParams = new URLSearchParams(window.location.search);
+      const productId = urlParams.get('id') || 'dt-prod-1';
+
+      function loadProductDetails() {
+        if (!window.DasTechData || !window.DasTechData.products) return;
+
+        const product = window.DasTechData.products.find(p => p.id === productId) || window.DasTechData.products[0];
+
+        // Page title & meta
+        document.title = `${product.name} — DasTech`;
+        document.getElementById('breadcrumbProductName').textContent = product.name;
+
+        // Hero fields
+        document.getElementById('detailProductImage').src = product.image;
+        document.getElementById('detailProductCategory').textContent = product.categoryName || product.category;
+        document.getElementById('detailProductName').textContent = product.name;
+        document.getElementById('detailProductTagline').textContent = product.tagline;
+        document.getElementById('detailProductRating').textContent = product.rating;
+        document.getElementById('detailProductReviews').textContent = `(${product.reviewsCount} reviews)`;
+        document.getElementById('detailProductPrice').textContent = `$${product.price}`;
+        if (product.originalPrice) {
+          document.getElementById('detailProductOriginalPrice').textContent = `$${product.originalPrice}`;
+        } else {
+          document.getElementById('detailProductOriginalPrice').style.display = 'none';
+        }
+
+        // Overview
+        document.getElementById('detailProductOverview').textContent = product.overview;
+
+        // Features
+        const featuresContainer = document.getElementById('detailFeaturesList');
+        if (featuresContainer && product.features) {
+          featuresContainer.innerHTML = product.features.map(f => `
+            <div class="col-md-6">
+              <div class="p-3 bg-light rounded-3 h-100">
+                <div class="fw-bold mb-1"><i class="bi bi-check-circle-fill text-primary me-2"></i>${f.title}</div>
+                <div class="text-muted small">${f.desc}</div>
+              </div>
+            </div>
+          `).join('');
+        }
+
+        // What's Included
+        const whatsIncludedContainer = document.getElementById('detailWhatsIncludedList');
+        if (whatsIncludedContainer && product.whatsIncluded) {
+          whatsIncludedContainer.innerHTML = product.whatsIncluded.map(item => `
+            <li class="list-group-item bg-transparent px-0 py-2 d-flex align-items-center">
+              <i class="bi bi-file-earmark-code-fill text-primary me-3 fs-5"></i>
+              <span>${item}</span>
+            </li>
+          `).join('');
+        }
+
+        // Tech Stack
+        const techStackContainer = document.getElementById('detailTechStack');
+        if (techStackContainer && product.technologies) {
+          techStackContainer.innerHTML = product.technologies.map(t => `
+            <span class="tech-badge">${t}</span>
+          `).join('');
+        }
+
+        // Requirements
+        const reqContainer = document.getElementById('detailRequirementsList');
+        if (reqContainer && product.requirements) {
+          reqContainer.innerHTML = product.requirements.map(r => `
+            <li class="mb-1">${r}</li>
+          `).join('');
+        }
+
+        // FAQ
+        const faqContainer = document.getElementById('productFaqAccordion');
+        if (faqContainer && product.faq) {
+          faqContainer.innerHTML = product.faq.map((item, idx) => `
+            <div class="accordion-item border-0 mb-2 rounded-3 overflow-hidden bg-light">
+              <h2 class="accordion-header" id="faqHead${idx}">
+                <button class="accordion-button bg-light fw-bold ${idx !== 0 ? 'collapsed' : ''}" type="button" data-bs-toggle="collapse" data-bs-target="#faqCollapse${idx}">
+                  ${item.q}
+                </button>
+              </h2>
+              <div id="faqCollapse${idx}" class="accordion-collapse collapse ${idx === 0 ? 'show' : ''}" data-bs-parent="#productFaqAccordion">
+                <div class="accordion-body text-muted small">
+                  ${item.a}
+                </div>
+              </div>
+            </div>
+          `).join('');
+        }
+
+        // Attach action buttons
+        document.getElementById('detailAddToCartBtn').addEventListener('click', () => {
+          DasTechCart.addItem(product.id, false);
+        });
+
+        document.getElementById('detailBuyNowBtn').addEventListener('click', () => {
+          DasTechCart.addItem(product.id, true);
+        });
+      }
+
+      document.addEventListener('DOMContentLoaded', loadProductDetails);
+    </script>
+  </body>
+</html>

@@ -1,0 +1,305 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Project Case Study — DasTech</title>
+    <meta name="description" content="In-depth technical architecture, problem statement, solution design, and measured business impact for DasTech enterprise projects.">
+
+    <!-- Bootstrap 5 CSS -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css">
+    <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
+
+    <!-- DasTech Master Design System -->
+    <link rel="stylesheet" href="style.css">
+  </head>
+  <body>
+    <!-- Top Navigation Bar -->
+    <nav class="navbar navbar-expand-lg dastech-navbar sticky-top" id="mainNavbar">
+      <div class="container">
+        <a class="dastech-brand" href="index.html">
+          <span class="brand-icon"><i class="bi bi-cpu-fill"></i></span>
+          <span>Das<span class="brand-text-accent">Tech</span></span>
+        </a>
+
+        <div class="d-flex align-items-center d-lg-none gap-2">
+          <button class="cart-btn-trigger" data-dastech-open-cart aria-label="Open Shopping Cart">
+            <i class="bi bi-bag-fill"></i>
+            <span class="dastech-cart-badge" style="display: none;">0</span>
+          </button>
+          
+          <button class="navbar-toggler border-0 p-2" type="button" data-bs-toggle="collapse" data-bs-target="#navbarContent">
+            <i class="bi bi-list fs-2 text-dark"></i>
+          </button>
+        </div>
+
+        <div class="collapse navbar-collapse" id="navbarContent">
+          <ul class="navbar-nav mx-auto mb-2 mb-lg-0">
+            <li class="nav-item">
+              <a class="nav-link" href="index.html">Home</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="products.html">Digital Products</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link active" aria-current="page" href="projects.html">Projects</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="services-page.html">Services</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="about.html">About</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="index.html#contact_us">Contact</a>
+            </li>
+          </ul>
+
+          <div class="nav-actions d-none d-lg-flex">
+            <button class="cart-btn-trigger" data-dastech-open-cart title="Shopping Cart">
+              <i class="bi bi-bag-fill"></i>
+              <span class="dastech-cart-badge" style="display: none;">0</span>
+            </button>
+            <a href="login.html" class="btn btn-dastech-ghost btn-sm"><i class="bi bi-person-fill"></i> Portal</a>
+            <a href="index.html#contact_us" class="btn btn-dastech-primary btn-sm">Start a Project</a>
+          </div>
+        </div>
+      </div>
+    </nav>
+
+    <!-- Case Study Main Container -->
+    <main class="py-5">
+      <div class="container">
+        <!-- Breadcrumb -->
+        <nav aria-label="breadcrumb" class="mb-4">
+          <ol class="breadcrumb">
+            <li class="breadcrumb-item"><a href="index.html">Home</a></li>
+            <li class="breadcrumb-item"><a href="projects.html">Projects</a></li>
+            <li class="breadcrumb-item active" aria-current="page" id="breadcrumbProjectTitle">Case Study</li>
+          </ol>
+        </nav>
+
+        <!-- Project Hero Card -->
+        <div class="card border-0 shadow-sm rounded-4 p-4 p-lg-5 mb-5 bg-white">
+          <div class="row g-5 align-items-center">
+            <div class="col-lg-6">
+              <div class="d-flex align-items-center gap-2 mb-2">
+                <span class="category-badge" id="caseCategory">FinTech & Cloud</span>
+                <span class="badge bg-light text-muted border small" id="caseYear">2025</span>
+              </div>
+              <h1 class="display-6 fw-bold mb-3" id="caseTitle">FinPulse Neo-Banking & Wealth Platform</h1>
+              <p class="text-muted lead mb-4" id="caseShortDesc">High-concurrency digital banking platform with real-time peer-to-peer transfers, investment portfolios, and automated fraud scoring.</p>
+              
+              <div class="p-3 bg-light rounded-3 border mb-4">
+                <div class="small text-muted mb-1"><i class="bi bi-building me-1"></i> Client Organization</div>
+                <div class="fw-bold fs-6 text-dark" id="caseClient">FinPulse Financial Ltd.</div>
+              </div>
+
+              <div class="d-flex flex-wrap gap-2 mb-4" id="caseTechBadges">
+                <!-- Tech badges injected by JS -->
+              </div>
+
+              <a href="index.html#contact_us" class="btn btn-dastech-primary btn-dastech-lg">
+                <i class="bi bi-rocket-takeoff-fill me-2"></i> Request Similar Solution
+              </a>
+            </div>
+
+            <div class="col-lg-6">
+              <div class="rounded-4 overflow-hidden shadow-sm border bg-dark">
+                <img id="caseImage" src="images/home-dev.png" alt="Case Study Image" class="img-fluid w-100 object-fit-cover" style="max-height: 420px;">
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- Measurable Results Bar -->
+        <div class="row g-4 mb-5" id="caseResultsRow">
+          <!-- Populated by JS -->
+        </div>
+
+        <!-- Case Study Sections -->
+        <div class="row g-4">
+          <div class="col-lg-8">
+            <!-- Overview -->
+            <div class="card border-0 shadow-sm rounded-4 p-4 p-md-5 mb-4 bg-white">
+              <h3 class="fw-bold mb-3"><i class="bi bi-info-circle text-primary me-2"></i> Executive Overview</h3>
+              <p class="text-muted lead fs-6" id="caseOverview"></p>
+            </div>
+
+            <!-- Problem & Solution Matrix -->
+            <div class="row g-4 mb-4">
+              <div class="col-md-6">
+                <div class="card border-0 shadow-sm rounded-4 p-4 h-100 bg-white border-start border-danger border-4">
+                  <h4 class="fw-bold mb-3 text-danger"><i class="bi bi-exclamation-octagon-fill me-2"></i> The Problem</h4>
+                  <p class="text-muted small mb-0" id="caseProblem"></p>
+                </div>
+              </div>
+              <div class="col-md-6">
+                <div class="card border-0 shadow-sm rounded-4 p-4 h-100 bg-white border-start border-success border-4">
+                  <h4 class="fw-bold mb-3 text-success"><i class="bi bi-check-circle-fill me-2"></i> The DasTech Solution</h4>
+                  <p class="text-muted small mb-0" id="caseSolution"></p>
+                </div>
+              </div>
+            </div>
+
+            <!-- Implemented Features -->
+            <div class="card border-0 shadow-sm rounded-4 p-4 p-md-5 bg-white">
+              <h3 class="fw-bold mb-4"><i class="bi bi-gear-fill text-primary me-2"></i> Key Technical Features & Capabilities</h3>
+              <div class="d-flex flex-column gap-3" id="caseFeaturesList">
+                <!-- Features injected by JS -->
+              </div>
+            </div>
+          </div>
+
+          <!-- Sidebar CTA -->
+          <div class="col-lg-4">
+            <div class="card border-0 shadow-sm rounded-4 p-4 mb-4 bg-white">
+              <h4 class="fw-bold mb-3 fs-5">Project Scope Summary</h4>
+              <ul class="list-unstyled text-muted small mb-0 d-flex flex-column gap-2">
+                <li><i class="bi bi-check2-circle text-primary me-2"></i> Custom Architecture & Design</li>
+                <li><i class="bi bi-check2-circle text-primary me-2"></i> Database & API Development</li>
+                <li><i class="bi bi-check2-circle text-primary me-2"></i> Automated CI/CD Deployment</li>
+                <li><i class="bi bi-check2-circle text-primary me-2"></i> High-Availability Cloud Setup</li>
+                <li><i class="bi bi-check2-circle text-primary me-2"></i> 24/7 SLA Maintenance</li>
+              </ul>
+            </div>
+
+            <div class="card border-0 shadow-sm rounded-4 p-4 bg-dark text-white text-center">
+              <h4 class="fw-bold mb-2 text-white">Start Your Project</h4>
+              <p class="small opacity-75 mb-3">Looking to build something innovative? Our engineering team is ready to assist from concept to launch.</p>
+              <a href="index.html#contact_us" class="btn btn-dastech-primary fw-bold w-100">Get Free Estimate</a>
+            </div>
+          </div>
+        </div>
+      </div>
+    </main>
+
+    <!-- Professional DasTech Footer -->
+    <footer class="dastech-footer">
+      <div class="container">
+        <div class="row g-4">
+          <div class="col-lg-4 col-md-6">
+            <a class="footer-brand" href="index.html">
+              <span class="brand-icon"><i class="bi bi-cpu-fill"></i></span>
+              <span>Das<span class="text-primary">Tech</span></span>
+            </a>
+            <p class="footer-text">
+              DasTech is a modern digital products studio and full-service software development agency delivering high-velocity technology solutions.
+            </p>
+          </div>
+
+          <div class="col-lg-2 col-md-6">
+            <h5 class="footer-heading">Navigation</h5>
+            <ul class="footer-links">
+              <li><a href="index.html">Home</a></li>
+              <li><a href="products.html">Digital Products</a></li>
+              <li><a href="projects.html">Portfolio Projects</a></li>
+              <li><a href="services-page.html">Services</a></li>
+              <li><a href="about.html">About Us</a></li>
+            </ul>
+          </div>
+
+          <div class="col-lg-3 col-md-6">
+            <h5 class="footer-heading">Digital Products</h5>
+            <ul class="footer-links">
+              <li><a href="product-details.html?id=dt-prod-1">Apex SaaS Analytics</a></li>
+              <li><a href="product-details.html?id=dt-prod-2">CloudGuard DevOps Kit</a></li>
+              <li><a href="product-details.html?id=dt-prod-3">Nova UI Pro Kit</a></li>
+              <li><a href="cart.html">View Shopping Cart</a></li>
+            </ul>
+          </div>
+
+          <div class="col-lg-3 col-md-6">
+            <h5 class="footer-heading">Client Portal</h5>
+            <ul class="footer-links">
+              <li><a href="login.html"><i class="bi bi-lock-fill me-1"></i> Admin Login</a></li>
+              <li><a href="register.html"><i class="bi bi-person-plus-fill me-1"></i> Create Account</a></li>
+              <li><a href="dashboard.html"><i class="bi bi-speedometer2 me-1"></i> Dashboard</a></li>
+            </ul>
+          </div>
+        </div>
+
+        <div class="footer-bottom d-flex flex-column flex-md-row justify-content-between align-items-center gap-3">
+          <div class="text-muted">
+            &copy; <span id="currentYear"></span> DasTech. All Rights Reserved.
+          </div>
+          <div class="d-flex gap-3 text-muted small">
+            <a href="#" class="text-muted">Privacy Policy</a>
+            <span>•</span>
+            <a href="#" class="text-muted">Terms of Service</a>
+          </div>
+        </div>
+      </div>
+    </footer>
+
+    <!-- Scripts -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
+    
+    <!-- DasTech Core Logic & Cart -->
+    <script src="assets/js/dastech-data.js"></script>
+    <script src="assets/js/cart.js"></script>
+
+    <script>
+      document.getElementById('currentYear').textContent = new Date().getFullYear();
+
+      const urlParams = new URLSearchParams(window.location.search);
+      const projectId = urlParams.get('id') || 'dt-proj-1';
+
+      function loadProjectDetails() {
+        if (!window.DasTechData || !window.DasTechData.projects) return;
+
+        const project = window.DasTechData.projects.find(p => p.id === projectId) || window.DasTechData.projects[0];
+
+        // Header & Meta
+        document.title = `${project.title} — DasTech Case Study`;
+        document.getElementById('breadcrumbProjectTitle').textContent = project.title;
+
+        // Hero fields
+        document.getElementById('caseCategory').textContent = project.category;
+        document.getElementById('caseYear').textContent = project.year;
+        document.getElementById('caseTitle').textContent = project.title;
+        document.getElementById('caseShortDesc').textContent = project.shortDescription;
+        document.getElementById('caseClient').textContent = project.client;
+        document.getElementById('caseImage').src = project.image;
+
+        // Tech Badges
+        const techContainer = document.getElementById('caseTechBadges');
+        if (techContainer && project.technologies) {
+          techContainer.innerHTML = project.technologies.map(t => `<span class="tech-badge">${t}</span>`).join('');
+        }
+
+        // Metrics Row
+        const resultsContainer = document.getElementById('caseResultsRow');
+        if (resultsContainer && project.results) {
+          resultsContainer.innerHTML = project.results.map(r => `
+            <div class="col-md-4">
+              <div class="card border-0 shadow-sm rounded-4 p-4 text-center bg-white h-100">
+                <div class="display-6 fw-bold text-primary mb-1">${r.metric}</div>
+                <div class="text-muted small">${r.label}</div>
+              </div>
+            </div>
+          `).join('');
+        }
+
+        // Overview / Problem / Solution
+        document.getElementById('caseOverview').textContent = project.overview;
+        document.getElementById('caseProblem').textContent = project.problem;
+        document.getElementById('caseSolution').textContent = project.solution;
+
+        // Features list
+        const featuresContainer = document.getElementById('caseFeaturesList');
+        if (featuresContainer && project.features) {
+          featuresContainer.innerHTML = project.features.map(f => `
+            <div class="p-3 bg-light rounded-3 d-flex align-items-center gap-3">
+              <i class="bi bi-check-circle-fill text-success fs-5"></i>
+              <div class="text-dark fw-semibold">${f}</div>
+            </div>
+          `).join('');
+        }
+      }
+
+      document.addEventListener('DOMContentLoaded', loadProjectDetails);
+    </script>
+  </body>
+</html>
