@@ -117,11 +117,11 @@
                 
                 <div class="d-flex flex-column gap-3 mb-4">
                   <!-- Credit Card -->
-                  <label class="p-3 bg-dark rounded-3 border border-secondary border-opacity-25 d-flex align-items-center justify-content-between cursor-pointer">
+                  <label class="p-3 rounded-3 border border-secondary border-opacity-10 bg-subsurface d-flex align-items-center justify-content-between cursor-pointer">
                     <div class="d-flex align-items-center">
                       <input type="radio" name="paymentMethod" value="card" checked class="form-check-input me-3">
                       <div>
-                        <div class="fw-bold text-white">Credit or Debit Card</div>
+                        <div class="fw-bold">Credit or Debit Card</div>
                         <div class="text-muted small">Visa, Mastercard, American Express</div>
                       </div>
                     </div>
@@ -131,11 +131,11 @@
                   </label>
 
                   <!-- PayPal -->
-                  <label class="p-3 bg-dark rounded-3 border border-secondary border-opacity-25 d-flex align-items-center justify-content-between cursor-pointer">
+                  <label class="p-3 rounded-3 border border-secondary border-opacity-10 bg-subsurface d-flex align-items-center justify-content-between cursor-pointer">
                     <div class="d-flex align-items-center">
                       <input type="radio" name="paymentMethod" value="paypal" class="form-check-input me-3">
                       <div>
-                        <div class="fw-bold text-white">PayPal</div>
+                        <div class="fw-bold">PayPal</div>
                         <div class="text-muted small">Safe payment with PayPal balance or connected bank</div>
                       </div>
                     </div>
@@ -150,7 +150,7 @@
                       <label class="form-label-dastech">Card Number</label>
                       <div class="input-group">
                         <input type="text" class="form-control form-control-light" placeholder="4242 •••• •••• 4242" maxlength="19" required>
-                        <span class="input-group-text bg-dark border-secondary border-opacity-25 text-muted"><i class="bi bi-lock-fill"></i></span>
+                        <span class="input-group-text text-muted"><i class="bi bi-lock-fill"></i></span>
                       </div>
                     </div>
                     <div class="col-md-6">
@@ -187,7 +187,7 @@
 
                 <div class="d-flex justify-content-between mb-2 text-muted">
                   <span>Subtotal</span>
-                  <span class="fw-semibold text-white" id="checkoutSubtotal">$0.00</span>
+                  <span class="fw-semibold text-main" id="checkoutSubtotal">$0.00</span>
                 </div>
                 <div class="d-flex justify-content-between mb-3 text-muted">
                   <span>Digital Fulfillment</span>
@@ -220,17 +220,17 @@
               <div class="p-3 bg-success bg-opacity-20 text-success rounded-circle d-inline-flex mx-auto mb-3">
                 <i class="bi bi-check-circle-fill" style="font-size: 3rem;"></i>
               </div>
-              <h3 class="fw-bold mb-2 text-white">Order Confirmed!</h3>
+              <h3 class="fw-bold mb-2">Order Confirmed!</h3>
               <p class="text-muted small mb-4">Thank you for your purchase from DasTech. Your license keys, GitHub access, and source files have been generated.</p>
               
-              <div class="p-3 bg-dark rounded-3 text-start mb-4 border border-secondary border-opacity-25">
+              <div class="p-3 rounded-3 text-start mb-4 border border-secondary border-opacity-10 bg-subsurface">
                 <div class="d-flex justify-content-between small text-muted mb-1">
                   <span>Order Reference:</span>
-                  <span class="fw-bold text-white font-monospace">DT-94819-US</span>
+                  <span class="fw-bold font-monospace">DT-94819-US</span>
                 </div>
                 <div class="d-flex justify-content-between small text-muted">
                   <span>Delivery Email:</span>
-                  <span class="fw-bold text-white" id="successDeliveryEmail">alex@company.com</span>
+                  <span class="fw-bold" id="successDeliveryEmail">alex@company.com</span>
                 </div>
               </div>
 
