@@ -94,12 +94,12 @@
                 <span class="category-badge" id="caseCategory">FinTech & Cloud</span>
                 <span class="badge bg-secondary bg-opacity-20 text-muted border small font-monospace" id="caseYear">2025</span>
               </div>
-              <h1 class="display-6 fw-bold mb-3 text-white" id="caseTitle">FinPulse Neo-Banking & Wealth Platform</h1>
+              <h1 class="display-6 fw-bold mb-3" id="caseTitle">FinPulse Neo-Banking & Wealth Platform</h1>
               <p class="text-muted lead mb-4" id="caseShortDesc">High-concurrency digital banking platform with real-time peer-to-peer transfers, investment portfolios, and automated fraud scoring.</p>
               
-              <div class="p-3 bg-dark rounded-3 border border-secondary border-opacity-25 mb-4">
+              <div class="p-3 rounded-3 border border-secondary border-opacity-10 bg-subsurface mb-4">
                 <div class="small text-muted mb-1"><i class="bi bi-building me-1"></i> Client Organization</div>
-                <div class="fw-bold fs-6 text-white" id="caseClient">FinPulse Financial Ltd.</div>
+                <div class="fw-bold fs-6" id="caseClient">FinPulse Financial Ltd.</div>
               </div>
 
               <div class="d-flex flex-wrap gap-2 mb-4" id="caseTechBadges">
@@ -112,7 +112,7 @@
             </div>
 
             <div class="col-lg-6">
-              <div class="rounded-4 overflow-hidden shadow-sm border border-secondary border-opacity-25 bg-dark" data-tilt data-cursor="PREVIEW">
+              <div class="rounded-4 overflow-hidden shadow-sm border border-secondary border-opacity-10" data-tilt data-cursor="PREVIEW">
                 <img id="caseImage" src="images/home-dev.png" alt="Case Study Image" class="img-fluid w-100 object-fit-cover" style="max-height: 420px;">
               </div>
             </div>
@@ -171,9 +171,9 @@
               </ul>
             </div>
 
-            <div class="card border-0 shadow-sm rounded-4 p-4 bg-dark text-white text-center border border-secondary border-opacity-25">
-              <h4 class="fw-bold mb-2 text-white">Start Your Project</h4>
-              <p class="small opacity-75 mb-3">Looking to build something innovative? Our engineering team is ready to assist from concept to launch.</p>
+            <div class="card border-0 shadow-sm rounded-4 p-4 text-center border border-secondary border-opacity-10 bg-subsurface">
+              <h4 class="fw-bold mb-2">Start Your Project</h4>
+              <p class="small text-muted mb-3">Looking to build something innovative? Our engineering team is ready to assist from concept to launch.</p>
               <a href="index.html#contact_us" class="btn btn-dastech-primary fw-bold w-100" data-magnetic>Get Free Estimate</a>
             </div>
           </div>
@@ -298,9 +298,9 @@
         const featuresContainer = document.getElementById('caseFeaturesList');
         if (featuresContainer && project.features) {
           featuresContainer.innerHTML = project.features.map(f => `
-            <div class="p-3 bg-dark rounded-3 d-flex align-items-center gap-3 border border-secondary border-opacity-25">
+            <div class="p-3 rounded-3 d-flex align-items-center gap-3 border border-secondary border-opacity-10 bg-subsurface">
               <i class="bi bi-check-circle-fill text-success fs-5"></i>
-              <div class="text-white fw-semibold">${f}</div>
+              <div class="fw-semibold">${f}</div>
             </div>
           `).join('');
         }
