@@ -1,19 +1,20 @@
 /* ==========================================================================
-   DasTech Master Next-Gen Stylesheet & Futuristic Design System (2026 Edition)
+   DasTech Master Stylesheet & Dual-Theme Design System (2026 Edition)
    70% Clean UI | 20% Premium Interaction | 10% WOW Experimental Experience
+   Fully Independent, High-Contrast Color Templates for Dark & Light Themes
    ========================================================================== */
 
 @import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&family=Plus+Jakarta+Sans:wght@400;500;600;700;800;900&family=JetBrains+Mono:wght@400;500;600;700&display=swap');
 
 /* ==========================================================================
-   Design Tokens & CSS Variables (Dark by Default + Light Mode Support)
+   1. Design Tokens & CSS Variables (Dark by Default)
    ========================================================================== */
-:root {
+:root, [data-theme="dark"] {
   /* Brand Core Tokens */
   --dt-primary: #3B82F6;
   --dt-primary-hover: #2563EB;
   --dt-primary-glow: rgba(59, 130, 246, 0.35);
-  --dt-primary-light: rgba(59, 130, 246, 0.12);
+  --dt-primary-light: rgba(59, 130, 246, 0.14);
   
   --dt-accent-purple: #818CF8;
   --dt-accent-cyan: #06B6D4;
@@ -21,30 +22,44 @@
   --dt-accent-amber: #F59E0B;
   --dt-danger: #EF4444;
 
-  /* Dark Theme Surfaces (Default Next-Gen Tech Obsidian) */
+  /* 🌌 Dark Theme Surfaces (Obsidian High-Tech Studio) */
   --dt-bg-body: #07090E;
   --dt-bg-card: #0F131C;
   --dt-bg-card-hover: #161C28;
-  --dt-bg-card-glass: rgba(15, 19, 28, 0.75);
-  --dt-bg-header: rgba(7, 9, 14, 0.85);
+  --dt-bg-subsurface: #121824;
+  --dt-bg-card-glass: rgba(15, 19, 28, 0.85);
+  --dt-bg-header: rgba(7, 9, 14, 0.88);
+  --dt-bg-footer: #0A0D14;
+  --dt-bg-modal: #0F131C;
+  --dt-bg-drawer: #0F131C;
   
-  --dt-border: rgba(255, 255, 255, 0.08);
-  --dt-border-hover: rgba(59, 130, 246, 0.4);
+  /* Borders */
+  --dt-border: rgba(255, 255, 255, 0.09);
+  --dt-border-hover: rgba(59, 130, 246, 0.45);
   --dt-border-glow: rgba(59, 130, 246, 0.25);
+  --dt-border-subtle: rgba(255, 255, 255, 0.05);
 
+  /* Typography */
   --dt-text-main: #F8FAFC;
+  --dt-text-headings: #FFFFFF;
   --dt-text-muted: #94A3B8;
   --dt-text-light: #64748B;
   --dt-text-white: #FFFFFF;
 
-  --dt-grid-pattern: rgba(255, 255, 255, 0.03);
+  /* Forms & Tables */
+  --dt-input-bg: rgba(255, 255, 255, 0.04);
+  --dt-input-border: rgba(255, 255, 255, 0.12);
+  --dt-input-text: #FFFFFF;
+  --dt-table-head-bg: #121824;
+  --dt-table-border: rgba(255, 255, 255, 0.08);
 
-  /* Shadows */
-  --dt-shadow-sm: 0 2px 4px rgba(0, 0, 0, 0.2);
-  --dt-shadow-md: 0 8px 16px rgba(0, 0, 0, 0.35);
-  --dt-shadow-lg: 0 16px 32px rgba(0, 0, 0, 0.5);
-  --dt-shadow-xl: 0 24px 48px rgba(0, 0, 0, 0.6);
-  --dt-shadow-glow: 0 0 35px rgba(59, 130, 246, 0.25);
+  /* Patterns & Shadows */
+  --dt-grid-pattern: rgba(255, 255, 255, 0.035);
+  --dt-shadow-sm: 0 2px 4px rgba(0, 0, 0, 0.25);
+  --dt-shadow-md: 0 8px 20px rgba(0, 0, 0, 0.45);
+  --dt-shadow-lg: 0 16px 36px rgba(0, 0, 0, 0.6);
+  --dt-shadow-xl: 0 24px 50px rgba(0, 0, 0, 0.75);
+  --dt-shadow-glow: 0 0 35px rgba(59, 130, 246, 0.3);
 
   /* Radii */
   --dt-radius-sm: 8px;
@@ -55,34 +70,68 @@
 
   /* Transitions */
   --dt-transition-fast: all 0.15s cubic-bezier(0.16, 1, 0.3, 1);
-  --dt-transition: all 0.3s cubic-bezier(0.16, 1, 0.3, 1);
-  --dt-transition-slow: all 0.6s cubic-bezier(0.16, 1, 0.3, 1);
-}
-
-/* Light Theme Variables */
-[data-theme="light"] {
-  --dt-bg-body: #F8FAFC;
-  --dt-bg-card: #FFFFFF;
-  --dt-bg-card-hover: #F1F5F9;
-  --dt-bg-card-glass: rgba(255, 255, 255, 0.85);
-  --dt-bg-header: rgba(255, 255, 255, 0.9);
-
-  --dt-border: #E2E8F0;
-  --dt-border-hover: #CBD5E1;
-  --dt-border-glow: rgba(59, 130, 246, 0.2);
-
-  --dt-text-main: #0F172A;
-  --dt-text-muted: #64748B;
-  --dt-text-light: #94A3B8;
-  --dt-text-white: #0F172A;
-
-  --dt-grid-pattern: rgba(0, 0, 0, 0.04);
-  --dt-shadow-md: 0 4px 12px rgba(0, 0, 0, 0.06);
-  --dt-shadow-xl: 0 20px 30px rgba(0, 0, 0, 0.08);
+  --dt-transition: all 0.25s cubic-bezier(0.16, 1, 0.3, 1);
+  --dt-transition-slow: all 0.5s cubic-bezier(0.16, 1, 0.3, 1);
 }
 
 /* ==========================================================================
-   Base & Reset
+   2. Light Theme Palette (☀️ Clean Apple / Stripe Pro Studio)
+   ========================================================================== */
+[data-theme="light"] {
+  /* Brand Core Tokens (Refined for High Contrast on Light Surfaces) */
+  --dt-primary: #2563EB;
+  --dt-primary-hover: #1D4ED8;
+  --dt-primary-glow: rgba(37, 99, 235, 0.25);
+  --dt-primary-light: rgba(37, 99, 235, 0.08);
+  
+  --dt-accent-purple: #6366F1;
+  --dt-accent-cyan: #0284C7;
+  --dt-accent-emerald: #059669;
+  --dt-accent-amber: #D97706;
+  --dt-danger: #DC2626;
+
+  /* ☀️ Light Theme Surfaces */
+  --dt-bg-body: #F8FAFC;
+  --dt-bg-card: #FFFFFF;
+  --dt-bg-card-hover: #F1F5F9;
+  --dt-bg-subsurface: #F1F5F9;
+  --dt-bg-card-glass: rgba(255, 255, 255, 0.92);
+  --dt-bg-header: rgba(255, 255, 255, 0.94);
+  --dt-bg-footer: #FFFFFF;
+  --dt-bg-modal: #FFFFFF;
+  --dt-bg-drawer: #FFFFFF;
+
+  /* Borders */
+  --dt-border: #E2E8F0;
+  --dt-border-hover: #94A3B8;
+  --dt-border-glow: rgba(37, 99, 235, 0.18);
+  --dt-border-subtle: #F1F5F9;
+
+  /* Typography (Rich Dark Slate for High Contrast) */
+  --dt-text-main: #1E293B;
+  --dt-text-headings: #0F172A;
+  --dt-text-muted: #64748B;
+  --dt-text-light: #94A3B8;
+  --dt-text-white: #0F172A; /* Inverted for light mode headers */
+
+  /* Forms & Tables */
+  --dt-input-bg: #FFFFFF;
+  --dt-input-border: #CBD5E1;
+  --dt-input-text: #0F172A;
+  --dt-table-head-bg: #F8FAFC;
+  --dt-table-border: #E2E8F0;
+
+  /* Patterns & Shadows */
+  --dt-grid-pattern: rgba(15, 23, 42, 0.035);
+  --dt-shadow-sm: 0 1px 3px rgba(0, 0, 0, 0.05);
+  --dt-shadow-md: 0 4px 14px rgba(0, 0, 0, 0.06);
+  --dt-shadow-lg: 0 12px 28px rgba(0, 0, 0, 0.08);
+  --dt-shadow-xl: 0 20px 40px rgba(0, 0, 0, 0.1);
+  --dt-shadow-glow: 0 0 25px rgba(37, 99, 235, 0.15);
+}
+
+/* ==========================================================================
+   3. Base & Reset
    ========================================================================== */
 *, *::before, *::after {
   box-sizing: border-box;
@@ -102,14 +151,14 @@ body {
   margin: 0;
   padding: 0;
   -webkit-font-smoothing: antialiased;
-  transition: background-color 0.3s ease, color 0.3s ease;
+  transition: background-color 0.25s ease, color 0.25s ease;
   background-image: radial-gradient(var(--dt-grid-pattern) 1px, transparent 1px);
   background-size: 28px 28px;
 }
 
 h1, h2, h3, h4, h5, h6, .display-font {
   font-family: 'Plus Jakarta Sans', sans-serif;
-  color: var(--dt-text-main);
+  color: var(--dt-text-headings);
   font-weight: 700;
   letter-spacing: -0.02em;
 }
@@ -130,7 +179,152 @@ img {
 }
 
 /* ==========================================================================
-   Custom Cursor & Interactive Badges (Desktop)
+   4. Universal Theme Surface Mappings & Overrides
+   ========================================================================== */
+/* Background helpers */
+.bg-dark-card {
+  background-color: var(--dt-bg-card) !important;
+  color: var(--dt-text-main) !important;
+}
+
+/* Map Bootstrap's bg-dark & bg-light to theme tokens */
+[data-theme="dark"] .bg-dark,
+[data-theme="dark"] .bg-darker {
+  background-color: var(--dt-bg-subsurface) !important;
+  color: var(--dt-text-main) !important;
+}
+
+[data-theme="light"] .bg-dark,
+[data-theme="light"] .bg-darker,
+[data-theme="light"] .bg-dark-card {
+  background-color: var(--dt-bg-card) !important;
+  color: var(--dt-text-main) !important;
+}
+
+[data-theme="light"] .bg-light {
+  background-color: var(--dt-bg-body) !important;
+}
+
+/* Card overrides */
+.card {
+  background-color: var(--dt-bg-card);
+  color: var(--dt-text-main);
+  border-color: var(--dt-border);
+}
+
+/* Modal overrides */
+.modal-content {
+  background-color: var(--dt-bg-modal) !important;
+  color: var(--dt-text-main) !important;
+  border: 1px solid var(--dt-border) !important;
+}
+
+.modal-header {
+  border-bottom: 1px solid var(--dt-border) !important;
+}
+
+/* Table overrides */
+.table {
+  color: var(--dt-text-main) !important;
+  border-color: var(--dt-table-border) !important;
+}
+
+.table th {
+  background-color: var(--dt-table-head-bg) !important;
+  color: var(--dt-text-muted) !important;
+  border-bottom: 1px solid var(--dt-table-border) !important;
+}
+
+.table td {
+  border-bottom: 1px solid var(--dt-table-border) !important;
+  background-color: transparent !important;
+}
+
+/* Form input overrides */
+.form-control, .form-select, .form-control-dastech, .form-control-light {
+  background-color: var(--dt-input-bg) !important;
+  border: 1px solid var(--dt-input-border) !important;
+  color: var(--dt-input-text) !important;
+  border-radius: var(--dt-radius-md);
+  padding: 0.75rem 1rem;
+  font-size: 0.95rem;
+  transition: var(--dt-transition-fast);
+}
+
+.form-control:focus, .form-select:focus, .form-control-dastech:focus, .form-control-light:focus {
+  border-color: var(--dt-primary) !important;
+  box-shadow: 0 0 0 3px var(--dt-primary-glow) !important;
+  outline: none;
+}
+
+.form-label-dastech, .form-label {
+  color: var(--dt-text-muted) !important;
+  font-size: 0.88rem;
+  font-weight: 600;
+  margin-bottom: 0.4rem;
+}
+
+.input-group-text {
+  background-color: var(--dt-bg-subsurface) !important;
+  border-color: var(--dt-input-border) !important;
+  color: var(--dt-text-muted) !important;
+}
+
+/* Accordion overrides */
+.accordion-item {
+  background-color: var(--dt-bg-card) !important;
+  border: 1px solid var(--dt-border) !important;
+}
+
+.accordion-button {
+  background-color: var(--dt-bg-card) !important;
+  color: var(--dt-text-headings) !important;
+  box-shadow: none !important;
+}
+
+.accordion-button:not(.collapsed) {
+  background-color: var(--dt-primary-light) !important;
+  color: var(--dt-primary) !important;
+}
+
+.accordion-button::after {
+  filter: var(--dt-accordion-arrow, invert(0.8));
+}
+
+[data-theme="light"] .accordion-button::after {
+  filter: none;
+}
+
+.accordion-body {
+  color: var(--dt-text-muted) !important;
+}
+
+/* Light Theme Text Color Normalize */
+[data-theme="light"] .text-white {
+  color: var(--dt-text-headings) !important;
+}
+
+[data-theme="light"] .text-light {
+  color: var(--dt-text-muted) !important;
+}
+
+[data-theme="light"] .text-dark {
+  color: var(--dt-text-headings) !important;
+}
+
+/* But keep white text on primary buttons, badges, and dark hero gradients */
+.btn-dastech-primary,
+.btn-dastech-primary *,
+.badge.bg-primary,
+.badge.bg-success,
+.badge.bg-danger,
+.universe-core-node,
+.universe-core-node * {
+  color: #FFFFFF !important;
+}
+
+/* ==========================================================================
+   5. Custom Cursor & Interactive Badges (Desktop)
    ========================================================================== */
 .dt-cursor-dot {
   position: fixed;
@@ -166,7 +360,7 @@ img {
 .dt-cursor-ring.is-hovering {
   width: 60px;
   height: 60px;
-  background: rgba(59, 130, 246, 0.08);
+  background: var(--dt-primary-light);
   border-color: var(--dt-primary);
 }
 
@@ -193,7 +387,7 @@ img {
 }
 
 /* ==========================================================================
-   Navigation Bar (Desktop & Mobile)
+   6. Navigation Bar
    ========================================================================== */
 .dastech-navbar {
   background: var(--dt-bg-header);
@@ -217,7 +411,7 @@ img {
   font-family: 'Plus Jakarta Sans', sans-serif;
   font-weight: 800;
   font-size: 1.45rem;
-  color: var(--dt-text-main);
+  color: var(--dt-text-headings);
   text-decoration: none;
   letter-spacing: -0.03em;
 }
@@ -226,7 +420,7 @@ img {
   width: 38px;
   height: 38px;
   background: linear-gradient(135deg, var(--dt-primary), var(--dt-accent-purple));
-  color: #fff;
+  color: #fff !important;
   border-radius: 10px;
   display: inline-flex;
   align-items: center;
@@ -322,7 +516,7 @@ img {
   top: -4px;
   right: -4px;
   background: var(--dt-primary);
-  color: #fff;
+  color: #fff !important;
   font-size: 0.7rem;
   font-weight: 700;
   min-width: 19px;
@@ -359,11 +553,11 @@ img {
 }
 
 /* ==========================================================================
-   Standardized Buttons & Magnetic States
+   7. Standardized Buttons & CTAs
    ========================================================================== */
 .btn-dastech-primary {
   background: linear-gradient(135deg, var(--dt-primary) 0%, #1D4ED8 100%);
-  color: #ffffff;
+  color: #ffffff !important;
   border: none;
   font-weight: 600;
   border-radius: var(--dt-radius-md);
@@ -378,7 +572,7 @@ img {
 
 .btn-dastech-primary:hover {
   background: linear-gradient(135deg, #1D4ED8 0%, #1E40AF 100%);
-  color: #ffffff;
+  color: #ffffff !important;
   transform: translateY(-2px);
   box-shadow: 0 8px 22px var(--dt-primary-glow);
 }
@@ -461,17 +655,12 @@ img {
   font-weight: 500;
   padding: 0.3rem 0.65rem;
   border-radius: var(--dt-radius-pill);
-  background: rgba(255, 255, 255, 0.05);
+  background: var(--dt-bg-subsurface);
   color: var(--dt-text-muted);
   border: 1px solid var(--dt-border);
   display: inline-flex;
   align-items: center;
   gap: 0.35rem;
-}
-
-[data-theme="light"] .tech-badge {
-  background: #F1F5F9;
-  color: #334155;
 }
 
 .category-badge {
@@ -500,7 +689,7 @@ img {
 }
 
 /* ==========================================================================
-   Section Components & Spotlight Cards
+   8. Section Components & Spotlight Cards
    ========================================================================== */
 .section-padding {
   padding: 6rem 0;
@@ -554,7 +743,7 @@ img {
   left: var(--mouse-x, 0px);
   width: 250px;
   height: 250px;
-  background: radial-gradient(circle, rgba(59, 130, 246, 0.12) 0%, transparent 70%);
+  background: radial-gradient(circle, var(--dt-primary-light) 0%, transparent 70%);
   transform: translate(-50%, -50%);
   pointer-events: none;
   opacity: 0;
@@ -572,12 +761,12 @@ img {
 }
 
 /* ==========================================================================
-   Hero Section
+   9. Hero Section
    ========================================================================== */
 .hero-section {
   position: relative;
   padding: 6.5rem 0 5.5rem;
-  background: radial-gradient(circle at 80% 20%, rgba(59, 130, 246, 0.09) 0%, transparent 60%),
+  background: radial-gradient(circle at 80% 20%, var(--dt-primary-light) 0%, transparent 60%),
               radial-gradient(circle at 10% 80%, rgba(129, 140, 248, 0.08) 0%, transparent 50%);
   overflow: hidden;
 }
@@ -591,7 +780,7 @@ img {
 }
 
 .hero-headline .text-gradient {
-  background: linear-gradient(135deg, var(--dt-primary) 0%, #A78BFA 50%, #38BDF8 100%);
+  background: linear-gradient(135deg, var(--dt-primary) 0%, #818CF8 50%, #06B6D4 100%);
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
 }
@@ -659,7 +848,7 @@ img {
 }
 
 /* ==========================================================================
-   Trust / Stats Bar
+   10. Trust / Stats Bar
    ========================================================================== */
 .stats-banner {
   background: var(--dt-bg-card);
@@ -680,10 +869,9 @@ img {
   font-family: 'Plus Jakarta Sans', sans-serif;
   font-size: 2.6rem;
   font-weight: 800;
-  color: var(--dt-text-main);
   line-height: 1;
   margin-bottom: 0.4rem;
-  background: linear-gradient(135deg, var(--dt-text-main) 30%, var(--dt-primary) 100%);
+  background: linear-gradient(135deg, var(--dt-text-headings) 30%, var(--dt-primary) 100%);
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
 }
@@ -695,7 +883,7 @@ img {
 }
 
 /* ==========================================================================
-   Bento Grid Section Architecture
+   11. Bento Grid Layout
    ========================================================================== */
 .bento-grid {
   display: grid;
@@ -728,7 +916,7 @@ img {
 .bento-card-12 { grid-column: span 12; }
 
 /* ==========================================================================
-   Digital Universe Node Graph (Interactive)
+   12. Digital Universe Node Graph (Interactive)
    ========================================================================== */
 .universe-section-wrapper {
   background: var(--dt-bg-card);
@@ -744,7 +932,7 @@ img {
   position: relative;
   width: 100%;
   height: 480px;
-  background: radial-gradient(circle at 50% 50%, rgba(59, 130, 246, 0.08) 0%, transparent 70%);
+  background: radial-gradient(circle at 50% 50%, var(--dt-primary-light) 0%, transparent 70%);
   border-radius: var(--dt-radius-lg);
   border: 1px dashed var(--dt-border);
   overflow: hidden;
@@ -763,7 +951,7 @@ img {
   flex-direction: column;
   align-items: center;
   justify-content: center;
-  color: #fff;
+  color: #fff !important;
   box-shadow: 0 0 35px var(--dt-primary-glow);
   z-index: 10;
 }
@@ -822,7 +1010,7 @@ img {
   max-width: 190px;
   text-align: center;
   box-shadow: var(--dt-shadow-md);
-  opacity: 0.85;
+  opacity: 0.9;
   transition: var(--dt-transition-fast);
 }
 
@@ -845,7 +1033,7 @@ img {
   display: block;
   font-size: 0.82rem;
   font-weight: 700;
-  color: var(--dt-text-main);
+  color: var(--dt-text-headings);
   white-space: nowrap;
   overflow: hidden;
   text-overflow: ellipsis;
@@ -859,7 +1047,7 @@ img {
 }
 
 /* ==========================================================================
-   Scroll-Driven Storytelling ("Idea to Global Launch")
+   13. Scroll-Driven Storytelling ("Idea to Global Launch")
    ========================================================================== */
 .story-timeline-container {
   position: relative;
@@ -911,7 +1099,7 @@ img {
 }
 
 /* ==========================================================================
-   DasTech Labs Section (Telemetry Progress)
+   14. DasTech Labs Section (Telemetry Progress)
    ========================================================================== */
 .lab-card {
   background: var(--dt-bg-card);
@@ -929,14 +1117,11 @@ img {
 
 .lab-telemetry-bar {
   height: 6px;
-  background: rgba(255, 255, 255, 0.08);
+  background: var(--dt-bg-subsurface);
   border-radius: var(--dt-radius-pill);
   overflow: hidden;
   margin: 1rem 0 0.5rem;
-}
-
-[data-theme="light"] .lab-telemetry-bar {
-  background: #E2E8F0;
+  border: 1px solid var(--dt-border);
 }
 
 .lab-telemetry-fill {
@@ -946,7 +1131,7 @@ img {
 }
 
 /* ==========================================================================
-   Digital Product Card & Store
+   15. Digital Product Card & Store
    ========================================================================== */
 .product-card {
   background: var(--dt-bg-card);
@@ -1006,7 +1191,7 @@ img {
 }
 
 .product-card-title a {
-  color: var(--dt-text-main);
+  color: var(--dt-text-headings);
 }
 
 .product-card-title a:hover {
@@ -1048,7 +1233,7 @@ img {
   font-family: 'Plus Jakarta Sans', sans-serif;
   font-size: 1.45rem;
   font-weight: 800;
-  color: var(--dt-text-main);
+  color: var(--dt-text-headings);
 }
 
 .original-price {
@@ -1079,7 +1264,7 @@ img {
 }
 
 .category-pill-btn {
-  background: rgba(255, 255, 255, 0.05);
+  background: var(--dt-bg-subsurface);
   border: 1px solid var(--dt-border);
   color: var(--dt-text-muted);
   padding: 0.45rem 1rem;
@@ -1090,19 +1275,15 @@ img {
   transition: var(--dt-transition-fast);
 }
 
-[data-theme="light"] .category-pill-btn {
-  background: #F1F5F9;
-}
-
 .category-pill-btn:hover,
 .category-pill-btn.active {
   background: var(--dt-primary);
-  color: #ffffff;
+  color: #ffffff !important;
   border-color: var(--dt-primary);
 }
 
 /* ==========================================================================
-   Project Showcase Cards
+   16. Project Showcase Cards
    ========================================================================== */
 .project-card {
   background: var(--dt-bg-card);
@@ -1163,7 +1344,7 @@ img {
 }
 
 .project-card-title a {
-  color: var(--dt-text-main);
+  color: var(--dt-text-headings);
 }
 
 .project-card-title a:hover {
@@ -1178,7 +1359,7 @@ img {
 }
 
 /* ==========================================================================
-   Service Cards
+   17. Service Cards
    ========================================================================== */
 .service-box {
   background: var(--dt-bg-card);
@@ -1212,7 +1393,7 @@ img {
 
 .service-box:hover .service-icon-wrap {
   background: var(--dt-primary);
-  color: #ffffff;
+  color: #ffffff !important;
   box-shadow: 0 6px 16px var(--dt-primary-glow);
 }
 
@@ -1248,37 +1429,7 @@ img {
 }
 
 /* ==========================================================================
-   Why DasTech & Value Pillars
-   ========================================================================== */
-.why-dastech-card {
-  background: var(--dt-bg-card);
-  border: 1px solid var(--dt-border);
-  border-radius: var(--dt-radius-lg);
-  padding: 2rem;
-  transition: var(--dt-transition);
-}
-
-.why-dastech-card:hover {
-  border-color: var(--dt-primary);
-  transform: translateY(-4px);
-  box-shadow: var(--dt-shadow-md);
-}
-
-.why-icon-box {
-  width: 48px;
-  height: 48px;
-  border-radius: 12px;
-  background: linear-gradient(135deg, rgba(59, 130, 246, 0.15), rgba(6, 182, 212, 0.15));
-  color: var(--dt-primary);
-  display: inline-flex;
-  align-items: center;
-  justify-content: center;
-  font-size: 1.4rem;
-  margin-bottom: 1.2rem;
-}
-
-/* ==========================================================================
-   Contact & Lead Form
+   18. Contact & Lead Form
    ========================================================================== */
 .contact-section-wrapper {
   background: var(--dt-bg-card);
@@ -1288,62 +1439,21 @@ img {
   position: relative;
   overflow: hidden;
   border: 1px solid var(--dt-border);
+  box-shadow: var(--dt-shadow-xl);
 }
 
 .contact-form-card {
-  background: var(--dt-bg-card-glass);
-  backdrop-filter: blur(16px);
+  background: var(--dt-bg-subsurface);
   border: 1px solid var(--dt-border);
   border-radius: var(--dt-radius-lg);
   padding: 2.25rem;
 }
 
-.form-control-dastech {
-  background: rgba(255, 255, 255, 0.05);
-  border: 1px solid var(--dt-border);
-  color: var(--dt-text-main);
-  border-radius: var(--dt-radius-md);
-  padding: 0.75rem 1rem;
-  font-size: 0.95rem;
-  transition: var(--dt-transition-fast);
-}
-
-.form-control-dastech:focus {
-  background: rgba(255, 255, 255, 0.08);
-  border-color: var(--dt-primary);
-  color: var(--dt-text-main);
-  box-shadow: 0 0 0 3px var(--dt-primary-glow);
-  outline: none;
-}
-
-.form-label-dastech {
-  color: var(--dt-text-muted);
-  font-size: 0.88rem;
-  font-weight: 600;
-  margin-bottom: 0.4rem;
-}
-
-.form-control-light {
-  background: var(--dt-bg-card);
-  border: 1px solid var(--dt-border);
-  color: var(--dt-text-main);
-  border-radius: var(--dt-radius-md);
-  padding: 0.75rem 1rem;
-  font-size: 0.95rem;
-  transition: var(--dt-transition-fast);
-}
-
-.form-control-light:focus {
-  border-color: var(--dt-primary);
-  box-shadow: 0 0 0 3px var(--dt-primary-glow);
-  outline: none;
-}
-
 /* ==========================================================================
-   Footer
+   19. Footer
    ========================================================================== */
 .dastech-footer {
-  background: var(--dt-bg-card);
+  background: var(--dt-bg-footer);
   color: var(--dt-text-light);
   padding: 5rem 0 2rem;
   border-top: 1px solid var(--dt-border);
@@ -1356,7 +1466,7 @@ img {
   font-family: 'Plus Jakarta Sans', sans-serif;
   font-weight: 800;
   font-size: 1.5rem;
-  color: var(--dt-text-main);
+  color: var(--dt-text-headings);
   text-decoration: none;
   margin-bottom: 1.25rem;
 }
@@ -1372,7 +1482,7 @@ img {
   font-family: 'Plus Jakarta Sans', sans-serif;
   font-size: 1rem;
   font-weight: 700;
-  color: var(--dt-text-main);
+  color: var(--dt-text-headings);
   margin-bottom: 1.25rem;
 }
 
@@ -1405,7 +1515,7 @@ img {
 }
 
 /* ==========================================================================
-   Slide-in Cart Drawer & Toast Notifications
+   20. Slide-in Cart Drawer & Toast Notifications
    ========================================================================== */
 .dastech-cart-drawer {
   position: fixed;
@@ -1424,7 +1534,7 @@ img {
 .drawer-backdrop {
   position: absolute;
   inset: 0;
-  background: rgba(0, 0, 0, 0.7);
+  background: rgba(0, 0, 0, 0.6);
   backdrop-filter: blur(6px);
   opacity: 0;
   transition: opacity 0.3s ease;
@@ -1441,9 +1551,9 @@ img {
   bottom: 0;
   width: 100%;
   max-width: 420px;
-  background: var(--dt-bg-card);
+  background: var(--dt-bg-drawer);
   border-left: 1px solid var(--dt-border);
-  box-shadow: -10px 0 30px rgba(0, 0, 0, 0.4);
+  box-shadow: -10px 0 30px rgba(0, 0, 0, 0.3);
   display: flex;
   flex-direction: column;
   transform: translateX(100%);
@@ -1457,18 +1567,24 @@ img {
 .drawer-header {
   padding: 1.25rem 1.5rem;
   border-bottom: 1px solid var(--dt-border);
+  background: var(--dt-bg-card);
 }
 
 .drawer-body {
   padding: 1.5rem;
   overflow-y: auto;
   flex-grow: 1;
+  background: var(--dt-bg-drawer);
 }
 
 .drawer-footer {
   padding: 1.5rem;
-  background: var(--dt-bg-body);
+  background: var(--dt-bg-subsurface);
   border-top: 1px solid var(--dt-border);
+}
+
+.drawer-item-title {
+  color: var(--dt-text-headings) !important;
 }
 
 /* Toast Notification */
@@ -1515,11 +1631,11 @@ img {
 }
 
 /* ==========================================================================
-   Live Product Preview Modal & Browser Chrome
+   21. Live Product Preview Modal
    ========================================================================== */
 .dt-preview-modal .modal-content {
-  background: var(--dt-bg-card);
-  border: 1px solid var(--dt-border);
+  background: var(--dt-bg-modal) !important;
+  border: 1px solid var(--dt-border) !important;
 }
 
 .circle-dot {
@@ -1534,7 +1650,44 @@ img {
 .circle-dot.green { background: #27C93F; }
 
 /* ==========================================================================
-   Accessibility & Reduced Motion
+   22. Administration & Dashboard Theme Overrides
+   ========================================================================== */
+#header.header {
+  background-color: var(--dt-bg-header) !important;
+  border-bottom: 1px solid var(--dt-border) !important;
+}
+
+#sidebar.sidebar {
+  background-color: var(--dt-bg-card) !important;
+  border-right: 1px solid var(--dt-border) !important;
+}
+
+.sidebar-nav .nav-link {
+  color: var(--dt-text-muted) !important;
+  background: transparent !important;
+  border-radius: var(--dt-radius-md);
+  margin: 0.2rem 0.6rem;
+  padding: 0.65rem 1rem;
+}
+
+.sidebar-nav .nav-link:hover,
+.sidebar-nav .nav-link.active {
+  color: var(--dt-primary) !important;
+  background: var(--dt-primary-light) !important;
+}
+
+.sidebar-nav .nav-link i {
+  color: inherit !important;
+}
+
+#footer.footer {
+  background-color: var(--dt-bg-card) !important;
+  border-top: 1px solid var(--dt-border) !important;
+  color: var(--dt-text-muted) !important;
+}
+
+/* ==========================================================================
+   23. Accessibility & Reduced Motion
    ========================================================================== */
 @media (prefers-reduced-motion: reduce) {
   *, *::before, *::after {
@@ -1548,7 +1701,7 @@ img {
 }
 
 /* ==========================================================================
-   Responsive Breakpoints & Mobile Optimization
+   24. Responsive Breakpoints
    ========================================================================== */
 @media (max-width: 1199.98px) {
   .hero-headline {
