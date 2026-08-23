@@ -1,5 +1,5 @@
 <!doctype html>
-<html lang="en">
+<html lang="en" data-theme="dark">
   <head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
@@ -18,19 +18,22 @@
     <!-- Top Navigation Bar -->
     <nav class="navbar navbar-expand-lg dastech-navbar sticky-top" id="mainNavbar">
       <div class="container">
-        <a class="dastech-brand" href="index.html">
+        <a class="dastech-brand" href="index.html" data-cursor="EXPLORE">
           <span class="brand-icon"><i class="bi bi-cpu-fill"></i></span>
           <span>Das<span class="brand-text-accent">Tech</span></span>
         </a>
 
         <div class="d-flex align-items-center d-lg-none gap-2">
+          <button class="dastech-theme-toggle" aria-label="Toggle Theme">
+            <i class="bi bi-sun-fill text-warning"></i>
+          </button>
           <button class="cart-btn-trigger" data-dastech-open-cart aria-label="Open Shopping Cart">
             <i class="bi bi-bag-fill"></i>
             <span class="dastech-cart-badge" style="display: none;">0</span>
           </button>
           
           <button class="navbar-toggler border-0 p-2" type="button" data-bs-toggle="collapse" data-bs-target="#navbarContent">
-            <i class="bi bi-list fs-2 text-dark"></i>
+            <i class="bi bi-list fs-2 text-white"></i>
           </button>
         </div>
 
@@ -57,12 +60,15 @@
           </ul>
 
           <div class="nav-actions d-none d-lg-flex">
+            <button class="dastech-theme-toggle" aria-label="Toggle Theme" title="Switch Theme">
+              <i class="bi bi-sun-fill text-warning"></i>
+            </button>
             <button class="cart-btn-trigger" data-dastech-open-cart title="Shopping Cart">
               <i class="bi bi-bag-fill"></i>
               <span class="dastech-cart-badge" style="display: none;">0</span>
             </button>
             <a href="login.html" class="btn btn-dastech-ghost btn-sm"><i class="bi bi-person-fill"></i> Portal</a>
-            <a href="index.html#contact_us" class="btn btn-dastech-primary btn-sm">Start a Project</a>
+            <a href="index.html#contact_us" class="btn btn-dastech-primary btn-sm" data-magnetic>Start a Project</a>
           </div>
         </div>
       </div>
@@ -81,32 +87,32 @@
         </nav>
 
         <!-- Project Hero Card -->
-        <div class="card border-0 shadow-sm rounded-4 p-4 p-lg-5 mb-5 bg-white">
+        <div class="card border-0 shadow-sm rounded-4 p-4 p-lg-5 mb-5 bg-dark-card">
           <div class="row g-5 align-items-center">
             <div class="col-lg-6">
               <div class="d-flex align-items-center gap-2 mb-2">
                 <span class="category-badge" id="caseCategory">FinTech & Cloud</span>
-                <span class="badge bg-light text-muted border small" id="caseYear">2025</span>
+                <span class="badge bg-secondary bg-opacity-20 text-muted border small font-monospace" id="caseYear">2025</span>
               </div>
-              <h1 class="display-6 fw-bold mb-3" id="caseTitle">FinPulse Neo-Banking & Wealth Platform</h1>
+              <h1 class="display-6 fw-bold mb-3 text-white" id="caseTitle">FinPulse Neo-Banking & Wealth Platform</h1>
               <p class="text-muted lead mb-4" id="caseShortDesc">High-concurrency digital banking platform with real-time peer-to-peer transfers, investment portfolios, and automated fraud scoring.</p>
               
-              <div class="p-3 bg-light rounded-3 border mb-4">
+              <div class="p-3 bg-dark rounded-3 border border-secondary border-opacity-25 mb-4">
                 <div class="small text-muted mb-1"><i class="bi bi-building me-1"></i> Client Organization</div>
-                <div class="fw-bold fs-6 text-dark" id="caseClient">FinPulse Financial Ltd.</div>
+                <div class="fw-bold fs-6 text-white" id="caseClient">FinPulse Financial Ltd.</div>
               </div>
 
               <div class="d-flex flex-wrap gap-2 mb-4" id="caseTechBadges">
                 <!-- Tech badges injected by JS -->
               </div>
 
-              <a href="index.html#contact_us" class="btn btn-dastech-primary btn-dastech-lg">
+              <a href="index.html#contact_us" class="btn btn-dastech-primary btn-dastech-lg" data-magnetic>
                 <i class="bi bi-rocket-takeoff-fill me-2"></i> Request Similar Solution
               </a>
             </div>
 
             <div class="col-lg-6">
-              <div class="rounded-4 overflow-hidden shadow-sm border bg-dark">
+              <div class="rounded-4 overflow-hidden shadow-sm border border-secondary border-opacity-25 bg-dark" data-tilt data-cursor="PREVIEW">
                 <img id="caseImage" src="images/home-dev.png" alt="Case Study Image" class="img-fluid w-100 object-fit-cover" style="max-height: 420px;">
               </div>
             </div>
@@ -122,7 +128,7 @@
         <div class="row g-4">
           <div class="col-lg-8">
             <!-- Overview -->
-            <div class="card border-0 shadow-sm rounded-4 p-4 p-md-5 mb-4 bg-white">
+            <div class="card border-0 shadow-sm rounded-4 p-4 p-md-5 mb-4 bg-dark-card">
               <h3 class="fw-bold mb-3"><i class="bi bi-info-circle text-primary me-2"></i> Executive Overview</h3>
               <p class="text-muted lead fs-6" id="caseOverview"></p>
             </div>
@@ -130,13 +136,13 @@
             <!-- Problem & Solution Matrix -->
             <div class="row g-4 mb-4">
               <div class="col-md-6">
-                <div class="card border-0 shadow-sm rounded-4 p-4 h-100 bg-white border-start border-danger border-4">
+                <div class="card border-0 shadow-sm rounded-4 p-4 h-100 bg-dark-card border-start border-danger border-4">
                   <h4 class="fw-bold mb-3 text-danger"><i class="bi bi-exclamation-octagon-fill me-2"></i> The Problem</h4>
                   <p class="text-muted small mb-0" id="caseProblem"></p>
                 </div>
               </div>
               <div class="col-md-6">
-                <div class="card border-0 shadow-sm rounded-4 p-4 h-100 bg-white border-start border-success border-4">
+                <div class="card border-0 shadow-sm rounded-4 p-4 h-100 bg-dark-card border-start border-success border-4">
                   <h4 class="fw-bold mb-3 text-success"><i class="bi bi-check-circle-fill me-2"></i> The DasTech Solution</h4>
                   <p class="text-muted small mb-0" id="caseSolution"></p>
                 </div>
@@ -144,7 +150,7 @@
             </div>
 
             <!-- Implemented Features -->
-            <div class="card border-0 shadow-sm rounded-4 p-4 p-md-5 bg-white">
+            <div class="card border-0 shadow-sm rounded-4 p-4 p-md-5 bg-dark-card">
               <h3 class="fw-bold mb-4"><i class="bi bi-gear-fill text-primary me-2"></i> Key Technical Features & Capabilities</h3>
               <div class="d-flex flex-column gap-3" id="caseFeaturesList">
                 <!-- Features injected by JS -->
@@ -154,7 +160,7 @@
 
           <!-- Sidebar CTA -->
           <div class="col-lg-4">
-            <div class="card border-0 shadow-sm rounded-4 p-4 mb-4 bg-white">
+            <div class="card border-0 shadow-sm rounded-4 p-4 mb-4 bg-dark-card">
               <h4 class="fw-bold mb-3 fs-5">Project Scope Summary</h4>
               <ul class="list-unstyled text-muted small mb-0 d-flex flex-column gap-2">
                 <li><i class="bi bi-check2-circle text-primary me-2"></i> Custom Architecture & Design</li>
@@ -165,10 +171,10 @@
               </ul>
             </div>
 
-            <div class="card border-0 shadow-sm rounded-4 p-4 bg-dark text-white text-center">
+            <div class="card border-0 shadow-sm rounded-4 p-4 bg-dark text-white text-center border border-secondary border-opacity-25">
               <h4 class="fw-bold mb-2 text-white">Start Your Project</h4>
               <p class="small opacity-75 mb-3">Looking to build something innovative? Our engineering team is ready to assist from concept to launch.</p>
-              <a href="index.html#contact_us" class="btn btn-dastech-primary fw-bold w-100">Get Free Estimate</a>
+              <a href="index.html#contact_us" class="btn btn-dastech-primary fw-bold w-100" data-magnetic>Get Free Estimate</a>
             </div>
           </div>
         </div>
@@ -180,7 +186,7 @@
       <div class="container">
         <div class="row g-4">
           <div class="col-lg-4 col-md-6">
-            <a class="footer-brand" href="index.html">
+            <a class="footer-brand" href="index.html" data-cursor="EXPLORE">
               <span class="brand-icon"><i class="bi bi-cpu-fill"></i></span>
               <span>Das<span class="text-primary">Tech</span></span>
             </a>
@@ -236,9 +242,10 @@
     <!-- Scripts -->
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
     
-    <!-- DasTech Core Logic & Cart -->
+    <!-- DasTech Core Logic, Cart & Interactions -->
     <script src="assets/js/dastech-data.js"></script>
     <script src="assets/js/cart.js"></script>
+    <script src="assets/js/dastech-interactions.js"></script>
 
     <script>
       document.getElementById('currentYear').textContent = new Date().getFullYear();
@@ -274,7 +281,7 @@
         if (resultsContainer && project.results) {
           resultsContainer.innerHTML = project.results.map(r => `
             <div class="col-md-4">
-              <div class="card border-0 shadow-sm rounded-4 p-4 text-center bg-white h-100">
+              <div class="card border-0 shadow-sm rounded-4 p-4 text-center bg-dark-card h-100">
                 <div class="display-6 fw-bold text-primary mb-1">${r.metric}</div>
                 <div class="text-muted small">${r.label}</div>
               </div>
@@ -291,9 +298,9 @@
         const featuresContainer = document.getElementById('caseFeaturesList');
         if (featuresContainer && project.features) {
           featuresContainer.innerHTML = project.features.map(f => `
-            <div class="p-3 bg-light rounded-3 d-flex align-items-center gap-3">
+            <div class="p-3 bg-dark rounded-3 d-flex align-items-center gap-3 border border-secondary border-opacity-25">
               <i class="bi bi-check-circle-fill text-success fs-5"></i>
-              <div class="text-dark fw-semibold">${f}</div>
+              <div class="text-white fw-semibold">${f}</div>
             </div>
           `).join('');
         }

@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="en" data-theme="dark">
 
 <head>
   <meta charset="utf-8">
@@ -25,7 +25,7 @@
   <link href="./style.css" rel="stylesheet">
 </head>
 
-<body class="bg-light">
+<body>
 
   <main>
     <div class="container">
@@ -35,19 +35,22 @@
           <div class="row justify-content-center">
             <div class="col-lg-4 col-md-6 d-flex flex-column align-items-center justify-content-center">
 
-              <div class="d-flex justify-content-center py-4">
-                <a href="./index.html" class="dastech-brand text-decoration-none">
+              <div class="d-flex justify-content-between align-items-center w-100 py-4">
+                <a href="./index.html" class="dastech-brand text-decoration-none" data-cursor="EXPLORE">
                   <span class="brand-icon"><i class="bi bi-cpu-fill"></i></span>
-                  <span class="fs-3 fw-bold text-dark">Das<span class="brand-text-accent">Tech</span></span>
+                  <span class="fs-3 fw-bold">Das<span class="brand-text-accent">Tech</span></span>
                 </a>
+                <button class="dastech-theme-toggle" aria-label="Toggle Theme" title="Switch Theme">
+                  <i class="bi bi-sun-fill text-warning"></i>
+                </button>
               </div>
 
-              <div class="card mb-3 border-0 shadow-sm rounded-4 p-3 bg-white w-100">
+              <div class="card mb-3 border-0 shadow-sm rounded-4 p-3 bg-dark-card w-100" data-tilt>
 
                 <div class="card-body">
 
                   <div class="pt-2 pb-3 text-center">
-                    <h5 class="card-title pb-0 fs-4 fw-bold">Welcome Back</h5>
+                    <h5 class="card-title pb-0 fs-4 fw-bold text-white">Welcome Back</h5>
                     <p class="small text-muted mb-0">Enter your credentials to access your DasTech Portal</p>
                   </div>
 
@@ -56,38 +59,35 @@
                     <div class="col-12">
                       <label for="yourUsername" class="form-label small fw-bold">Email Address</label>
                       <div class="input-group has-validation">
-                        <span class="input-group-text bg-white border-end-0"><i class="bi bi-envelope text-muted"></i></span>
+                        <span class="input-group-text bg-dark border-secondary border-opacity-25 border-end-0"><i class="bi bi-envelope text-muted"></i></span>
                         <input type="email" name="username" class="form-control form-control-light border-start-0" id="yourUsername" required placeholder="admin@dastech.io">
                         <div class="invalid-feedback">Please enter a valid email address.</div>
                       </div>
                     </div>
 
                     <div class="col-12">
-                      <div class="d-flex justify-content-between align-items-center">
-                        <label for="yourPassword" class="form-label small fw-bold mb-1">Password</label>
-                        <a href="#" class="small text-primary text-decoration-none">Forgot password?</a>
-                      </div>
+                      <label for="yourPassword" class="form-label small fw-bold">Password</label>
                       <div class="input-group has-validation">
-                        <span class="input-group-text bg-white border-end-0"><i class="bi bi-key text-muted"></i></span>
+                        <span class="input-group-text bg-dark border-secondary border-opacity-25 border-end-0"><i class="bi bi-lock text-muted"></i></span>
                         <input type="password" name="password" class="form-control form-control-light border-start-0" id="yourPassword" required placeholder="••••••••">
-                        <div class="invalid-feedback">Please enter your password!</div>
+                        <div class="invalid-feedback">Please enter your password.</div>
                       </div>
                     </div>
 
-                    <div class="col-12">
+                    <div class="col-12 d-flex justify-content-between align-items-center">
                       <div class="form-check">
-                        <input class="form-check-input" type="checkbox" name="remember" value="true" id="rememberMe" checked>
-                        <label class="form-check-label small text-muted" for="rememberMe">Remember my session</label>
+                        <input class="form-check-input" type="checkbox" name="remember" value="true" id="rememberMe">
+                        <label class="form-check-label small text-muted" for="rememberMe">Remember me</label>
                       </div>
+                      <a href="#" class="small text-primary text-decoration-none">Forgot password?</a>
                     </div>
 
-                    <div class="col-12">
-                      <a class="btn btn-dastech-primary w-100 py-2 fw-bold" href="./dashboard.html">
-                        <i class="bi bi-box-arrow-in-right me-1"></i> Sign In to Portal
-                      </a>
+                    <div class="col-12 mt-4">
+                      <a href="dashboard.html" class="btn btn-dastech-primary w-100 py-2 fw-bold" data-cursor="EXPLORE" data-magnetic>Sign In to Portal</a>
                     </div>
-                    <div class="col-12 text-center">
-                      <p class="small mb-0 text-muted">Don't have an account? <a href="./register.html" class="text-primary fw-semibold">Create an account</a></p>
+
+                    <div class="col-12 text-center mt-3">
+                      <p class="small mb-0 text-muted">Don't have an account? <a href="register.html" class="text-primary fw-bold text-decoration-none">Create an account</a></p>
                     </div>
                   </form>
 
@@ -95,7 +95,7 @@
               </div>
 
               <div class="text-center text-muted small mt-2">
-                &copy; <span id="currentYear"></span> <strong>DasTech</strong>. All Rights Reserved.
+                &copy; <span id="currentYear"></span> DasTech. All Rights Reserved.
               </div>
 
             </div>
@@ -107,11 +107,15 @@
     </div>
   </main>
 
+  <a href="#" class="back-to-top d-flex align-items-center justify-content-center"><i class="bi bi-arrow-up-short"></i></a>
+
+  <!-- Vendor JS Files -->
   <script src="./assets/vendor/bootstrap/js/bootstrap.bundle.min.js"></script>
+  <script src="./assets/js/dastech-interactions.js"></script>
+  <script src="./assets/js/main.js"></script>
   <script>
     document.getElementById('currentYear').textContent = new Date().getFullYear();
   </script>
-
 </body>
 
 </html>

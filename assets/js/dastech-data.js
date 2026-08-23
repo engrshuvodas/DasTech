@@ -1,6 +1,6 @@
 /**
- * DasTech Digital Products & Projects Data Layer
- * Provides clean, structured data for products, projects, services, and tech stacks.
+ * DasTech Digital Products, Projects & Labs Data Layer
+ * Extended with Labs Prototypes, Interactive Previews, and Graph Topology.
  */
 
 window.DasTechData = {
@@ -47,8 +47,10 @@ window.DasTechData = {
         { q: "How do I receive future updates?", a: "All updates are pushed to your customer portal and notified via email with complete migration guides." },
         { q: "Is backend code included?", a: "Yes, fully functional API routes, auth handlers, and database migration scripts are included out of the box." }
       ],
-      demoUrl: "#demo",
-      featured: true
+      demoUrl: "#demo-apex",
+      demoTitle: "Apex SaaS Live Control Center",
+      featured: true,
+      graphPos: { x: 25, y: 30 }
     },
     {
       id: "dt-prod-2",
@@ -88,8 +90,10 @@ window.DasTechData = {
         { q: "Does this work with private VPCs?", a: "Yes, all modules are built with private subnets, NAT gateways, and secure bastion hosts." },
         { q: "Can I customize the Helm charts?", a: "All Helm values and manifests are 100% open and fully customizable for your stack." }
       ],
-      demoUrl: "#demo",
-      featured: true
+      demoUrl: "#demo-cloudguard",
+      demoTitle: "CloudGuard Multi-Cluster Telemetry",
+      featured: true,
+      graphPos: { x: 75, y: 25 }
     },
     {
       id: "dt-prod-3",
@@ -126,8 +130,10 @@ window.DasTechData = {
       faq: [
         { q: "Is this compatible with plain HTML?", a: "Yes! Both vanilla HTML5/CSS and React components are supplied." }
       ],
-      demoUrl: "#demo",
-      featured: true
+      demoUrl: "#demo-nova",
+      demoTitle: "Nova UI Component Interactive Sandbox",
+      featured: true,
+      graphPos: { x: 30, y: 75 }
     },
     {
       id: "dt-prod-4",
@@ -165,8 +171,10 @@ window.DasTechData = {
       faq: [
         { q: "Can I host this on my own VPS?", a: "Absolutely. With Docker Compose, you can deploy PulseFlow to any $5/mo VPS in under 3 minutes." }
       ],
-      demoUrl: "#demo",
-      featured: false
+      demoUrl: "#demo-pulse",
+      demoTitle: "PulseFlow Pipeline Simulation",
+      featured: false,
+      graphPos: { x: 70, y: 70 }
     },
     {
       id: "dt-prod-5",
@@ -202,8 +210,10 @@ window.DasTechData = {
       faq: [
         { q: "Can I use Stripe without Shopify?", a: "Yes, a standalone local cart + Stripe Checkout adapter is included." }
       ],
-      demoUrl: "#demo",
-      featured: false
+      demoUrl: "#demo-speedcraft",
+      demoTitle: "SpeedCraft Instant Storefront Preview",
+      featured: false,
+      graphPos: { x: 50, y: 20 }
     },
     {
       id: "dt-prod-6",
@@ -238,8 +248,10 @@ window.DasTechData = {
       faq: [
         { q: "Can I host this on GitHub Pages?", a: "Yes, DocuPress exports completely static HTML/JS/CSS ready for GitHub Pages, Netlify, or Vercel." }
       ],
-      demoUrl: "#demo",
-      featured: false
+      demoUrl: "#demo-docupress",
+      demoTitle: "DocuPress Interactive API Playground",
+      featured: false,
+      graphPos: { x: 50, y: 85 }
     }
   ],
 
@@ -269,7 +281,8 @@ window.DasTechData = {
         { metric: "99.99%", label: "Uptime SLA Achieved" },
         { metric: "1.2s", label: "Average Page Load Time" }
       ],
-      featured: true
+      featured: true,
+      graphPos: { x: 15, y: 50 }
     },
     {
       id: "dt-proj-2",
@@ -295,7 +308,8 @@ window.DasTechData = {
         { metric: "4.8 hrs", label: "Saved per Customs Clearance" },
         { metric: "5,000+", label: "Vehicles Monitored in Real-Time" }
       ],
-      featured: true
+      featured: true,
+      graphPos: { x: 85, y: 50 }
     },
     {
       id: "dt-proj-3",
@@ -321,7 +335,8 @@ window.DasTechData = {
         { metric: "4.9/5", label: "Patient Satisfaction Score" },
         { metric: "0", label: "Security Breaches / Zero-Trust" }
       ],
-      featured: true
+      featured: true,
+      graphPos: { x: 50, y: 50 }
     },
     {
       id: "dt-proj-4",
@@ -346,8 +361,52 @@ window.DasTechData = {
         { metric: "99.995%", label: "System Availability" },
         { metric: "40%", label: "Cloud Infrastructure Cost Savings" }
       ],
-      featured: false
+      featured: false,
+      graphPos: { x: 50, y: 90 }
     }
+  ],
+
+  // DasTech Labs (Experimental & In-Development Prototypes)
+  labs: [
+    {
+      id: "dt-lab-1",
+      name: "VectorFlow AI Indexer",
+      category: "AI & Data Systems",
+      stage: "Beta Testing",
+      progress: 88,
+      concept: "Sub-millisecond semantic vector search and real-time document embedding indexing for Postgres pgvector.",
+      tags: ["Rust", "Wasm", "pgvector", "Embeddings"]
+    },
+    {
+      id: "dt-lab-2",
+      name: "EdgeMesh Zero-Sync",
+      category: "Distributed State",
+      stage: "Architecture R&D",
+      progress: 65,
+      concept: "Conflict-free replicated data types (CRDTs) engine enabling offline-first collaborative web applications.",
+      tags: ["CRDTs", "WebRTC", "TypeScript", "IndexedDB"]
+    },
+    {
+      id: "dt-lab-3",
+      name: "PassKey Shield SDK",
+      category: "Security & Auth",
+      stage: "Release Candidate",
+      progress: 94,
+      concept: "Biometric WebAuthn passkey authentication middleware with zero-knowledge hardware token validation.",
+      tags: ["WebAuthn", "FIDO2", "Cryptography", "OAuth3"]
+    }
+  ],
+
+  // Interactive Tech Ecosystem Stack
+  techEcosystem: [
+    { name: "Next.js 15", category: "Frontend", desc: "React Server Components, App Router & Turbopack rendering engine.", projects: ["Apex SaaS", "SpeedCraft Store"] },
+    { name: "TypeScript", category: "Core Language", desc: "Strict type safety across full-stack distributed systems.", projects: ["All Products & Projects"] },
+    { name: "Kubernetes", category: "Infrastructure", desc: "Automated container orchestration, scaling, and fault tolerance.", projects: ["CloudGuard", "FinPulse Platform"] },
+    { name: "Kafka", category: "Event Streaming", desc: "High-throughput real-time message brokering and event sourcing.", projects: ["FinPulse Platform", "OmniChain ERP"] },
+    { name: "FastAPI", category: "Backend Microservices", desc: "Asynchronous Python APIs with automatic OpenAPI schema generation.", projects: ["OmniChain Logistics"] },
+    { name: "Terraform", category: "Cloud IaC", desc: "Declarative multi-cloud infrastructure orchestration.", projects: ["CloudGuard Toolkit", "CloudScale"] },
+    { name: "PostgreSQL", category: "Database", desc: "ACID compliant relational storage with JSONB & pgvector support.", projects: ["Apex SaaS", "FinPulse Platform"] },
+    { name: "WebRTC", category: "Real-Time Comms", desc: "Peer-to-peer encrypted high-definition audio/video streams.", projects: ["MediVault Telehealth"] }
   ],
 
   // Core DasTech Services

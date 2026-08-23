@@ -1,10 +1,10 @@
 <!doctype html>
-<html lang="en">
+<html lang="en" data-theme="dark">
   <head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <title>Secure Checkout — DasTech</title>
-    <meta name="description" content="Complete your purchase securely. Instant digital delivery and lifetime updates included with every DasTech product.">
+    <meta name="description" content="Complete your purchase securely. Instant digital download and source code access.">
 
     <!-- Bootstrap 5 CSS -->
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
@@ -13,167 +13,234 @@
     <!-- DasTech Master Design System -->
     <link rel="stylesheet" href="style.css">
   </head>
-  <body class="bg-light">
+  <body>
     <!-- Top Navigation Bar -->
     <nav class="navbar navbar-expand-lg dastech-navbar sticky-top" id="mainNavbar">
       <div class="container">
-        <a class="dastech-brand" href="index.html">
+        <a class="dastech-brand" href="index.html" data-cursor="EXPLORE">
           <span class="brand-icon"><i class="bi bi-cpu-fill"></i></span>
           <span>Das<span class="brand-text-accent">Tech</span></span>
         </a>
 
-        <div class="d-flex align-items-center gap-2">
-          <div class="d-flex align-items-center text-muted small">
-            <i class="bi bi-shield-lock-fill text-success fs-5 me-2"></i>
-            <span class="d-none d-sm-inline fw-semibold">256-Bit SSL Encrypted</span>
+        <div class="d-flex align-items-center d-lg-none gap-2">
+          <button class="dastech-theme-toggle" aria-label="Toggle Theme">
+            <i class="bi bi-sun-fill text-warning"></i>
+          </button>
+          <a href="cart.html" class="cart-btn-trigger" aria-label="Cart">
+            <i class="bi bi-bag-fill"></i>
+            <span class="dastech-cart-badge" style="display: none;">0</span>
+          </a>
+          <button class="navbar-toggler border-0 p-2" type="button" data-bs-toggle="collapse" data-bs-target="#navbarContent">
+            <i class="bi bi-list fs-2 text-white"></i>
+          </button>
+        </div>
+
+        <div class="collapse navbar-collapse" id="navbarContent">
+          <ul class="navbar-nav mx-auto mb-2 mb-lg-0">
+            <li class="nav-item"><a class="nav-link" href="index.html">Home</a></li>
+            <li class="nav-item"><a class="nav-link" href="products.html">Digital Products</a></li>
+            <li class="nav-item"><a class="nav-link" href="projects.html">Projects</a></li>
+            <li class="nav-item"><a class="nav-link" href="services-page.html">Services</a></li>
+            <li class="nav-item"><a class="nav-link" href="about.html">About</a></li>
+          </ul>
+
+          <div class="nav-actions d-none d-lg-flex">
+            <button class="dastech-theme-toggle" aria-label="Toggle Theme" title="Switch Theme">
+              <i class="bi bi-sun-fill text-warning"></i>
+            </button>
+            <span class="badge bg-success bg-opacity-20 text-success border border-success border-opacity-25 px-3 py-2 rounded-pill font-monospace small">
+              <i class="bi bi-shield-lock-fill me-1"></i> 256-Bit SSL Encrypted
+            </span>
           </div>
         </div>
       </div>
     </nav>
 
     <!-- Checkout Main Content -->
-    <main class="py-5">
+    <main class="py-5 min-vh-100">
       <div class="container">
-        <div class="row g-4">
-          <!-- Checkout Form Column -->
-          <div class="col-lg-7">
-            <div class="card border-0 shadow-sm rounded-4 p-4 p-md-5 bg-white mb-4">
-              <h3 class="fw-bold mb-4 fs-4"><i class="bi bi-person-check text-primary me-2"></i> 1. Customer Information</h3>
-              
-              <form id="checkoutForm">
-                <div class="row g-3 mb-4">
+        <!-- Steps Indicator -->
+        <div class="row justify-content-center mb-5">
+          <div class="col-lg-8">
+            <div class="d-flex justify-content-between align-items-center position-relative">
+              <div class="text-center position-relative z-2">
+                <div class="rounded-circle bg-primary text-white d-inline-flex align-items-center justify-content-center fw-bold mb-1 shadow-sm" style="width: 38px; height: 38px;">1</div>
+                <div class="small fw-bold text-white">Review</div>
+              </div>
+              <div class="text-center position-relative z-2">
+                <div class="rounded-circle bg-primary text-white d-inline-flex align-items-center justify-content-center fw-bold mb-1 shadow-sm" style="width: 38px; height: 38px;">2</div>
+                <div class="small fw-bold text-white">Customer Info</div>
+              </div>
+              <div class="text-center position-relative z-2">
+                <div class="rounded-circle bg-primary text-white d-inline-flex align-items-center justify-content-center fw-bold mb-1 shadow-sm" style="width: 38px; height: 38px;">3</div>
+                <div class="small fw-bold text-white">Payment</div>
+              </div>
+              <div class="text-center position-relative z-2">
+                <div class="rounded-circle bg-secondary bg-opacity-25 text-muted d-inline-flex align-items-center justify-content-center fw-bold mb-1 shadow-sm" style="width: 38px; height: 38px;">4</div>
+                <div class="small text-muted">Complete</div>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <form id="checkoutForm">
+          <div class="row g-4">
+            <!-- Left Form Fields -->
+            <div class="col-lg-7">
+              <!-- Customer Details Card -->
+              <div class="card border-0 shadow-sm rounded-4 p-4 mb-4 bg-dark-card">
+                <h4 class="fw-bold mb-3 fs-5"><i class="bi bi-person-circle text-primary me-2"></i> 1. Customer Information</h4>
+                <div class="row g-3">
                   <div class="col-md-6">
-                    <label class="form-label small fw-bold text-dark">First Name *</label>
-                    <input type="text" class="form-control form-control-light" required placeholder="John">
+                    <label class="form-label-dastech">First Name *</label>
+                    <input type="text" class="form-control form-control-light" required placeholder="Alex">
                   </div>
                   <div class="col-md-6">
-                    <label class="form-label small fw-bold text-dark">Last Name *</label>
-                    <input type="text" class="form-control form-control-light" required placeholder="Doe">
+                    <label class="form-label-dastech">Last Name *</label>
+                    <input type="text" class="form-control form-control-light" required placeholder="Morgan">
                   </div>
                   <div class="col-12">
-                    <label class="form-label small fw-bold text-dark">Email Address (for instant source code access) *</label>
-                    <input type="email" class="form-control form-control-light" required placeholder="john@example.com">
-                    <div class="form-text small">Your digital license and download credentials will be dispatched to this email immediately.</div>
+                    <label class="form-label-dastech">Email Address (for License & Download Delivery) *</label>
+                    <input type="email" class="form-control form-control-light" id="checkoutEmail" required placeholder="alex@company.com">
+                    <div class="form-text small text-muted">All product downloads, updates, and GitHub repo invitations are sent to this address.</div>
                   </div>
-                  <div class="col-md-6">
-                    <label class="form-label small fw-bold text-dark">Company / Organization (Optional)</label>
-                    <input type="text" class="form-control form-control-light" placeholder="Acme Technologies Inc.">
-                  </div>
-                  <div class="col-md-6">
-                    <label class="form-label small fw-bold text-dark">Country / Region *</label>
-                    <select class="form-select form-control-light" required>
-                      <option value="US" selected>United States</option>
-                      <option value="UK">United Kingdom</option>
-                      <option value="CA">Canada</option>
-                      <option value="AU">Australia</option>
-                      <option value="DE">Germany</option>
-                      <option value="SG">Singapore</option>
-                      <option value="OTHER">Other Country</option>
-                    </select>
+                  <div class="col-12">
+                    <label class="form-label-dastech">Company / Team Name (Optional)</label>
+                    <input type="text" class="form-control form-control-light" placeholder="Acme Labs">
                   </div>
                 </div>
+              </div>
 
-                <hr class="my-4">
-
-                <h3 class="fw-bold mb-4 fs-4"><i class="bi bi-credit-card-2-front text-primary me-2"></i> 2. Payment Method</h3>
-
+              <!-- Payment Method Selection -->
+              <div class="card border-0 shadow-sm rounded-4 p-4 mb-4 bg-dark-card">
+                <h4 class="fw-bold mb-3 fs-5"><i class="bi bi-credit-card text-primary me-2"></i> 2. Payment Method</h4>
+                
                 <div class="d-flex flex-column gap-3 mb-4">
-                  <!-- Credit Card Option -->
-                  <div class="border rounded-4 p-3 bg-light">
-                    <div class="form-check d-flex align-items-center justify-content-between">
-                      <div class="d-flex align-items-center gap-2">
-                        <input class="form-check-input mt-0" type="radio" name="paymentMethod" id="payCreditCard" checked>
-                        <label class="form-check-label fw-bold text-dark" for="payCreditCard">
-                          Credit / Debit Card
-                        </label>
-                      </div>
-                      <div class="d-flex gap-2 text-muted fs-5">
-                        <i class="bi bi-credit-card"></i>
+                  <!-- Credit Card -->
+                  <label class="p-3 bg-dark rounded-3 border border-secondary border-opacity-25 d-flex align-items-center justify-content-between cursor-pointer">
+                    <div class="d-flex align-items-center">
+                      <input type="radio" name="paymentMethod" value="card" checked class="form-check-input me-3">
+                      <div>
+                        <div class="fw-bold text-white">Credit or Debit Card</div>
+                        <div class="text-muted small">Visa, Mastercard, American Express</div>
                       </div>
                     </div>
+                    <div class="d-flex gap-1 text-muted fs-5">
+                      <i class="bi bi-credit-card-2-front-fill text-primary"></i>
+                    </div>
+                  </label>
 
-                    <div class="row g-3 mt-2" id="cardInputFields">
-                      <div class="col-12">
-                        <label class="small text-muted mb-1">Card Number</label>
-                        <div class="input-group">
-                          <span class="input-group-text bg-white border-end-0"><i class="bi bi-credit-card-2-back text-muted"></i></span>
-                          <input type="text" class="form-control form-control-light border-start-0" placeholder="4242 •••• •••• 4242" maxlength="19">
-                        </div>
-                      </div>
-                      <div class="col-6">
-                        <label class="small text-muted mb-1">Expiry Date</label>
-                        <input type="text" class="form-control form-control-light" placeholder="MM / YY" maxlength="5">
-                      </div>
-                      <div class="col-6">
-                        <label class="small text-muted mb-1">CVC / CVV</label>
-                        <input type="text" class="form-control form-control-light" placeholder="CVC" maxlength="4">
+                  <!-- PayPal -->
+                  <label class="p-3 bg-dark rounded-3 border border-secondary border-opacity-25 d-flex align-items-center justify-content-between cursor-pointer">
+                    <div class="d-flex align-items-center">
+                      <input type="radio" name="paymentMethod" value="paypal" class="form-check-input me-3">
+                      <div>
+                        <div class="fw-bold text-white">PayPal</div>
+                        <div class="text-muted small">Safe payment with PayPal balance or connected bank</div>
                       </div>
                     </div>
-                  </div>
-
-                  <!-- PayPal Option -->
-                  <div class="border rounded-4 p-3 bg-light">
-                    <div class="form-check d-flex align-items-center justify-content-between">
-                      <div class="d-flex align-items-center gap-2">
-                        <input class="form-check-input mt-0" type="radio" name="paymentMethod" id="payPayPal">
-                        <label class="form-check-label fw-bold text-dark" for="payPayPal">
-                          PayPal Account
-                        </label>
-                      </div>
-                      <span class="badge bg-secondary">Instant</span>
-                    </div>
-                  </div>
-                </div>
-
-                <!-- Terms & License Consent -->
-                <div class="form-check mb-4">
-                  <input class="form-check-input" type="checkbox" id="termsConsent" required checked>
-                  <label class="form-check-label small text-muted" for="termsConsent">
-                    I agree to the <a href="#" class="text-primary">Commercial License Terms</a> and acknowledge that this is a digital software product with instant delivery.
+                    <i class="bi bi-paypal text-primary fs-5"></i>
                   </label>
                 </div>
 
-                <!-- Submit Button -->
-                <button type="submit" class="btn btn-dastech-primary w-100 py-3 fw-bold fs-5" id="placeOrderBtn">
-                  <i class="bi bi-shield-check me-2"></i> Complete Order
+                <!-- Simulated Card Inputs -->
+                <div id="creditCardFields">
+                  <div class="row g-3">
+                    <div class="col-12">
+                      <label class="form-label-dastech">Card Number</label>
+                      <div class="input-group">
+                        <input type="text" class="form-control form-control-light" placeholder="4242 •••• •••• 4242" maxlength="19" required>
+                        <span class="input-group-text bg-dark border-secondary border-opacity-25 text-muted"><i class="bi bi-lock-fill"></i></span>
+                      </div>
+                    </div>
+                    <div class="col-md-6">
+                      <label class="form-label-dastech">Expiry Date</label>
+                      <input type="text" class="form-control form-control-light" placeholder="MM / YY" maxlength="5" required>
+                    </div>
+                    <div class="col-md-6">
+                      <label class="form-label-dastech">CVC / CVV</label>
+                      <input type="text" class="form-control form-control-light" placeholder="CVC" maxlength="4" required>
+                    </div>
+                  </div>
+                </div>
+              </div>
+
+              <!-- Terms Checkbox -->
+              <div class="form-check mb-4">
+                <input class="form-check-input" type="checkbox" id="termsConsent" required>
+                <label class="form-check-label text-muted small" for="termsConsent">
+                  I agree to the <a href="#" class="text-primary">DasTech License Terms</a> and acknowledge that this is an instant digital product with immediate code access.
+                </label>
+              </div>
+            </div>
+
+            <!-- Right Column: Order Summary -->
+            <div class="col-lg-5">
+              <div class="card border-0 shadow-sm rounded-4 p-4 bg-dark-card sticky-top" style="top: 100px;">
+                <h4 class="fw-bold mb-3 fs-5">Order Summary</h4>
+                
+                <div id="checkoutItemsList" class="mb-3 d-flex flex-column gap-3">
+                  <!-- Populated by JS -->
+                </div>
+
+                <hr class="border-secondary border-opacity-25">
+
+                <div class="d-flex justify-content-between mb-2 text-muted">
+                  <span>Subtotal</span>
+                  <span class="fw-semibold text-white" id="checkoutSubtotal">$0.00</span>
+                </div>
+                <div class="d-flex justify-content-between mb-3 text-muted">
+                  <span>Digital Fulfillment</span>
+                  <span class="text-success fw-semibold">Instant Download</span>
+                </div>
+
+                <hr class="border-secondary border-opacity-25">
+
+                <div class="d-flex justify-content-between mb-4">
+                  <span class="fw-bold fs-5">Total Due</span>
+                  <span class="fw-bold fs-4 text-primary" id="checkoutTotal">$0.00</span>
+                </div>
+
+                <button type="submit" class="btn btn-dastech-primary w-100 py-3 fw-bold mb-3" id="completeOrderBtn" data-cursor="BUY" data-magnetic>
+                  <i class="bi bi-lock-fill me-1"></i> Authorize & Complete Order
                 </button>
-              </form>
+
+                <div class="text-center text-muted small">
+                  <i class="bi bi-shield-check text-success me-1"></i> Instant Delivery to your email upon payment.
+                </div>
+              </div>
             </div>
           </div>
+        </form>
 
-          <!-- Order Summary Column -->
-          <div class="col-lg-5">
-            <div class="card border-0 shadow-sm rounded-4 p-4 p-md-5 bg-white sticky-top" style="top: 100px;">
-              <h4 class="fw-bold mb-3 fs-5">Order Items</h4>
-
-              <div id="checkoutItemsList" class="d-flex flex-column gap-3 mb-4">
-                <!-- Populated via JS -->
+        <!-- Order Success Modal -->
+        <div class="modal fade" id="orderSuccessModal" tabindex="-1" aria-hidden="true" data-bs-backdrop="static">
+          <div class="modal-dialog modal-dialog-centered">
+            <div class="modal-content border-0 rounded-4 p-4 text-center bg-dark-card">
+              <div class="p-3 bg-success bg-opacity-20 text-success rounded-circle d-inline-flex mx-auto mb-3">
+                <i class="bi bi-check-circle-fill" style="font-size: 3rem;"></i>
+              </div>
+              <h3 class="fw-bold mb-2 text-white">Order Confirmed!</h3>
+              <p class="text-muted small mb-4">Thank you for your purchase from DasTech. Your license keys, GitHub access, and source files have been generated.</p>
+              
+              <div class="p-3 bg-dark rounded-3 text-start mb-4 border border-secondary border-opacity-25">
+                <div class="d-flex justify-content-between small text-muted mb-1">
+                  <span>Order Reference:</span>
+                  <span class="fw-bold text-white font-monospace">DT-94819-US</span>
+                </div>
+                <div class="d-flex justify-content-between small text-muted">
+                  <span>Delivery Email:</span>
+                  <span class="fw-bold text-white" id="successDeliveryEmail">alex@company.com</span>
+                </div>
               </div>
 
-              <hr>
-
-              <!-- Calculations -->
-              <div class="d-flex justify-content-between mb-2 text-muted">
-                <span>Subtotal</span>
-                <span class="fw-semibold text-dark" id="checkoutSubtotal">$0.00</span>
-              </div>
-              <div class="d-flex justify-content-between mb-3 text-muted">
-                <span>Digital Delivery</span>
-                <span class="text-success fw-semibold">FREE (Instant)</span>
-              </div>
-
-              <hr>
-
-              <div class="d-flex justify-content-between mb-4">
-                <span class="fw-bold fs-5">Amount Due</span>
-                <span class="fw-bold fs-3 text-primary" id="checkoutTotal">$0.00</span>
-              </div>
-
-              <!-- Value props -->
-              <div class="p-3 bg-light rounded-3 text-muted small d-flex flex-column gap-2">
-                <div><i class="bi bi-check2-circle text-success me-2"></i> Verified Git repository & zip archive delivery</div>
-                <div><i class="bi bi-check2-circle text-success me-2"></i> Commercial single/extended deployment rights</div>
-                <div><i class="bi bi-check2-circle text-success me-2"></i> Dedicated ticket & Discord engineering support</div>
+              <div class="d-grid gap-2">
+                <a href="dashboard.html" class="btn btn-dastech-primary py-2 fw-bold" data-cursor="EXPLORE">
+                  <i class="bi bi-speedometer2 me-1"></i> Access Customer Portal
+                </a>
+                <a href="products.html" class="btn btn-dastech-outline py-2">
+                  Browse More Products
+                </a>
               </div>
             </div>
           </div>
@@ -181,117 +248,97 @@
       </div>
     </main>
 
-    <!-- Order Confirmation Modal -->
-    <div class="modal fade" id="orderConfirmationModal" tabindex="-1" aria-hidden="true" data-bs-backdrop="static">
-      <div class="modal-dialog modal-dialog-centered">
-        <div class="modal-content border-0 rounded-4 shadow-lg text-center p-4">
-          <div class="modal-body">
-            <div class="p-3 bg-success bg-opacity-10 text-success rounded-circle d-inline-flex mb-3">
-              <i class="bi bi-check-circle-fill" style="font-size: 3.5rem;"></i>
-            </div>
-            <h3 class="fw-bold mb-2">Order Confirmed!</h3>
-            <p class="text-muted small mb-4">
-              Thank you for purchasing with <strong>DasTech</strong>. Your digital product license and download keys have been generated and dispatched to your email.
-            </p>
-            <div class="p-3 bg-light rounded-3 border text-start mb-4 small">
-              <div class="d-flex justify-content-between mb-1">
-                <span class="text-muted">Order ID:</span>
-                <span class="fw-mono fw-bold" id="receiptOrderId">DT-ORD-98421</span>
-              </div>
-              <div class="d-flex justify-content-between mb-1">
-                <span class="text-muted">License Status:</span>
-                <span class="badge bg-success">Active Commercial</span>
-              </div>
-              <div class="d-flex justify-content-between">
-                <span class="text-muted">Delivery:</span>
-                <span class="text-dark fw-semibold">Instant Access Ready</span>
-              </div>
-            </div>
-            <div class="d-grid gap-2">
-              <a href="products.html" class="btn btn-dastech-primary py-2 fw-semibold">Explore More Products</a>
-              <a href="index.html" class="btn btn-dastech-outline py-2 fw-semibold">Return to Home</a>
-            </div>
+    <!-- Professional DasTech Footer -->
+    <footer class="dastech-footer">
+      <div class="container">
+        <div class="footer-bottom d-flex flex-column flex-md-row justify-content-between align-items-center gap-3 pt-0 border-top-0">
+          <div class="text-muted">
+            &copy; <span id="currentYear"></span> DasTech. All Rights Reserved.
+          </div>
+          <div class="d-flex gap-3 text-muted small">
+            <a href="#" class="text-muted">Privacy Policy</a>
+            <span>•</span>
+            <a href="#" class="text-muted">Terms of Service</a>
           </div>
         </div>
       </div>
-    </div>
+    </footer>
 
     <!-- Scripts -->
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
     
-    <!-- DasTech Core Logic & Cart -->
+    <!-- DasTech Core Logic, Cart & Interactions -->
     <script src="assets/js/dastech-data.js"></script>
     <script src="assets/js/cart.js"></script>
+    <script src="assets/js/dastech-interactions.js"></script>
 
     <script>
-      function renderCheckoutItems() {
-        const cart = DasTechCart.getItems();
-        const container = document.getElementById('checkoutItemsList');
+      document.getElementById('currentYear').textContent = new Date().getFullYear();
+
+      function loadCheckoutSummary() {
+        let cart = DasTechCart.getItems();
+        
+        // Fallback demo product if cart opened empty
+        if (cart.length === 0 && window.DasTechData && window.DasTechData.products) {
+          cart = [{
+            id: window.DasTechData.products[0].id,
+            name: window.DasTechData.products[0].name,
+            price: window.DasTechData.products[0].price,
+            category: window.DasTechData.products[0].category,
+            image: window.DasTechData.products[0].image,
+            quantity: 1
+          }];
+        }
+
+        const itemsContainer = document.getElementById('checkoutItemsList');
         const subtotalEl = document.getElementById('checkoutSubtotal');
         const totalEl = document.getElementById('checkoutTotal');
 
-        if (cart.length === 0) {
-          // If empty, redirect to products or prompt
-          container.innerHTML = `
-            <div class="text-center py-4 text-muted">
-              <p class="mb-2">Your cart is currently empty.</p>
-              <a href="products.html" class="btn btn-dastech-primary btn-sm">Select a Product</a>
-            </div>
-          `;
-          subtotalEl.textContent = '$0.00';
-          totalEl.textContent = '$0.00';
-          return;
-        }
-
         let html = '';
+        let total = 0;
+
         cart.forEach(item => {
+          const itemPrice = item.price * (item.quantity || 1);
+          total += itemPrice;
           html += `
             <div class="d-flex align-items-center justify-content-between">
               <div class="d-flex align-items-center">
-                <img src="${item.image}" alt="${item.name}" class="rounded-3 me-3" style="width: 48px; height: 48px; object-fit: cover;">
+                <img src="${item.image}" alt="${item.name}" class="rounded-3 me-2" style="width: 46px; height: 46px; object-fit: cover;">
                 <div>
-                  <div class="fw-bold text-dark small">${item.name}</div>
-                  <span class="text-muted small">Qty: ${item.quantity || 1}</span>
+                  <div class="fw-bold small text-white">${item.name}</div>
+                  <div class="text-muted small">Qty: ${item.quantity || 1} &bull; ${item.category}</div>
                 </div>
               </div>
-              <div class="fw-bold text-dark">$${(item.price * (item.quantity || 1)).toFixed(2)}</div>
+              <div class="fw-bold text-white small">$${itemPrice.toFixed(2)}</div>
             </div>
           `;
         });
 
-        container.innerHTML = html;
-
-        const subtotal = DasTechCart.getSubtotal();
-        subtotalEl.textContent = `$${subtotal.toFixed(2)}`;
-        totalEl.textContent = `$${subtotal.toFixed(2)}`;
+        itemsContainer.innerHTML = html;
+        subtotalEl.textContent = `$${total.toFixed(2)}`;
+        totalEl.textContent = `$${total.toFixed(2)}`;
       }
 
       document.addEventListener('DOMContentLoaded', () => {
-        renderCheckoutItems();
+        loadCheckoutSummary();
 
+        // Form submission
         const form = document.getElementById('checkoutForm');
-        if (form) {
-          form.addEventListener('submit', (e) => {
-            e.preventDefault();
-            const btn = document.getElementById('placeOrderBtn');
-            const originalText = btn.innerHTML;
-            btn.innerHTML = '<span class="spinner-border spinner-border-sm me-2"></span> Securing Order...';
-            btn.disabled = true;
+        form.addEventListener('submit', (e) => {
+          e.preventDefault();
+          const email = document.getElementById('checkoutEmail').value;
+          const submitBtn = document.getElementById('completeOrderBtn');
 
-            setTimeout(() => {
-              // Generate random order ID
-              const orderId = 'DT-ORD-' + Math.floor(100000 + Math.random() * 900000);
-              document.getElementById('receiptOrderId').textContent = orderId;
+          submitBtn.innerHTML = '<span class="spinner-border spinner-border-sm me-2"></span> Processing Payment...';
+          submitBtn.disabled = true;
 
-              // Clear cart
-              DasTechCart.clearCart();
-
-              // Show confirmation modal
-              const modal = new bootstrap.Modal(document.getElementById('orderConfirmationModal'));
-              modal.show();
-            }, 1200);
-          });
-        }
+          setTimeout(() => {
+            document.getElementById('successDeliveryEmail').textContent = email;
+            DasTechCart.clearCart();
+            const successModal = new bootstrap.Modal(document.getElementById('orderSuccessModal'));
+            successModal.show();
+          }, 1200);
+        });
       });
     </script>
   </body>

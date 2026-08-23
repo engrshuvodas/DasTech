@@ -1,14 +1,14 @@
 <!doctype html>
-<html lang="en">
+<html lang="en" data-theme="dark">
   <head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <title>DasTech — Digital Products & Engineering Studio</title>
-    <meta name="description" content="DasTech designs and builds cutting-edge software solutions, ready-to-deploy digital products, SaaS platforms, and enterprise web applications.">
+    <meta name="description" content="DasTech designs and builds cutting-edge software solutions, ready-to-deploy digital products, SaaS platforms, and enterprise cloud systems.">
     
     <!-- Open Graph / Meta -->
     <meta property="og:title" content="DasTech — Digital Products & Engineering Studio">
-    <meta property="og:description" content="Building high-performance digital products and custom software solutions that move businesses forward.">
+    <meta property="og:description" content="We build digital products and enterprise software that feel like the future.">
     <meta property="og:type" content="website">
 
     <!-- Bootstrap 5 CSS -->
@@ -28,12 +28,17 @@
     <!-- Top Navigation Bar -->
     <nav class="navbar navbar-expand-lg dastech-navbar sticky-top" id="mainNavbar">
       <div class="container">
-        <a class="dastech-brand" href="index.html">
+        <a class="dastech-brand" href="index.html" data-cursor="EXPLORE">
           <span class="brand-icon"><i class="bi bi-cpu-fill"></i></span>
           <span>Das<span class="brand-text-accent">Tech</span></span>
         </a>
 
         <div class="d-flex align-items-center d-lg-none gap-2">
+          <!-- Theme Toggle Mobile -->
+          <button class="dastech-theme-toggle" aria-label="Toggle Theme">
+            <i class="bi bi-sun-fill text-warning"></i>
+          </button>
+
           <!-- Mobile Cart Trigger -->
           <button class="cart-btn-trigger" data-dastech-open-cart aria-label="Open Shopping Cart">
             <i class="bi bi-bag-fill"></i>
@@ -42,7 +47,7 @@
           
           <button class="navbar-toggler border-0 p-2" type="button" data-bs-toggle="collapse" data-bs-target="#navbarContent"
             aria-controls="navbarContent" aria-expanded="false" aria-label="Toggle navigation">
-            <i class="bi bi-list fs-2 text-dark"></i>
+            <i class="bi bi-list fs-2 text-white"></i>
           </button>
         </div>
 
@@ -69,19 +74,24 @@
           </ul>
 
           <div class="nav-actions d-none d-lg-flex">
+            <!-- Theme Toggle Desktop -->
+            <button class="dastech-theme-toggle" aria-label="Toggle Theme" title="Switch Theme">
+              <i class="bi bi-sun-fill text-warning"></i>
+            </button>
+
             <!-- Desktop Cart Trigger -->
             <button class="cart-btn-trigger" data-dastech-open-cart title="Shopping Cart">
               <i class="bi bi-bag-fill"></i>
               <span class="dastech-cart-badge" style="display: none;">0</span>
             </button>
             <a href="login.html" class="btn btn-dastech-ghost btn-sm"><i class="bi bi-person-fill"></i> Portal</a>
-            <a href="#contact_us" class="btn btn-dastech-primary btn-sm">Start a Project</a>
+            <a href="#contact_us" class="btn btn-dastech-primary btn-sm" data-magnetic>Start a Project</a>
           </div>
         </div>
       </div>
     </nav>
 
-    <!-- Hero Section -->
+    <!-- Cinematic Hero Experience -->
     <header class="hero-section">
       <div class="container">
         <div class="row align-items-center g-5">
@@ -90,16 +100,16 @@
               <i class="bi bi-stars"></i> Next-Gen Software Studio & Marketplace
             </div>
             <h1 class="hero-headline">
-              Building Digital Products That <span class="text-gradient">Move Businesses</span> Forward.
+              We Build Digital Products That <span class="text-gradient">Feel Like the Future</span>.
             </h1>
             <p class="hero-lead">
-              DasTech combines premier software engineering with high-velocity digital product templates, SaaS starters, and custom cloud architecture to accelerate your digital growth.
+              DasTech combines premier software engineering with turnkey digital product templates, SaaS starters, and custom cloud architecture to accelerate your digital growth.
             </p>
             <div class="hero-cta-group">
-              <a href="products.html" class="btn btn-dastech-primary btn-dastech-lg">
+              <a href="products.html" class="btn btn-dastech-primary btn-dastech-lg" data-magnetic data-cursor="EXPLORE">
                 <i class="bi bi-box-seam-fill"></i> Explore Products
               </a>
-              <a href="projects.html" class="btn btn-dastech-outline btn-dastech-lg">
+              <a href="projects.html" class="btn btn-dastech-outline btn-dastech-lg" data-magnetic data-cursor="VIEW">
                 <i class="bi bi-folder-check"></i> View Portfolio
               </a>
             </div>
@@ -111,27 +121,27 @@
           </div>
 
           <div class="col-lg-6" data-aos="fade-left" data-aos-duration="800">
-            <div class="hero-visual-card position-relative">
+            <div class="hero-visual-card position-relative" data-tilt data-cursor="PREVIEW">
               <img src="images/home-banner.png" alt="DasTech Software Engineering" class="img-fluid">
               
-              <!-- Floating UI Badge Top Right -->
+              <!-- Floating Live UI Badge Top Right -->
               <div class="hero-floating-badge badge-top-right">
-                <div class="p-2 bg-primary bg-opacity-10 text-primary rounded-3">
+                <div class="p-2 bg-primary bg-opacity-20 text-primary rounded-3">
                   <i class="bi bi-lightning-charge-fill fs-5"></i>
                 </div>
                 <div>
-                  <div class="fw-bold fs-6 text-dark">Instant Deploy</div>
-                  <div class="text-muted small">Turnkey Architectures</div>
+                  <div class="fw-bold fs-6">Turnkey Architecture</div>
+                  <div class="text-muted small">Instant Cloud Deploy</div>
                 </div>
               </div>
 
-              <!-- Floating UI Badge Bottom Left -->
+              <!-- Floating Live UI Badge Bottom Left -->
               <div class="hero-floating-badge badge-bottom-left">
-                <div class="p-2 bg-success bg-opacity-10 text-success rounded-3">
+                <div class="p-2 bg-success bg-opacity-20 text-success rounded-3">
                   <i class="bi bi-shield-check fs-5"></i>
                 </div>
                 <div>
-                  <div class="fw-bold fs-6 text-dark">99.9% Uptime</div>
+                  <div class="fw-bold fs-6">99.99% Uptime</div>
                   <div class="text-muted small">Battle-tested Systems</div>
                 </div>
               </div>
@@ -171,8 +181,98 @@
       </div>
     </header>
 
+    <!-- Bento Grid Highlight Section -->
+    <section class="section-padding">
+      <div class="container">
+        <div class="section-header text-center" data-aos="fade-up">
+          <span class="section-tag"><i class="bi bi-grid-1x2"></i> Architecture Matrix</span>
+          <h2 class="section-title">Engineered for Velocity & Scale</h2>
+          <p class="section-subtitle">How our unified ecosystem bridges digital product assets with custom cloud engineering.</p>
+        </div>
+
+        <div class="bento-grid">
+          <!-- Bento Box 1: Apex Spotlight -->
+          <div class="bento-card bento-card-8" data-aos="fade-up" data-tilt>
+            <div class="d-flex justify-content-between align-items-start mb-3">
+              <span class="category-badge">Flagship SaaS Starter</span>
+              <button class="btn btn-sm btn-dastech-outline py-1 px-3" data-dastech-preview="dt-prod-1" data-cursor="PREVIEW">
+                <i class="bi bi-play-circle me-1"></i> Live Interactive Preview
+              </button>
+            </div>
+            <h3 class="fw-bold mb-2">Apex SaaS Admin & Analytics Suite</h3>
+            <p class="text-muted mb-4">Complete full-stack Next.js 15 starter equipped with multi-tenant workspace isolation, Stripe subscriptions, and 20+ responsive interactive charts.</p>
+            <div class="d-flex flex-wrap gap-2 mb-4">
+              <span class="tech-badge">Next.js 15</span>
+              <span class="tech-badge">TypeScript</span>
+              <span class="tech-badge">Prisma ORM</span>
+              <span class="tech-badge">Stripe Billing</span>
+            </div>
+            <div class="mt-auto d-flex justify-content-between align-items-center border-top border-secondary border-opacity-10 pt-3">
+              <span class="fs-4 fw-bold text-gradient">$69 <small class="text-muted text-decoration-line-through fs-6">$129</small></span>
+              <div class="d-flex gap-2">
+                <button class="btn btn-dastech-outline btn-sm" data-dastech-add-cart="dt-prod-1"><i class="bi bi-bag-plus"></i></button>
+                <button class="btn btn-dastech-primary btn-sm" data-dastech-buy-now="dt-prod-1" data-cursor="BUY">Buy Now</button>
+              </div>
+            </div>
+          </div>
+
+          <!-- Bento Box 2: Real-time Telemetry -->
+          <div class="bento-card bento-card-4" data-aos="fade-up" data-aos-delay="100">
+            <span class="section-tag mb-2"><i class="bi bi-activity"></i> Live Telemetry</span>
+            <h4 class="fw-bold mb-3 fs-5">Active Production Metrics</h4>
+            <div class="d-flex flex-column gap-3 mb-3">
+              <div class="p-3 rounded-3 bg-dark border border-secondary border-opacity-25">
+                <div class="d-flex justify-content-between small text-muted mb-1">
+                  <span>API Response Time</span>
+                  <span class="text-success fw-bold">24ms</span>
+                </div>
+                <div class="progress" style="height: 4px;">
+                  <div class="progress-bar bg-success" style="width: 95%;"></div>
+                </div>
+              </div>
+              <div class="p-3 rounded-3 bg-dark border border-secondary border-opacity-25">
+                <div class="d-flex justify-content-between small text-muted mb-1">
+                  <span>Global Uptime SLA</span>
+                  <span class="text-primary fw-bold">99.995%</span>
+                </div>
+                <div class="progress" style="height: 4px;">
+                  <div class="progress-bar bg-primary" style="width: 99%;"></div>
+                </div>
+              </div>
+            </div>
+            <div class="mt-auto text-muted small"><i class="bi bi-shield-check text-success me-1"></i> Multi-Region Zero-Downtime</div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Digital Universe Interactive Node Graph -->
+    <section class="section-padding pt-0">
+      <div class="container">
+        <div class="universe-section-wrapper" data-aos="fade-up">
+          <div class="row align-items-center mb-4">
+            <div class="col-md-8">
+              <span class="section-tag"><i class="bi bi-diagram-3"></i> Interactive Graph</span>
+              <h2 class="h3 fw-bold mb-1">The DasTech Digital Universe</h2>
+              <p class="text-muted small mb-0">Explore interconnected SaaS architectures, digital templates, and enterprise case studies.</p>
+            </div>
+            <div class="col-md-4 text-md-end mt-3 mt-md-0">
+              <span class="badge bg-primary bg-opacity-20 text-primary font-monospace small px-3 py-2 rounded-pill">
+                Hover node to inspect &bull; Click to open
+              </span>
+            </div>
+          </div>
+
+          <!-- Universe Interactive Canvas -->
+          <div class="universe-canvas-container" id="universeCanvasContainer">
+            <!-- Populated dynamically via JS with glowing nodes & connection links -->
+          </div>
+        </div>
+      </div>
+    </section>
+
     <!-- Featured Digital Products Marketplace Section -->
-    <section class="section-padding bg-light" id="products">
+    <section class="section-padding bg-dark-card" id="products">
       <div class="container">
         <div class="d-flex flex-column flex-md-row justify-content-between align-items-md-end mb-4">
           <div>
@@ -181,16 +281,16 @@
             <p class="text-muted mb-0">Production-ready source code, SaaS blueprints, and developer utilities.</p>
           </div>
           <div class="mt-3 mt-md-0">
-            <a href="products.html" class="btn btn-dastech-outline">
+            <a href="products.html" class="btn btn-dastech-outline" data-cursor="EXPLORE">
               View All Products <i class="bi bi-arrow-right"></i>
             </a>
           </div>
         </div>
 
         <div class="row g-4" id="featuredProductsContainer">
-          <!-- Populated dynamically via DasTechData or rendered below as static high-performance cards -->
+          <!-- Product Card 1 -->
           <div class="col-md-6 col-lg-4" data-aos="fade-up">
-            <div class="product-card">
+            <div class="product-card" data-tilt>
               <div class="product-card-thumb">
                 <img src="assets/img/product-1.jpg" alt="Apex SaaS Admin & Analytics Suite">
                 <div class="product-badge-overlay">
@@ -199,7 +299,7 @@
               </div>
               <div class="product-card-body">
                 <h3 class="product-card-title">
-                  <a href="product-details.html?id=dt-prod-1">Apex SaaS Admin & Analytics Suite</a>
+                  <a href="product-details.html?id=dt-prod-1" data-cursor="EXPLORE">Apex SaaS Admin & Analytics Suite</a>
                 </h3>
                 <p class="product-card-desc">Turnkey multi-tenant SaaS starter with role-based auth, Stripe subscriptions, and responsive dark/light dashboards.</p>
                 <div class="product-tech-stack">
@@ -213,10 +313,13 @@
                     <span class="original-price">$129</span>
                   </div>
                   <div class="product-actions">
+                    <button class="btn btn-dastech-outline btn-dastech-sm" data-dastech-preview="dt-prod-1" title="Live Preview" data-cursor="PREVIEW">
+                      <i class="bi bi-eye"></i>
+                    </button>
                     <button class="btn btn-dastech-outline btn-dastech-sm" data-dastech-add-cart="dt-prod-1" title="Add to Cart">
                       <i class="bi bi-bag-plus"></i>
                     </button>
-                    <button class="btn btn-dastech-primary btn-dastech-sm" data-dastech-buy-now="dt-prod-1">
+                    <button class="btn btn-dastech-primary btn-dastech-sm" data-dastech-buy-now="dt-prod-1" data-cursor="BUY">
                       Buy Now
                     </button>
                   </div>
@@ -225,8 +328,9 @@
             </div>
           </div>
 
+          <!-- Product Card 2 -->
           <div class="col-md-6 col-lg-4" data-aos="fade-up" data-aos-delay="100">
-            <div class="product-card">
+            <div class="product-card" data-tilt>
               <div class="product-card-thumb">
                 <img src="assets/img/product-2.jpg" alt="CloudGuard Kubernetes & DevOps Toolkit">
                 <div class="product-badge-overlay">
@@ -235,7 +339,7 @@
               </div>
               <div class="product-card-body">
                 <h3 class="product-card-title">
-                  <a href="product-details.html?id=dt-prod-2">CloudGuard Kubernetes & DevOps Toolkit</a>
+                  <a href="product-details.html?id=dt-prod-2" data-cursor="EXPLORE">CloudGuard Kubernetes & DevOps Toolkit</a>
                 </h3>
                 <p class="product-card-desc">Production-ready Terraform blueprints, automated CI/CD GitHub workflows, and Prometheus observability for cloud setups.</p>
                 <div class="product-tech-stack">
@@ -249,10 +353,13 @@
                     <span class="original-price">$149</span>
                   </div>
                   <div class="product-actions">
+                    <button class="btn btn-dastech-outline btn-dastech-sm" data-dastech-preview="dt-prod-2" title="Live Preview" data-cursor="PREVIEW">
+                      <i class="bi bi-eye"></i>
+                    </button>
                     <button class="btn btn-dastech-outline btn-dastech-sm" data-dastech-add-cart="dt-prod-2" title="Add to Cart">
                       <i class="bi bi-bag-plus"></i>
                     </button>
-                    <button class="btn btn-dastech-primary btn-dastech-sm" data-dastech-buy-now="dt-prod-2">
+                    <button class="btn btn-dastech-primary btn-dastech-sm" data-dastech-buy-now="dt-prod-2" data-cursor="BUY">
                       Buy Now
                     </button>
                   </div>
@@ -261,8 +368,9 @@
             </div>
           </div>
 
+          <!-- Product Card 3 -->
           <div class="col-md-6 col-lg-4" data-aos="fade-up" data-aos-delay="200">
-            <div class="product-card">
+            <div class="product-card" data-tilt>
               <div class="product-card-thumb">
                 <img src="assets/img/product-3.jpg" alt="Nova UI Pro Design System">
                 <div class="product-badge-overlay">
@@ -271,7 +379,7 @@
               </div>
               <div class="product-card-body">
                 <h3 class="product-card-title">
-                  <a href="product-details.html?id=dt-prod-3">Nova UI Pro Design System</a>
+                  <a href="product-details.html?id=dt-prod-3" data-cursor="EXPLORE">Nova UI Pro Design System</a>
                 </h3>
                 <p class="product-card-desc">500+ modular, accessible UI components with auto-layout Figma files and clean React/HTML source code.</p>
                 <div class="product-tech-stack">
@@ -285,14 +393,154 @@
                     <span class="original-price">$99</span>
                   </div>
                   <div class="product-actions">
+                    <button class="btn btn-dastech-outline btn-dastech-sm" data-dastech-preview="dt-prod-3" title="Live Preview" data-cursor="PREVIEW">
+                      <i class="bi bi-eye"></i>
+                    </button>
                     <button class="btn btn-dastech-outline btn-dastech-sm" data-dastech-add-cart="dt-prod-3" title="Add to Cart">
                       <i class="bi bi-bag-plus"></i>
                     </button>
-                    <button class="btn btn-dastech-primary btn-dastech-sm" data-dastech-buy-now="dt-prod-3">
+                    <button class="btn btn-dastech-primary btn-dastech-sm" data-dastech-buy-now="dt-prod-3" data-cursor="BUY">
                       Buy Now
                     </button>
                   </div>
                 </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Scroll-Driven Storytelling Section ("From Idea to Shipped Product") -->
+    <section class="section-padding" id="scrollStorytellingSection">
+      <div class="container">
+        <div class="section-header text-center" data-aos="fade-up">
+          <span class="section-tag"><i class="bi bi-arrow-repeat"></i> Engineering Lifecycle</span>
+          <h2 class="section-title">From Architecture to Global Launch</h2>
+          <p class="section-subtitle">A disciplined, high-velocity roadmap designed to turn ambitious ideas into market-dominant software.</p>
+        </div>
+
+        <div class="row justify-content-center">
+          <div class="col-lg-9">
+            <div class="story-timeline-container">
+              <div class="story-timeline-line"></div>
+
+              <!-- Step 1 -->
+              <div class="story-step-card is-active" data-aos="fade-up">
+                <span class="story-step-indicator"></span>
+                <div class="d-flex justify-content-between align-items-center mb-2">
+                  <span class="badge bg-primary bg-opacity-20 text-primary font-monospace small">Phase 01</span>
+                  <span class="small text-muted font-monospace">Architecture & Discovery</span>
+                </div>
+                <h4 class="fw-bold mb-2">Technical Discovery & Database Schema Design</h4>
+                <p class="text-muted small mb-0">We translate business objectives into strict architectural blueprints, data models, and API interface contracts before writing a single line of code.</p>
+              </div>
+
+              <!-- Step 2 -->
+              <div class="story-step-card" data-aos="fade-up">
+                <span class="story-step-indicator"></span>
+                <div class="d-flex justify-content-between align-items-center mb-2">
+                  <span class="badge bg-primary bg-opacity-20 text-primary font-monospace small">Phase 02</span>
+                  <span class="small text-muted font-monospace">UI/UX & Tokens</span>
+                </div>
+                <h4 class="fw-bold mb-2">Figma Design Systems & Accessibility Validation</h4>
+                <p class="text-muted small mb-0">We craft WCAG 2.1 AA accessible component libraries with fluid responsive behavior across mobile (360px) to ultra-wide (1920px+) viewports.</p>
+              </div>
+
+              <!-- Step 3 -->
+              <div class="story-step-card" data-aos="fade-up">
+                <span class="story-step-indicator"></span>
+                <div class="d-flex justify-content-between align-items-center mb-2">
+                  <span class="badge bg-primary bg-opacity-20 text-primary font-monospace small">Phase 03</span>
+                  <span class="small text-muted font-monospace">Sprint Execution</span>
+                </div>
+                <h4 class="fw-bold mb-2">High-Velocity Full-Stack Implementation</h4>
+                <p class="text-muted small mb-0">Transparent two-week sprint cycles with live staging deployments, strictly typed TypeScript codebases, and continuous integration checks.</p>
+              </div>
+
+              <!-- Step 4 -->
+              <div class="story-step-card" data-aos="fade-up">
+                <span class="story-step-indicator"></span>
+                <div class="d-flex justify-content-between align-items-center mb-2">
+                  <span class="badge bg-primary bg-opacity-20 text-primary font-monospace small">Phase 04</span>
+                  <span class="small text-muted font-monospace">Zero-Downtime Deployment</span>
+                </div>
+                <h4 class="fw-bold mb-2">Cloud Infrastructure & Automated CI/CD Launch</h4>
+                <p class="text-muted small mb-0">Multi-region Kubernetes deployment, Prometheus observability, automated SSL provisioning, and 24/7 SLA maintenance handover.</p>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- DasTech Labs Section (Experimental Prototypes) -->
+    <section class="section-padding bg-dark-card">
+      <div class="container">
+        <div class="d-flex flex-column flex-md-row justify-content-between align-items-md-end mb-4">
+          <div>
+            <span class="section-tag"><i class="bi bi-radioactive"></i> R&D Department</span>
+            <h2 class="section-title">DasTech Labs</h2>
+            <p class="text-muted mb-0">Experimental prototypes and upcoming digital toolkits under active engineering.</p>
+          </div>
+          <div class="mt-3 mt-md-0">
+            <span class="badge bg-secondary bg-opacity-20 text-light border border-secondary border-opacity-25 px-3 py-2 rounded-pill font-monospace small">
+              <i class="bi bi-circle-fill text-success me-1" style="font-size: 0.5rem;"></i> Active Research Cycle
+            </span>
+          </div>
+        </div>
+
+        <div class="row g-4">
+          <div class="col-md-4" data-aos="fade-up">
+            <div class="lab-card h-100">
+              <div class="d-flex justify-content-between align-items-center mb-2">
+                <span class="category-badge">AI & Vectors</span>
+                <span class="badge bg-warning bg-opacity-20 text-warning font-monospace small">Beta Testing</span>
+              </div>
+              <h4 class="fw-bold mb-2 fs-5">VectorFlow AI Indexer</h4>
+              <p class="text-muted small mb-3">Sub-millisecond semantic vector search and real-time document embedding indexing for Postgres pgvector.</p>
+              <div class="lab-telemetry-bar">
+                <div class="lab-telemetry-fill" style="width: 88%;"></div>
+              </div>
+              <div class="d-flex justify-content-between small text-muted font-monospace">
+                <span>R&D Progress</span>
+                <span class="text-primary fw-bold">88%</span>
+              </div>
+            </div>
+          </div>
+
+          <div class="col-md-4" data-aos="fade-up" data-aos-delay="100">
+            <div class="lab-card h-100">
+              <div class="d-flex justify-content-between align-items-center mb-2">
+                <span class="category-badge">Distributed State</span>
+                <span class="badge bg-info bg-opacity-20 text-info font-monospace small">Architecture R&D</span>
+              </div>
+              <h4 class="fw-bold mb-2 fs-5">EdgeMesh Zero-Sync</h4>
+              <p class="text-muted small mb-3">Conflict-free replicated data types (CRDTs) engine enabling offline-first collaborative web applications.</p>
+              <div class="lab-telemetry-bar">
+                <div class="lab-telemetry-fill" style="width: 65%;"></div>
+              </div>
+              <div class="d-flex justify-content-between small text-muted font-monospace">
+                <span>R&D Progress</span>
+                <span class="text-primary fw-bold">65%</span>
+              </div>
+            </div>
+          </div>
+
+          <div class="col-md-4" data-aos="fade-up" data-aos-delay="200">
+            <div class="lab-card h-100">
+              <div class="d-flex justify-content-between align-items-center mb-2">
+                <span class="category-badge">Auth & Security</span>
+                <span class="badge bg-success bg-opacity-20 text-success font-monospace small">Release Candidate</span>
+              </div>
+              <h4 class="fw-bold mb-2 fs-5">PassKey Shield SDK</h4>
+              <p class="text-muted small mb-3">Biometric WebAuthn passkey authentication middleware with zero-knowledge hardware token validation.</p>
+              <div class="lab-telemetry-bar">
+                <div class="lab-telemetry-fill" style="width: 94%;"></div>
+              </div>
+              <div class="d-flex justify-content-between small text-muted font-monospace">
+                <span>R&D Progress</span>
+                <span class="text-primary fw-bold">94%</span>
               </div>
             </div>
           </div>
@@ -310,7 +558,7 @@
             <p class="text-muted mb-0">Custom enterprise applications and digital transformations built by DasTech.</p>
           </div>
           <div class="mt-3 mt-md-0">
-            <a href="projects.html" class="btn btn-dastech-outline">
+            <a href="projects.html" class="btn btn-dastech-outline" data-cursor="VIEW">
               View All Projects <i class="bi bi-arrow-right"></i>
             </a>
           </div>
@@ -318,14 +566,14 @@
 
         <div class="row g-4">
           <div class="col-md-6 col-lg-4" data-aos="fade-up">
-            <div class="project-card">
+            <div class="project-card" data-tilt>
               <div class="project-card-thumb">
                 <img src="images/home-dev.png" alt="FinPulse Neo-Banking">
               </div>
               <div class="project-card-body">
                 <div class="project-category-meta">FinTech & Cloud</div>
                 <h3 class="project-card-title">
-                  <a href="project-details.html?id=dt-proj-1">FinPulse Neo-Banking & Wealth Platform</a>
+                  <a href="project-details.html?id=dt-proj-1" data-cursor="VIEW">FinPulse Neo-Banking & Wealth Platform</a>
                 </h3>
                 <p class="project-card-desc">High-concurrency digital banking platform with peer-to-peer transfers, real-time ledger sync, and KYC automation.</p>
                 <div class="product-tech-stack mb-3">
@@ -334,7 +582,7 @@
                   <span class="tech-badge">Kafka</span>
                 </div>
                 <div>
-                  <a href="project-details.html?id=dt-proj-1" class="btn btn-dastech-ghost p-0 fw-bold text-primary">
+                  <a href="project-details.html?id=dt-proj-1" class="btn btn-dastech-ghost p-0 fw-bold text-primary" data-cursor="VIEW">
                     Read Case Study <i class="bi bi-arrow-right ms-1"></i>
                   </a>
                 </div>
@@ -343,14 +591,14 @@
           </div>
 
           <div class="col-md-6 col-lg-4" data-aos="fade-up" data-aos-delay="100">
-            <div class="project-card">
+            <div class="project-card" data-tilt>
               <div class="project-card-thumb">
                 <img src="images/home-web.png" alt="OmniChain Fleet ERP">
               </div>
               <div class="project-card-body">
                 <div class="project-category-meta">Enterprise Software</div>
                 <h3 class="project-card-title">
-                  <a href="project-details.html?id=dt-proj-2">OmniChain Logistics & Fleet ERP</a>
+                  <a href="project-details.html?id=dt-proj-2" data-cursor="VIEW">OmniChain Logistics & Fleet ERP</a>
                 </h3>
                 <p class="project-card-desc">Real-time GPS telemetry, automated customs clearance manifests, and fleet dispatching for 5,000+ commercial vehicles.</p>
                 <div class="product-tech-stack mb-3">
@@ -359,7 +607,7 @@
                   <span class="tech-badge">Mapbox GL</span>
                 </div>
                 <div>
-                  <a href="project-details.html?id=dt-proj-2" class="btn btn-dastech-ghost p-0 fw-bold text-primary">
+                  <a href="project-details.html?id=dt-proj-2" class="btn btn-dastech-ghost p-0 fw-bold text-primary" data-cursor="VIEW">
                     Read Case Study <i class="bi bi-arrow-right ms-1"></i>
                   </a>
                 </div>
@@ -368,14 +616,14 @@
           </div>
 
           <div class="col-md-6 col-lg-4" data-aos="fade-up" data-aos-delay="200">
-            <div class="project-card">
+            <div class="project-card" data-tilt>
               <div class="project-card-thumb">
                 <img src="images/home-mobile.png" alt="MediVault Telehealth">
               </div>
               <div class="project-card-body">
                 <div class="project-category-meta">Healthcare & Mobile</div>
                 <h3 class="project-card-title">
-                  <a href="project-details.html?id=dt-proj-3">MediVault Telehealth Consultation Hub</a>
+                  <a href="project-details.html?id=dt-proj-3" data-cursor="VIEW">MediVault Telehealth Consultation Hub</a>
                 </h3>
                 <p class="project-card-desc">HIPAA-compliant encrypted video appointments, EHR database connectivity, and digital prescription dispatch.</p>
                 <div class="product-tech-stack mb-3">
@@ -384,7 +632,7 @@
                   <span class="tech-badge">MongoDB</span>
                 </div>
                 <div>
-                  <a href="project-details.html?id=dt-proj-3" class="btn btn-dastech-ghost p-0 fw-bold text-primary">
+                  <a href="project-details.html?id=dt-proj-3" class="btn btn-dastech-ghost p-0 fw-bold text-primary" data-cursor="VIEW">
                     Read Case Study <i class="bi bi-arrow-right ms-1"></i>
                   </a>
                 </div>
@@ -395,8 +643,44 @@
       </div>
     </section>
 
+    <!-- Interactive Technology Constellation Ecosystem -->
+    <section class="section-padding bg-dark-card">
+      <div class="container">
+        <div class="section-header text-center" data-aos="fade-up">
+          <span class="section-tag"><i class="bi bi-code-square"></i> Core Tech Ecosystem</span>
+          <h2 class="section-title">Built with Contemporary Industry Standards</h2>
+          <p class="section-subtitle">Hover over any technology chip to inspect architectural applications.</p>
+        </div>
+
+        <div class="row align-items-center g-4">
+          <div class="col-lg-7" data-aos="fade-right">
+            <div class="d-flex flex-wrap gap-3" id="techChipsContainer">
+              <span class="tech-badge interactive-tech-chip py-2 px-3 fs-6 cursor-pointer" data-tech="Next.js 15"><i class="bi bi-layers text-primary me-2"></i> Next.js 15</span>
+              <span class="tech-badge interactive-tech-chip py-2 px-3 fs-6 cursor-pointer" data-tech="TypeScript"><i class="bi bi-filetype-tsx text-primary me-2"></i> TypeScript</span>
+              <span class="tech-badge interactive-tech-chip py-2 px-3 fs-6 cursor-pointer" data-tech="Kubernetes"><i class="bi bi-box-seam text-primary me-2"></i> Kubernetes</span>
+              <span class="tech-badge interactive-tech-chip py-2 px-3 fs-6 cursor-pointer" data-tech="Kafka"><i class="bi bi-activity text-primary me-2"></i> Kafka</span>
+              <span class="tech-badge interactive-tech-chip py-2 px-3 fs-6 cursor-pointer" data-tech="FastAPI"><i class="bi bi-lightning text-primary me-2"></i> FastAPI</span>
+              <span class="tech-badge interactive-tech-chip py-2 px-3 fs-6 cursor-pointer" data-tech="Terraform"><i class="bi bi-cloud-arrow-up text-primary me-2"></i> Terraform</span>
+              <span class="tech-badge interactive-tech-chip py-2 px-3 fs-6 cursor-pointer" data-tech="PostgreSQL"><i class="bi bi-database text-primary me-2"></i> PostgreSQL</span>
+              <span class="tech-badge interactive-tech-chip py-2 px-3 fs-6 cursor-pointer" data-tech="WebRTC"><i class="bi bi-camera-video text-primary me-2"></i> WebRTC</span>
+            </div>
+          </div>
+
+          <div class="col-lg-5" data-aos="fade-left">
+            <div id="techEcosystemDetail">
+              <div class="p-4 rounded-4 bg-dark border border-secondary border-opacity-25 shadow-lg">
+                <span class="badge bg-primary bg-opacity-20 text-primary font-monospace small mb-2">Interactive Inspector</span>
+                <h5 class="fw-bold text-white mb-2">Select a Technology</h5>
+                <p class="small text-muted mb-0">Hover over any technology on the left to see which DasTech products and client platforms leverage it.</p>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
     <!-- Services Section -->
-    <section class="section-padding bg-light" id="services">
+    <section class="section-padding" id="services">
       <div class="container">
         <div class="section-header text-center" data-aos="fade-up">
           <span class="section-tag"><i class="bi bi-gear-wide-connected"></i> Engineering Capabilities</span>
@@ -406,10 +690,8 @@
 
         <div class="row g-4">
           <div class="col-md-6 col-lg-4" data-aos="fade-up">
-            <div class="service-box">
-              <div class="service-icon-wrap">
-                <i class="bi bi-code-slash"></i>
-              </div>
+            <div class="service-box" data-tilt>
+              <div class="service-icon-wrap"><i class="bi bi-code-slash"></i></div>
               <h3 class="service-title">Custom Software Engineering</h3>
               <p class="service-text">Robust backends, intuitive frontends, and tailored database architectures built to solve complex business operations.</p>
               <ul class="service-features-list">
@@ -421,10 +703,8 @@
           </div>
 
           <div class="col-md-6 col-lg-4" data-aos="fade-up" data-aos-delay="100">
-            <div class="service-box">
-              <div class="service-icon-wrap">
-                <i class="bi bi-window-stack"></i>
-              </div>
+            <div class="service-box" data-tilt>
+              <div class="service-icon-wrap"><i class="bi bi-window-stack"></i></div>
               <h3 class="service-title">Web & SaaS Applications</h3>
               <p class="service-text">Modern, conversion-focused single-page and progressive web applications engineered with Next.js and React.</p>
               <ul class="service-features-list">
@@ -436,10 +716,8 @@
           </div>
 
           <div class="col-md-6 col-lg-4" data-aos="fade-up" data-aos-delay="200">
-            <div class="service-box">
-              <div class="service-icon-wrap">
-                <i class="bi bi-phone"></i>
-              </div>
+            <div class="service-box" data-tilt>
+              <div class="service-icon-wrap"><i class="bi bi-phone"></i></div>
               <h3 class="service-title">Mobile App Development</h3>
               <p class="service-text">High-performance iOS and Android applications with offline synchronization and responsive touch experiences.</p>
               <ul class="service-features-list">
@@ -447,128 +725,6 @@
                 <li><i class="bi bi-check-circle-fill"></i> Push Notifications & Real-Time Sync</li>
                 <li><i class="bi bi-check-circle-fill"></i> App Store & Play Store Publishing</li>
               </ul>
-            </div>
-          </div>
-
-          <div class="col-md-6 col-lg-4" data-aos="fade-up">
-            <div class="service-box">
-              <div class="service-icon-wrap">
-                <i class="bi bi-cloud-check"></i>
-              </div>
-              <h3 class="service-title">Cloud Architecture & DevOps</h3>
-              <p class="service-text">Automated CI/CD deployment pipelines, container orchestration, and multi-region cloud infrastructure.</p>
-              <ul class="service-features-list">
-                <li><i class="bi bi-check-circle-fill"></i> Kubernetes & Docker Deployments</li>
-                <li><i class="bi bi-check-circle-fill"></i> Terraform Infrastructure as Code</li>
-                <li><i class="bi bi-check-circle-fill"></i> 24/7 Monitoring & Log Observability</li>
-              </ul>
-            </div>
-          </div>
-
-          <div class="col-md-6 col-lg-4" data-aos="fade-up" data-aos-delay="100">
-            <div class="service-box">
-              <div class="service-icon-wrap">
-                <i class="bi bi-palette"></i>
-              </div>
-              <h3 class="service-title">UI/UX & Product Design</h3>
-              <p class="service-text">User journey mapping, wireframing, high-fidelity prototypes, and accessible design system development.</p>
-              <ul class="service-features-list">
-                <li><i class="bi bi-check-circle-fill"></i> Figma Design Systems & Tokens</li>
-                <li><i class="bi bi-check-circle-fill"></i> Usability Testing & Analytics</li>
-                <li><i class="bi bi-check-circle-fill"></i> WCAG 2.1 AA Compliance</li>
-              </ul>
-            </div>
-          </div>
-
-          <div class="col-md-6 col-lg-4" data-aos="fade-up" data-aos-delay="200">
-            <div class="service-box">
-              <div class="service-icon-wrap">
-                <i class="bi bi-shield-check"></i>
-              </div>
-              <h3 class="service-title">QA & Security Auditing</h3>
-              <p class="service-text">Comprehensive automated test suites, performance stress benchmarking, and security vulnerability scanning.</p>
-              <ul class="service-features-list">
-                <li><i class="bi bi-check-circle-fill"></i> End-to-End Automated Testing</li>
-                <li><i class="bi bi-check-circle-fill"></i> Load Testing & Speed Optimization</li>
-                <li><i class="bi bi-check-circle-fill"></i> OWASP Security Vulnerability Scans</li>
-              </ul>
-            </div>
-          </div>
-        </div>
-      </div>
-    </section>
-
-    <!-- Why DasTech Section -->
-    <section class="section-padding">
-      <div class="container">
-        <div class="section-header text-center" data-aos="fade-up">
-          <span class="section-tag"><i class="bi bi-award"></i> The DasTech Advantage</span>
-          <h2 class="section-title">Why Industry Leaders Choose DasTech</h2>
-          <p class="section-subtitle">We merge senior engineering discipline with modern speed to ship reliable software on time.</p>
-        </div>
-
-        <div class="row g-4">
-          <div class="col-md-6 col-lg-3" data-aos="fade-up">
-            <div class="why-dastech-card text-center">
-              <div class="why-icon-box mx-auto">
-                <i class="bi bi-people-fill"></i>
-              </div>
-              <h4 class="fw-bold mb-2 fs-5">Senior Engineers</h4>
-              <p class="text-muted small mb-0">Every project is handled by seasoned architects and developers with deep domain expertise.</p>
-            </div>
-          </div>
-
-          <div class="col-md-6 col-lg-3" data-aos="fade-up" data-aos-delay="100">
-            <div class="why-dastech-card text-center">
-              <div class="why-icon-box mx-auto">
-                <i class="bi bi-speedometer2"></i>
-              </div>
-              <h4 class="fw-bold mb-2 fs-5">Agile Velocity</h4>
-              <p class="text-muted small mb-0">Transparent 2-week sprint cycles with live staging previews and continuous feedback loops.</p>
-            </div>
-          </div>
-
-          <div class="col-md-6 col-lg-3" data-aos="fade-up" data-aos-delay="200">
-            <div class="why-dastech-card text-center">
-              <div class="why-icon-box mx-auto">
-                <i class="bi bi-shield-lock-fill"></i>
-              </div>
-              <h4 class="fw-bold mb-2 fs-5">Code Ownership</h4>
-              <p class="text-muted small mb-0">100% intellectual property transfer, clean documentation, and zero proprietary lock-in.</p>
-            </div>
-          </div>
-
-          <div class="col-md-6 col-lg-3" data-aos="fade-up" data-aos-delay="300">
-            <div class="why-dastech-card text-center">
-              <div class="why-icon-box mx-auto">
-                <i class="bi bi-headset"></i>
-              </div>
-              <h4 class="fw-bold mb-2 fs-5">Ongoing Support</h4>
-              <p class="text-muted small mb-0">Guaranteed SLAs, security patch updates, and continuous maintenance monitoring.</p>
-            </div>
-          </div>
-        </div>
-      </div>
-    </section>
-
-    <!-- Key Client Portfolio Video Showcase -->
-    <section class="section-padding bg-light">
-      <div class="container">
-        <div class="section-header text-center" data-aos="fade-up">
-          <span class="section-tag"><i class="bi bi-play-circle"></i> Video Spotlight</span>
-          <h2 class="section-title">Client Portfolio & Showcase</h2>
-          <p class="section-subtitle">Take an inside look at how DasTech delivers enterprise-grade software solutions.</p>
-        </div>
-
-        <div class="row g-4 justify-content-center">
-          <div class="col-lg-6" data-aos="fade-up">
-            <div class="ratio ratio-16x9 rounded-4 shadow-sm overflow-hidden border">
-              <iframe src="https://www.youtube.com/embed/OycHVArEc9Y" title="DasTech Engineering Overview" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
-            </div>
-          </div>
-          <div class="col-lg-6" data-aos="fade-up" data-aos-delay="100">
-            <div class="ratio ratio-16x9 rounded-4 shadow-sm overflow-hidden border">
-              <iframe src="https://www.youtube.com/embed/OycHVArEc9Y" title="DasTech Product Workflow" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
             </div>
           </div>
         </div>
@@ -581,7 +737,7 @@
         <div class="contact-section-wrapper" data-aos="fade-up">
           <div class="row align-items-center g-5">
             <div class="col-lg-5">
-              <span class="badge bg-primary bg-opacity-25 text-white mb-3 px-3 py-2 rounded-pill">
+              <span class="badge bg-primary bg-opacity-25 text-primary mb-3 px-3 py-2 rounded-pill font-monospace">
                 <i class="bi bi-envelope-fill me-1"></i> Get in Touch
               </span>
               <h2 class="display-6 fw-bold mb-3 text-white">Have a Project in Mind? Let's Build It.</h2>
@@ -636,7 +792,7 @@
                       <textarea class="form-control form-control-dastech" rows="4" required placeholder="Briefly describe your goals, budget timeline, or tech requirements..."></textarea>
                     </div>
                     <div class="col-12 mt-4">
-                      <button type="submit" class="btn btn-dastech-primary w-100 py-3 fw-bold">
+                      <button type="submit" class="btn btn-dastech-primary w-100 py-3 fw-bold" data-magnetic>
                         <i class="bi bi-send-fill me-2"></i> Submit Inquiry
                       </button>
                     </div>
@@ -654,7 +810,7 @@
       <div class="container">
         <div class="row g-4">
           <div class="col-lg-4 col-md-6">
-            <a class="footer-brand" href="index.html">
+            <a class="footer-brand" href="index.html" data-cursor="EXPLORE">
               <span class="brand-icon"><i class="bi bi-cpu-fill"></i></span>
               <span>Das<span class="text-primary">Tech</span></span>
             </a>
@@ -662,9 +818,9 @@
               DasTech is a modern digital products studio and full-service software development agency delivering high-velocity technology solutions.
             </p>
             <div class="d-flex gap-3">
-              <a href="#" class="btn btn-sm btn-outline-light rounded-circle p-2" aria-label="GitHub"><i class="bi bi-github"></i></a>
-              <a href="#" class="btn btn-sm btn-outline-light rounded-circle p-2" aria-label="LinkedIn"><i class="bi bi-linkedin"></i></a>
-              <a href="#" class="btn btn-sm btn-outline-light rounded-circle p-2" aria-label="Twitter"><i class="bi bi-twitter-x"></i></a>
+              <a href="#" class="btn btn-sm btn-outline-light rounded-circle p-2" aria-label="GitHub" data-cursor="OPEN"><i class="bi bi-github"></i></a>
+              <a href="#" class="btn btn-sm btn-outline-light rounded-circle p-2" aria-label="LinkedIn" data-cursor="OPEN"><i class="bi bi-linkedin"></i></a>
+              <a href="#" class="btn btn-sm btn-outline-light rounded-circle p-2" aria-label="Twitter" data-cursor="OPEN"><i class="bi bi-twitter-x"></i></a>
             </div>
           </div>
 
@@ -711,7 +867,7 @@
             <span>•</span>
             <a href="#" class="text-muted">Terms of Service</a>
             <span>•</span>
-            <a href="#" class="text-muted">Security</a>
+            <a href="#" class="text-muted">Security Policy</a>
           </div>
         </div>
       </div>
@@ -723,9 +879,10 @@
     <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/OwlCarousel2/2.3.4/owl.carousel.min.js"></script>
     
-    <!-- DasTech Core Logic & Cart -->
+    <!-- DasTech Core Logic, Interactions & Cart -->
     <script src="assets/js/dastech-data.js"></script>
     <script src="assets/js/cart.js"></script>
+    <script src="assets/js/dastech-interactions.js"></script>
 
     <script>
       AOS.init({ once: true, offset: 50, duration: 600 });
@@ -748,11 +905,11 @@
           e.preventDefault();
           const submitBtn = contactForm.querySelector('button[type="submit"]');
           const originalText = submitBtn.innerHTML;
-          submitBtn.innerHTML = '<span class="spinner-border spinner-border-sm me-2"></span> Sending...';
+          submitBtn.innerHTML = '<span class="spinner-border spinner-border-sm me-2"></span> Transmitting...';
           submitBtn.disabled = true;
 
           setTimeout(function() {
-            submitBtn.innerHTML = '<i class="bi bi-check2-circle me-2"></i> Message Sent!';
+            submitBtn.innerHTML = '<i class="bi bi-check2-circle me-2"></i> Inquiry Received!';
             submitBtn.classList.remove('btn-dastech-primary');
             submitBtn.classList.add('btn-success');
             contactForm.reset();

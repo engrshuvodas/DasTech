@@ -1,5 +1,5 @@
 <!doctype html>
-<html lang="en">
+<html lang="en" data-theme="dark">
   <head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
@@ -17,19 +17,22 @@
     <!-- Top Navigation Bar -->
     <nav class="navbar navbar-expand-lg dastech-navbar sticky-top" id="mainNavbar">
       <div class="container">
-        <a class="dastech-brand" href="index.html">
+        <a class="dastech-brand" href="index.html" data-cursor="EXPLORE">
           <span class="brand-icon"><i class="bi bi-cpu-fill"></i></span>
           <span>Das<span class="brand-text-accent">Tech</span></span>
         </a>
 
         <div class="d-flex align-items-center d-lg-none gap-2">
+          <button class="dastech-theme-toggle" aria-label="Toggle Theme">
+            <i class="bi bi-sun-fill text-warning"></i>
+          </button>
           <button class="cart-btn-trigger" data-dastech-open-cart aria-label="Open Shopping Cart">
             <i class="bi bi-bag-fill"></i>
             <span class="dastech-cart-badge" style="display: none;">0</span>
           </button>
           
           <button class="navbar-toggler border-0 p-2" type="button" data-bs-toggle="collapse" data-bs-target="#navbarContent">
-            <i class="bi bi-list fs-2 text-dark"></i>
+            <i class="bi bi-list fs-2 text-white"></i>
           </button>
         </div>
 
@@ -56,19 +59,22 @@
           </ul>
 
           <div class="nav-actions d-none d-lg-flex">
+            <button class="dastech-theme-toggle" aria-label="Toggle Theme" title="Switch Theme">
+              <i class="bi bi-sun-fill text-warning"></i>
+            </button>
             <button class="cart-btn-trigger" data-dastech-open-cart title="Shopping Cart">
               <i class="bi bi-bag-fill"></i>
               <span class="dastech-cart-badge" style="display: none;">0</span>
             </button>
             <a href="login.html" class="btn btn-dastech-ghost btn-sm"><i class="bi bi-person-fill"></i> Portal</a>
-            <a href="index.html#contact_us" class="btn btn-dastech-primary btn-sm">Start a Project</a>
+            <a href="index.html#contact_us" class="btn btn-dastech-primary btn-sm" data-magnetic>Start a Project</a>
           </div>
         </div>
       </div>
     </nav>
 
     <!-- Cart Main Content -->
-    <main class="py-5 bg-light min-vh-100">
+    <main class="py-5 min-vh-100">
       <div class="container">
         <!-- Breadcrumb -->
         <nav aria-label="breadcrumb" class="mb-4">
@@ -84,7 +90,7 @@
         <div class="row g-4" id="cartContentRow">
           <!-- Items List Column -->
           <div class="col-lg-8">
-            <div class="card border-0 shadow-sm rounded-4 p-4 bg-white mb-4">
+            <div class="card border-0 shadow-sm rounded-4 p-4 bg-dark-card mb-4">
               <div class="table-responsive">
                 <table class="table align-middle mb-0">
                   <thead class="text-muted small text-uppercase">
@@ -105,7 +111,7 @@
 
             <!-- Action buttons -->
             <div class="d-flex justify-content-between align-items-center">
-              <a href="products.html" class="btn btn-dastech-outline">
+              <a href="products.html" class="btn btn-dastech-outline" data-cursor="EXPLORE">
                 <i class="bi bi-arrow-left me-1"></i> Continue Browsing
               </a>
               <button class="btn btn-outline-danger btn-sm" id="clearCartBtn">
@@ -116,7 +122,7 @@
 
           <!-- Order Summary Column -->
           <div class="col-lg-4">
-            <div class="card border-0 shadow-sm rounded-4 p-4 bg-white sticky-top" style="top: 100px;">
+            <div class="card border-0 shadow-sm rounded-4 p-4 bg-dark-card sticky-top" style="top: 100px;">
               <h4 class="fw-bold mb-3 fs-5">Order Summary</h4>
               
               <!-- Coupon Input -->
@@ -129,12 +135,12 @@
                 <div id="couponFeedback" class="small mt-1" style="display: none;"></div>
               </div>
 
-              <hr>
+              <hr class="border-secondary border-opacity-25">
 
               <!-- Price Breakdown -->
               <div class="d-flex justify-content-between mb-2 text-muted">
                 <span>Subtotal</span>
-                <span class="fw-semibold text-dark" id="summarySubtotal">$0.00</span>
+                <span class="fw-semibold text-white" id="summarySubtotal">$0.00</span>
               </div>
               <div class="d-flex justify-content-between mb-2 text-muted" id="discountRow" style="display: none;">
                 <span>Discount (<span id="discountPercent">0%</span>)</span>
@@ -145,14 +151,14 @@
                 <span class="text-success fw-semibold">FREE (Instant)</span>
               </div>
 
-              <hr>
+              <hr class="border-secondary border-opacity-25">
 
               <div class="d-flex justify-content-between mb-4">
                 <span class="fw-bold fs-5">Total</span>
                 <span class="fw-bold fs-4 text-primary" id="summaryTotal">$0.00</span>
               </div>
 
-              <a href="checkout.html" class="btn btn-dastech-primary w-100 py-3 fw-bold mb-3">
+              <a href="checkout.html" class="btn btn-dastech-primary w-100 py-3 fw-bold mb-3" data-cursor="BUY" data-magnetic>
                 Proceed to Checkout <i class="bi bi-shield-lock-fill ms-1"></i>
               </a>
 
@@ -164,14 +170,14 @@
         </div>
 
         <!-- Empty Cart State -->
-        <div id="cartEmptyState" class="card border-0 shadow-sm rounded-4 p-5 text-center bg-white" style="display: none;">
-          <div class="p-4 bg-light rounded-circle d-inline-flex mx-auto mb-3 text-muted">
+        <div id="cartEmptyState" class="card border-0 shadow-sm rounded-4 p-5 text-center bg-dark-card" style="display: none;">
+          <div class="p-4 bg-dark rounded-circle d-inline-flex mx-auto mb-3 text-muted border border-secondary border-opacity-25">
             <i class="bi bi-bag-x" style="font-size: 3.5rem;"></i>
           </div>
           <h3 class="fw-bold mb-2">Your Shopping Cart is Empty</h3>
           <p class="text-muted mb-4">Looks like you haven't added any digital products or SaaS starters yet.</p>
           <div>
-            <a href="products.html" class="btn btn-dastech-primary btn-dastech-lg">
+            <a href="products.html" class="btn btn-dastech-primary btn-dastech-lg" data-cursor="EXPLORE" data-magnetic>
               <i class="bi bi-box-seam me-1"></i> Explore Digital Products
             </a>
           </div>
@@ -184,7 +190,7 @@
       <div class="container">
         <div class="row g-4">
           <div class="col-lg-4 col-md-6">
-            <a class="footer-brand" href="index.html">
+            <a class="footer-brand" href="index.html" data-cursor="EXPLORE">
               <span class="brand-icon"><i class="bi bi-cpu-fill"></i></span>
               <span>Das<span class="text-primary">Tech</span></span>
             </a>
@@ -239,9 +245,10 @@
     <!-- Scripts -->
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
     
-    <!-- DasTech Core Logic & Cart -->
+    <!-- DasTech Core Logic, Cart & Interactions -->
     <script src="assets/js/dastech-data.js"></script>
     <script src="assets/js/cart.js"></script>
+    <script src="assets/js/dastech-interactions.js"></script>
 
     <script>
       document.getElementById('currentYear').textContent = new Date().getFullYear();
@@ -277,20 +284,20 @@
                 <div class="d-flex align-items-center">
                   <img src="${item.image}" alt="${item.name}" class="rounded-3 me-3" style="width: 58px; height: 58px; object-fit: cover;">
                   <div>
-                    <a href="product-details.html?id=${item.id}" class="fw-bold text-dark text-decoration-none d-block mb-1">${item.name}</a>
-                    <span class="badge bg-light text-dark border small">${item.category}</span>
+                    <a href="product-details.html?id=${item.id}" class="fw-bold text-white text-decoration-none d-block mb-1" data-cursor="EXPLORE">${item.name}</a>
+                    <span class="badge bg-secondary bg-opacity-20 text-muted border small font-monospace">${item.category}</span>
                   </div>
                 </div>
               </td>
-              <td class="text-center fw-semibold">$${item.price.toFixed(2)}</td>
+              <td class="text-center fw-semibold text-white">$${item.price.toFixed(2)}</td>
               <td class="text-center">
-                <div class="d-inline-flex align-items-center border rounded-3 bg-light p-1">
-                  <button class="btn btn-sm btn-link text-dark p-0 px-2 qty-dec" data-id="${item.id}">-</button>
-                  <span class="px-2 fw-bold">${item.quantity || 1}</span>
-                  <button class="btn btn-sm btn-link text-dark p-0 px-2 qty-inc" data-id="${item.id}">+</button>
+                <div class="d-inline-flex align-items-center border border-secondary border-opacity-25 rounded-3 bg-dark p-1">
+                  <button class="btn btn-sm btn-link text-light p-0 px-2 qty-dec" data-id="${item.id}">-</button>
+                  <span class="px-2 fw-bold text-white">${item.quantity || 1}</span>
+                  <button class="btn btn-sm btn-link text-light p-0 px-2 qty-inc" data-id="${item.id}">+</button>
                 </div>
               </td>
-              <td class="text-end fw-bold text-dark">$${itemTotal.toFixed(2)}</td>
+              <td class="text-end fw-bold text-primary">$${itemTotal.toFixed(2)}</td>
               <td class="text-center">
                 <button class="btn btn-link text-danger p-0 delete-btn" data-id="${item.id}" title="Remove Item">
                   <i class="bi bi-trash3-fill"></i>
@@ -317,7 +324,7 @@
           discountRow.style.display = 'none';
         }
 
-        // Attach action listeners
+        // Action listeners
         tableBody.querySelectorAll('.qty-inc').forEach(btn => {
           btn.addEventListener('click', () => {
             const id = btn.getAttribute('data-id');
@@ -359,7 +366,6 @@
           }
         });
 
-        // Coupon code handler
         const couponBtn = document.getElementById('applyCouponBtn');
         const couponInput = document.getElementById('couponCodeInput');
         const couponFeedback = document.getElementById('couponFeedback');

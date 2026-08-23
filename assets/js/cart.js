@@ -1,6 +1,6 @@
 /**
- * DasTech Global Cart & Commerce System
- * Handles persistent shopping cart, slide-in drawer, toast notifications, and checkout flow.
+ * DasTech Global Cart & Commerce System (2026 Edition)
+ * Handles persistent shopping cart, slide-in drawer, flying particle animations, toast notifications, and checkout flow.
  */
 
 (function () {
@@ -45,7 +45,7 @@
       return items.reduce((acc, item) => acc + item.price * (item.quantity || 1), 0);
     },
 
-    addItem: function (productId, buyNow = false) {
+    addItem: function (productId, buyNow = false, triggerElement = null) {
       if (!window.DasTechData || !window.DasTechData.products) {
         console.error("DasTechData products catalog not loaded");
         return;
@@ -76,13 +76,18 @@
 
       saveCart(cart);
 
+      // Trigger flying animation
+      if (triggerElement && window.triggerFlyingCartAnimation) {
+        window.triggerFlyingCartAnimation(triggerElement);
+      }
+
       if (buyNow) {
         window.location.href = "checkout.html";
         return;
       }
 
       showToast(`Added <strong>${product.name}</strong> to your cart!`);
-      openCartDrawer();
+      setTimeout(() => openCartDrawer(), 300);
     },
 
     removeItem: function (productId) {
@@ -176,11 +181,11 @@
         <div class="drawer-footer" id="dastech-drawer-footer">
           <div class="d-flex justify-content-between align-items-center mb-3">
             <span class="text-muted fw-semibold">Subtotal</span>
-            <span class="fs-5 fw-bold text-dark" id="dastech-drawer-subtotal">$0.00</span>
+            <span class="fs-5 fw-bold text-dark-theme" id="dastech-drawer-subtotal">$0.00</span>
           </div>
           <p class="small text-muted mb-3"><i class="bi bi-shield-lock-fill text-success me-1"></i> Instant digital license delivery & updates included.</p>
           <div class="d-grid gap-2">
-            <a href="checkout.html" class="btn btn-dastech-primary py-2 fw-semibold">
+            <a href="checkout.html" class="btn btn-dastech-primary py-2 fw-semibold" data-cursor="BUY">
               Proceed to Checkout <i class="bi bi-arrow-right ms-1"></i>
             </a>
             <a href="cart.html" class="btn btn-dastech-outline py-2 fw-semibold">
@@ -231,7 +236,7 @@
           </div>
           <h6 class="fw-bold">Your cart is empty</h6>
           <p class="text-muted small">Explore our ready-to-deploy digital products & starter kits.</p>
-          <a href="products.html" class="btn btn-dastech-primary btn-sm mt-2" onclick="DasTechCart.closeDrawer()">Browse Products</a>
+          <a href="products.html" class="btn btn-dastech-primary btn-sm mt-2" onclick="DasTechCart.closeDrawer()" data-cursor="EXPLORE">Browse Products</a>
         </div>
       `;
       if (footerEl) footerEl.style.display = "none";
@@ -243,15 +248,15 @@
     let html = '<div class="drawer-items-list">';
     cart.forEach((item) => {
       html += `
-        <div class="drawer-item d-flex align-items-center mb-3 pb-3 border-bottom">
-          <img src="${item.image}" alt="${item.name}" class="drawer-item-img rounded me-3" style="width: 54px; height: 54px; object-fit: cover;">
+        <div class="drawer-item d-flex align-items-center mb-3 pb-3 border-bottom border-secondary border-opacity-10">
+          <img src="${item.image}" alt="${item.name}" class="drawer-item-img rounded-3 me-3" style="width: 54px; height: 54px; object-fit: cover;">
           <div class="flex-grow-1">
             <div class="d-flex justify-content-between align-items-start">
-              <a href="product-details.html?id=${item.id}" class="drawer-item-title fw-bold text-dark text-decoration-none">${item.name}</a>
+              <a href="product-details.html?id=${item.id}" class="drawer-item-title fw-bold text-decoration-none">${item.name}</a>
               <button class="btn btn-link text-danger p-0 ms-2 remove-item-btn" data-id="${item.id}" title="Remove"><i class="bi bi-trash"></i></button>
             </div>
             <div class="d-flex justify-content-between align-items-center mt-1">
-              <span class="badge bg-light text-dark border small">${item.category}</span>
+              <span class="badge bg-secondary bg-opacity-10 text-muted border small">${item.category}</span>
               <span class="fw-bold text-primary">$${item.price.toFixed(2)}</span>
             </div>
           </div>
@@ -269,7 +274,7 @@
 
     // Attach listeners
     itemsContainer.querySelectorAll(".remove-item-btn").forEach((btn) => {
-      btn.addEventListener("click", (e) => {
+      btn.addEventListener("click", () => {
         const id = btn.getAttribute("data-id");
         DasTechCart.removeItem(id);
         updateDrawerContent();
@@ -317,14 +322,14 @@
       if (addBtn) {
         e.preventDefault();
         const id = addBtn.getAttribute("data-dastech-add-cart");
-        DasTechCart.addItem(id, false);
+        DasTechCart.addItem(id, false, addBtn);
       }
 
       const buyBtn = e.target.closest("[data-dastech-buy-now]");
       if (buyBtn) {
         e.preventDefault();
         const id = buyBtn.getAttribute("data-dastech-buy-now");
-        DasTechCart.addItem(id, true);
+        DasTechCart.addItem(id, true, buyBtn);
       }
 
       const openCartBtn = e.target.closest("[data-dastech-open-cart]");
