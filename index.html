@@ -93,6 +93,11 @@
 
     <!-- Cinematic Hero Experience -->
     <header class="hero-section">
+      <!-- Ambient Gradient Orbs -->
+      <div class="hero-orb hero-orb--1"></div>
+      <div class="hero-orb hero-orb--2"></div>
+      <div class="hero-orb hero-orb--3"></div>
+
       <div class="container">
         <div class="row align-items-center g-5">
           <div class="col-lg-6" data-aos="fade-right" data-aos-duration="800">
@@ -154,25 +159,25 @@
           <div class="row g-4 justify-content-center">
             <div class="col-6 col-md-3">
               <div class="stat-item">
-                <div class="stat-number">150+</div>
+                <div class="stat-number" data-counter="150" data-suffix="+">0+</div>
                 <div class="stat-label">Projects Completed</div>
               </div>
             </div>
             <div class="col-6 col-md-3">
               <div class="stat-item">
-                <div class="stat-number">99.8%</div>
+                <div class="stat-number" data-counter="99.8" data-suffix="%" data-decimals="1">0%</div>
                 <div class="stat-label">Client Satisfaction</div>
               </div>
             </div>
             <div class="col-6 col-md-3">
               <div class="stat-item">
-                <div class="stat-number">15+</div>
+                <div class="stat-number" data-counter="15" data-suffix="+">0+</div>
                 <div class="stat-label">Digital Products</div>
               </div>
             </div>
             <div class="col-6 col-md-3">
               <div class="stat-item">
-                <div class="stat-number">24/7</div>
+                <div class="stat-number" data-counter-text="24/7">24/7</div>
                 <div class="stat-label">Engineering Support</div>
               </div>
             </div>
@@ -885,18 +890,8 @@
     <script src="assets/js/dastech-interactions.js"></script>
 
     <script>
-      AOS.init({ once: true, offset: 50, duration: 600 });
+      AOS.init({ once: true, offset: 60, duration: 700, easing: 'ease-out-cubic' });
       document.getElementById('currentYear').textContent = new Date().getFullYear();
-
-      // Navbar scroll effect
-      window.addEventListener('scroll', function() {
-        const navbar = document.getElementById('mainNavbar');
-        if (window.scrollY > 20) {
-          navbar.classList.add('scrolled');
-        } else {
-          navbar.classList.remove('scrolled');
-        }
-      });
 
       // Contact Form Handler
       const contactForm = document.getElementById('homeContactForm');

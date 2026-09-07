@@ -1,8 +1,9 @@
 /**
- * DasTech Next-Gen Interaction & Experience Engine (2026 Edition)
+ * DasTech Next-Gen Interaction & Experience Engine (2026 Premium Edition)
  * Controls Theme Switching, Custom Cursor with Context Badges, Mouse Spotlight,
  * Magnetic CTAs, 3D Perspective Tilt, Flying Cart Animation, Digital Universe,
- * Scroll Storytelling, and Live Product Preview Modals.
+ * Scroll Storytelling, Live Product Preview Modals, Counter Animations,
+ * Parallax Effects, and Page Load Reveal.
  */
 
 (function () {
@@ -99,8 +100,8 @@
 
     function renderCursor() {
       if (isCursorActive) {
-        ringX += (mouseX - ringX) * 0.18;
-        ringY += (mouseY - ringY) * 0.18;
+        ringX += (mouseX - ringX) * 0.15;
+        ringY += (mouseY - ringY) * 0.15;
         cursorRing.style.transform = `translate3d(${ringX}px, ${ringY}px, 0)`;
       }
       requestAnimationFrame(renderCursor);
@@ -139,13 +140,13 @@
   }
 
   /* ==========================================================================
-     3. Mouse Spotlight & Ambient Glow Engine
+     3. Enhanced Mouse Spotlight & Ambient Glow Engine
      ========================================================================== */
   function initMouseSpotlight() {
     if (isTouchDevice || prefersReducedMotion) return;
 
     document.addEventListener('mousemove', (e) => {
-      const spotlightCards = document.querySelectorAll('.dastech-card, .product-card, .project-card, .bento-card, .service-box, .why-dastech-card');
+      const spotlightCards = document.querySelectorAll('.dastech-card, .product-card, .project-card, .bento-card, .service-box, .why-dastech-card, .lab-card');
       spotlightCards.forEach(card => {
         const rect = card.getBoundingClientRect();
         const x = e.clientX - rect.left;
@@ -168,8 +169,8 @@
         const rect = el.getBoundingClientRect();
         const centerX = rect.left + rect.width / 2;
         const centerY = rect.top + rect.height / 2;
-        const deltaX = (e.clientX - centerX) * 0.28;
-        const deltaY = (e.clientY - centerY) * 0.28;
+        const deltaX = (e.clientX - centerX) * 0.25;
+        const deltaY = (e.clientY - centerY) * 0.25;
         el.style.transform = `translate3d(${deltaX}px, ${deltaY}px, 0)`;
       });
 
@@ -180,7 +181,7 @@
   }
 
   /* ==========================================================================
-     5. 3D Perspective Tilt Engine
+     5. 3D Perspective Tilt Engine with Depth Shadows
      ========================================================================== */
   function init3DTilt() {
     if (isTouchDevice || prefersReducedMotion) return;
@@ -193,14 +194,20 @@
         const y = e.clientY - rect.top;
         const centerX = rect.width / 2;
         const centerY = rect.height / 2;
-        const rotateX = ((y - centerY) / centerY) * -8;
-        const rotateY = ((x - centerX) / centerX) * 8;
+        const rotateX = ((y - centerY) / centerY) * -6;
+        const rotateY = ((x - centerX) / centerX) * 6;
 
-        card.style.transform = `perspective(1000px) rotateX(${rotateX.toFixed(2)}deg) rotateY(${rotateY.toFixed(2)}deg) scale3d(1.02, 1.02, 1.02)`;
+        // Enhanced with depth shadow shift
+        const shadowX = ((x - centerX) / centerX) * 12;
+        const shadowY = ((y - centerY) / centerY) * 12;
+
+        card.style.transform = `perspective(1200px) rotateX(${rotateX.toFixed(2)}deg) rotateY(${rotateY.toFixed(2)}deg) scale3d(1.02, 1.02, 1.02)`;
+        card.style.boxShadow = `${-shadowX}px ${shadowY + 16}px 40px rgba(0, 0, 0, 0.25), 0 0 40px rgba(99, 102, 241, 0.05)`;
       });
 
       card.addEventListener('mouseleave', () => {
-        card.style.transform = 'perspective(1000px) rotateX(0deg) rotateY(0deg) scale3d(1, 1, 1)';
+        card.style.transform = 'perspective(1200px) rotateX(0deg) rotateY(0deg) scale3d(1, 1, 1)';
+        card.style.boxShadow = '';
       });
     });
   }
@@ -234,8 +241,8 @@
     setTimeout(() => {
       projectile.remove();
       cartTarget.classList.add('dt-cart-bump');
-      setTimeout(() => cartTarget.classList.remove('dt-cart-bump'), 400);
-    }, 600);
+      setTimeout(() => cartTarget.classList.remove('dt-cart-bump'), 450);
+    }, 650);
   };
 
   /* ==========================================================================
@@ -352,7 +359,7 @@
   }
 
   /* ==========================================================================
-     9. Scroll Storytelling Observer ("Idea to Global Launch")
+     9. Scroll Storytelling Observer
      ========================================================================== */
   function initScrollStorytelling() {
     const section = document.getElementById('scrollStorytellingSection');
@@ -401,7 +408,145 @@
   }
 
   /* ==========================================================================
-     11. Master Bootstrapping
+     11. Animated Counter (Count Up on Scroll Into View)
+     ========================================================================== */
+  function initAnimatedCounters() {
+    const counters = document.querySelectorAll('[data-counter]');
+    if (!counters.length) return;
+
+    const animateCounter = (el) => {
+      const target = parseFloat(el.getAttribute('data-counter'));
+      const suffix = el.getAttribute('data-suffix') || '';
+      const decimals = parseInt(el.getAttribute('data-decimals') || '0');
+      const duration = 2000;
+      const startTime = performance.now();
+
+      function easeOutQuart(t) {
+        return 1 - Math.pow(1 - t, 4);
+      }
+
+      function update(currentTime) {
+        const elapsed = currentTime - startTime;
+        const progress = Math.min(elapsed / duration, 1);
+        const easedProgress = easeOutQuart(progress);
+        const currentValue = easedProgress * target;
+
+        if (decimals > 0) {
+          el.textContent = currentValue.toFixed(decimals) + suffix;
+        } else {
+          el.textContent = Math.floor(currentValue) + suffix;
+        }
+
+        if (progress < 1) {
+          requestAnimationFrame(update);
+        }
+      }
+
+      requestAnimationFrame(update);
+    };
+
+    const counterObserver = new IntersectionObserver((entries) => {
+      entries.forEach(entry => {
+        if (entry.isIntersecting) {
+          animateCounter(entry.target);
+          counterObserver.unobserve(entry.target);
+        }
+      });
+    }, { threshold: 0.5 });
+
+    counters.forEach(counter => counterObserver.observe(counter));
+  }
+
+  /* ==========================================================================
+     12. Parallax Scroll for Hero Floating Elements
+     ========================================================================== */
+  function initParallax() {
+    if (isTouchDevice || prefersReducedMotion) return;
+
+    const heroSection = document.querySelector('.hero-section');
+    if (!heroSection) return;
+
+    const floatingBadges = heroSection.querySelectorAll('.hero-floating-badge');
+    const orbs = heroSection.querySelectorAll('.hero-orb');
+
+    let ticking = false;
+
+    window.addEventListener('scroll', () => {
+      if (!ticking) {
+        requestAnimationFrame(() => {
+          const scrollY = window.scrollY;
+          const heroHeight = heroSection.offsetHeight;
+
+          if (scrollY < heroHeight * 1.5) {
+            const progress = scrollY / heroHeight;
+
+            floatingBadges.forEach((badge, i) => {
+              const speed = 0.12 + (i * 0.06);
+              const yOffset = scrollY * speed;
+              const originalTransform = badge.style.animationName ? '' : '';
+              badge.style.transform = `translateY(${-yOffset}px)`;
+            });
+
+            orbs.forEach((orb, i) => {
+              const speed = 0.04 + (i * 0.02);
+              orb.style.transform = `translateY(${scrollY * speed}px)`;
+            });
+          }
+
+          ticking = false;
+        });
+        ticking = true;
+      }
+    });
+  }
+
+  /* ==========================================================================
+     13. Staggered Page Load Reveal Animation
+     ========================================================================== */
+  function initPageLoadReveal() {
+    if (prefersReducedMotion) return;
+
+    // Add reveal class to major sections
+    const sections = document.querySelectorAll('.section-padding, .hero-section, .stats-banner, .dastech-footer');
+    sections.forEach((section, i) => {
+      if (!section.classList.contains('dt-reveal')) {
+        section.style.transitionDelay = `${i * 0.08}s`;
+      }
+    });
+
+    // Create intersection observer for smooth section reveals
+    const revealObserver = new IntersectionObserver((entries) => {
+      entries.forEach(entry => {
+        if (entry.isIntersecting) {
+          entry.target.classList.add('is-visible');
+          revealObserver.unobserve(entry.target);
+        }
+      });
+    }, { threshold: 0.1, rootMargin: '0px 0px -50px 0px' });
+
+    document.querySelectorAll('.dt-reveal').forEach(el => {
+      revealObserver.observe(el);
+    });
+  }
+
+  /* ==========================================================================
+     14. Smooth Navbar Background on Scroll
+     ========================================================================== */
+  function initNavbarScroll() {
+    const navbar = document.getElementById('mainNavbar');
+    if (!navbar) return;
+
+    window.addEventListener('scroll', function () {
+      if (window.scrollY > 20) {
+        navbar.classList.add('scrolled');
+      } else {
+        navbar.classList.remove('scrolled');
+      }
+    });
+  }
+
+  /* ==========================================================================
+     15. Master Bootstrapping
      ========================================================================== */
   document.addEventListener('DOMContentLoaded', () => {
     initTheme();
@@ -412,6 +557,10 @@
     initDigitalUniverse();
     initScrollStorytelling();
     initTechStackInteractions();
+    initAnimatedCounters();
+    initParallax();
+    initPageLoadReveal();
+    initNavbarScroll();
 
     // Event delegation for live product preview trigger
     document.addEventListener('click', (e) => {
